@@ -9,10 +9,15 @@ public class HBpilot : MonoBehaviour
     public float rotateSpeedLR = 20;
     public float rotateSpeedUD = 20;
     private bool move;
+    
+
+    public GameObject pplayer;
+    
     // Start is called before the first frame update
     void Start()
     {
         move = true;
+        
     }
 
     // Update is called once per frame
@@ -22,6 +27,14 @@ public class HBpilot : MonoBehaviour
 
         //speed -= transform.forward.y * Time.deltaTime * 50.0f;
 
+       
+
+        //transform.Rotate(0.0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotateSpeed, 0.0f);
+    }
+
+
+    public void Test()
+    {
         if (speed < 0f)
         {
             speed = 0;
@@ -31,12 +44,6 @@ public class HBpilot : MonoBehaviour
             speed = 10;
         }
 
-        //transform.Rotate(0.0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotateSpeed, 0.0f);
-    }
-
-
-    public void Test()
-    {
         if (move)
         {
             transform.position += transform.forward * Time.deltaTime * speed;
@@ -75,4 +82,16 @@ public class HBpilot : MonoBehaviour
             transform.Rotate(0.0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotateSpeedLR, 0.0f);
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Box")
+        {
+            HBspawner.Riding = false;
+           //this.gameObject.SetActive(false);
+            
+        }
+    }
+
+
 }

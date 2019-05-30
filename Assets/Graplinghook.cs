@@ -50,7 +50,7 @@ public class Graplinghook : MonoBehaviour
 
         if (hooked && fired)
         {
-            hook.transform.parent = hookedobj.transform;
+            //hook.transform.parent = hookedobj.transform;
             transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
          

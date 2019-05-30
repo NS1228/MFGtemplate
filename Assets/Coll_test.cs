@@ -17,7 +17,7 @@ public class Coll_test : MonoBehaviour
     {
        if(triggercheck)
         {
-            this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+            //this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
         }
         if (!triggercheck)
         {

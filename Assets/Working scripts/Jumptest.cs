@@ -27,7 +27,7 @@ public class Jumptest : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
 
-            timer = Time.time + 1.5f;
+            timer = Time.time + 1f;
             isJumping = true;
 
         }

@@ -9,6 +9,7 @@ TagManager:
   - Box
   - Hook
   - Hookable
+  - Floor
   layers:
   - Default
   - TransparentFX

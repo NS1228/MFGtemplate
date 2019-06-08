@@ -37,8 +37,15 @@ public class Jumptest : MonoBehaviour
         {
             isJumping = false;
             gravity.x = 0;
-            gravity.y = -10;
+            gravity.y -= 1;
             gravity.z = 0;
+
+            Thirsperson_character.speed = 10;
+
+            if(gravity.y <= -10)
+            {
+                gravity.y = -10;
+            }
         }
 
         Jumper();
@@ -48,9 +55,9 @@ public class Jumptest : MonoBehaviour
     {
         if(isJumping)
         {
-
+            Thirsperson_character.speed = 15;
             gravity.x = 0;
-            gravity.y = 5;
+            gravity.y = 8;
             gravity.z = 0;
            // fpc.m_RunSpeed = (runSpeed / 100 * playerSpeedPercent);
 

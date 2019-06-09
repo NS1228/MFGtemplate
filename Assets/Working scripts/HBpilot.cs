@@ -39,9 +39,9 @@ public class HBpilot : MonoBehaviour
         {
             speed = 0;
         }
-        if (speed > 10f)
+        if (speed > 20f)
         {
-            speed = 10;
+            speed = 20;
         }
 
         if (move)

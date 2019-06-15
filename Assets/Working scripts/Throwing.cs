@@ -8,14 +8,18 @@ public class Throwing : MonoBehaviour
     public Transform player;
     public Transform playerCam;
     public float throwForce = 10;
-    bool hasPlayer = false;
-    bool beingCarried = false;
+   public bool hasPlayer = true;
+    public bool beingCarried = false;
    
     public int dmg;
     private bool touched = false;
+
+    public static bool tpEquiped;
     // Start is called before the first frame update
     void Start()
     {
+        hasPlayer = true;
+        this.GetComponent<Rigidbody>().useGravity = false;
         
     }
 
@@ -23,25 +27,25 @@ public class Throwing : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if(dist <= 2.5f)
-        {
+       if(dist <= 2.5f)
+       {
             hasPlayer = true;
         }
         else
         {
-            hasPlayer = false;
-        }
+           hasPlayer = false;
+        } 
         if(hasPlayer && Input.GetKey(KeyCode.E))
         {
             GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = playerCam;
+            this.gameObject.transform.parent = playerCam;
             beingCarried = true;
-        }
+        } 
         if (beingCarried)
         {
             if(touched)
             {
-                GetComponent<Rigidbody>().isKinematic = false;
+               GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
                 touched = false;
@@ -52,6 +56,10 @@ public class Throwing : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+                tpEquiped = false;
+
+            
+
 
 
             }
@@ -60,9 +68,12 @@ public class Throwing : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
+                
 
             }
         }
+
+       
     }
 
     void OnTriggerEnter()

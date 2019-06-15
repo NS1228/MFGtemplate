@@ -28,8 +28,8 @@ public class Teleport_Test : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         player.transform.position = transform.position;
-        //yield return new WaitForSeconds(1);
-        this.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
         print("yes");
     }
     

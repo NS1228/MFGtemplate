@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Characters.FirstPerson;
+
 
 public class Jumptest : MonoBehaviour
 {
     public bool isJumping;
     private float timer = 0;
     Vector3 gravity;
-    FirstPersonController fpc;
+    //FirstPersonController fpc;
 
     
 
@@ -17,17 +17,19 @@ public class Jumptest : MonoBehaviour
     {
         gravity = Physics.gravity;
         isJumping = false;
-        fpc = GameObject.FindObjectOfType<FirstPersonController>();
+        //fpc = GameObject.FindObjectOfType<FirstPersonController>();
     }
 
     void FixedUpdate()
     {
+        print(gravity.y);
+
         Physics.gravity = gravity;
 
         if (Input.GetKey(KeyCode.E))
         {
 
-            timer = Time.time + 1f;
+            timer = Time.time + 0.5f;
             isJumping = true;
 
         }
@@ -37,7 +39,7 @@ public class Jumptest : MonoBehaviour
         {
             isJumping = false;
             gravity.x = 0;
-            gravity.y -= 1;
+            gravity.y -= 1f;
             gravity.z = 0;
 
             Thirsperson_character.speed = 10;
@@ -55,9 +57,16 @@ public class Jumptest : MonoBehaviour
     {
         if(isJumping)
         {
-            Thirsperson_character.speed = 15;
+            Thirsperson_character.speed += 0.25f;
+           
+
+            if (Thirsperson_character.speed >= 18)
+            {
+                Thirsperson_character.speed = 18;
+            }
+
             gravity.x = 0;
-            gravity.y = 8;
+            gravity.y = 15;
             gravity.z = 0;
            // fpc.m_RunSpeed = (runSpeed / 100 * playerSpeedPercent);
 

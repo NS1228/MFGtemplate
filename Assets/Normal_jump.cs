@@ -27,7 +27,7 @@ public class Normal_jump : MonoBehaviour
             }
         }
 
-        print(jumpHeight);
+        //print(jumpHeight);
     }
 
     void OnCollisionEnter(Collision other)

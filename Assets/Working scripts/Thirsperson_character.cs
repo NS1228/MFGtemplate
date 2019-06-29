@@ -5,70 +5,77 @@ using UnityEngine;
 public class Thirsperson_character : MonoBehaviour
 {
 
-    public bool isSkating;
-
+    public bool hasBall;
+    public GameObject ballShoe;
     public static float speed;
-    public float skatespeed;
+    public float verSpeed;
+    public float ballSpeed;
+    public float boosterSpeed;
+    
     // Start is called before the first frame update
     void Start()
     {
-        skatespeed = 0;
-        speed = 8;
-        isSkating = true;
+
+        speed = 4;
+        hasBall = false;
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMovement();
-        
+
     }
 
-    void PlayerMovement ()
+    void PlayerMovement()
     {
-        if (!isSkating)
+        if (hasBall)
         {
             float hor = Input.GetAxis("Horizontal");
             float ver = Input.GetAxis("Vertical");
-            Vector3 playerMovement = new Vector3(hor, 0f, ver) * speed * Time.deltaTime;
+            Vector3 playerMovement = new Vector3(hor, 0f, ver) * ballSpeed * Time.deltaTime;
             transform.Translate(playerMovement, Space.Self);
         }
-        if (isSkating)
+
+        if (!hasBall & AbilityManager.hasBooster == false) 
         {
             float hor = Input.GetAxis("Horizontal");
             float ver = Input.GetAxis("Vertical");
-            Vector3 playerMovement = new Vector3(hor, 0f, ver * skatespeed) * speed * Time.deltaTime;
+            Vector3 playerMovement = new Vector3(hor, 0f, ver * verSpeed) * speed * Time.deltaTime;
+            transform.Translate(playerMovement, Space.Self);
+        }
+
+        if(AbilityManager.hasBooster &!hasBall)
+        {
+            float hor = Input.GetAxis("Horizontal");
+            float ver = Input.GetAxis("Vertical");
+            Vector3 playerMovement = new Vector3(hor, 0f, ver * verSpeed) * boosterSpeed * Time.deltaTime;
             transform.Translate(playerMovement, Space.Self);
 
         }
 
 
-        if (Input.GetKey(KeyCode.W))
+
+        if(ballShoe.activeInHierarchy)
         {
-            skatespeed += 0.03f;
-
-            if (skatespeed >= 2)
-            {
-                skatespeed = 2f;
-
-            }
+            hasBall = true;
+            
         }
         else
         {
-            
-            skatespeed -= 0.25f;
-            if(skatespeed <= 0)
-            {
-                skatespeed = 0;
-            }
+            hasBall = false;
         }
-            
 
-           
 
-        }
+
+
+
+
 
     }
+}
 
 
 

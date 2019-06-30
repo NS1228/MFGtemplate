@@ -11,6 +11,8 @@ TagManager:
   - Hookable
   - Floor
   - Wall
+  - Axe#
+  - Axe
   layers:
   - Default
   - TransparentFX

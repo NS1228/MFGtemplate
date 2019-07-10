@@ -13,6 +13,9 @@ TagManager:
   - Wall
   - Axe#
   - Axe
+  - Bullet
+  - test
+  - gSpawner
   layers:
   - Default
   - TransparentFX
@@ -25,7 +28,7 @@ TagManager:
   - hookable
   - player
   - setting
-  - 
+  - Player
   - 
   - 
   - 

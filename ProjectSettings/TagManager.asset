@@ -16,6 +16,8 @@ TagManager:
   - Bullet
   - test
   - gSpawner
+  - Shotguner
+  - Spawner
   layers:
   - Default
   - TransparentFX

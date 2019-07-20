@@ -17,16 +17,20 @@ public class Ranged_enemyMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public static bool grounded;
+
     void Start()
     {
         aiCANSHOOT = false;
         rb = GetComponent<Rigidbody>();
         Canlookaround = false;
+
+        grounded = true;
     }
         
     void Update()
     {
-       
+        
 
         if (!Canlookaround)
         {
@@ -50,7 +54,7 @@ public class Ranged_enemyMovement : MonoBehaviour
 
 
 
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+            if (Vector3.Distance(transform.position, Player.position) <= MaxDist && grounded)
             {
                 //Here Call any function U want Like Shoot at here or something 
                 rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
@@ -69,5 +73,23 @@ public class Ranged_enemyMovement : MonoBehaviour
 
         }
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Floor")
+        {
+            grounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Floor")
+        {
+            grounded = false;
+        }
+    }
+
+
 }
 

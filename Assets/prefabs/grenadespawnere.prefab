@@ -45,4 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 712980085264839310, guid: 2bc39373e01a0c54abc72fafe2068d1a, type: 3}
   yAxis: 100
-  grenadeLimit: 1
+  grenadeLimit: 0
+  maxGrenades: 100
+  set: 0

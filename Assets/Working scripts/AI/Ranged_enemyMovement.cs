@@ -19,6 +19,11 @@ public class Ranged_enemyMovement : MonoBehaviour
 
     public static bool grounded;
 
+    public float freezeTimer;
+    public bool canFreeze;
+    public bool speedLower;
+  
+
     void Start()
     {
         aiCANSHOOT = false;
@@ -26,6 +31,9 @@ public class Ranged_enemyMovement : MonoBehaviour
         Canlookaround = false;
 
         grounded = true;
+
+        canFreeze = false;
+        speedLower = false;
     }
         
     void Update()
@@ -72,6 +80,27 @@ public class Ranged_enemyMovement : MonoBehaviour
             }
 
         }
+
+        if(speedLower )
+        {
+
+            MoveSpeed -= 0.25f * Time.deltaTime;
+           // print(MoveSpeed);
+           
+
+        }
+
+        if(MoveSpeed <= 0 && speedLower)
+        {
+            MoveSpeed = 0;
+            speedLower = false;
+        }
+
+        if (Time.time >= freezeTimer && canFreeze == true)
+        {
+            MoveSpeed = 4;
+            canFreeze = false;
+        }
     }
 
     void OnCollisionEnter(Collision other)
@@ -79,6 +108,17 @@ public class Ranged_enemyMovement : MonoBehaviour
         if(other.gameObject.tag == "Floor")
         {
             grounded = true;
+        }
+
+        if(other.gameObject.tag == "Icetrail")
+        {
+           this.gameObject.GetComponent<AI_health>().health -= 5f;
+            speedLower = true;
+          freezeTimer = Time.time + 10;
+            canFreeze = true;
+            print("FREEZE");
+            
+
         }
     }
 
@@ -89,6 +129,11 @@ public class Ranged_enemyMovement : MonoBehaviour
             grounded = false;
         }
     }
+
+    
+
+    
+
 
 
 }

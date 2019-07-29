@@ -71,7 +71,7 @@ public class Shooting_test : MonoBehaviour
                 if (shooting >= 0.75f)
                 {
                     playerHealth -= playerDMG;
-                    print("TAKEDAMAGE");
+                    //print("TAKEDAMAGE");
                     player.GetComponent<Health_script>().health -= 20;
                 }
 

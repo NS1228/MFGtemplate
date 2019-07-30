@@ -20,6 +20,7 @@ TagManager:
   - Spawner
   - Icetrail
   - Gems
+  - Ballshoe
   layers:
   - Default
   - TransparentFX

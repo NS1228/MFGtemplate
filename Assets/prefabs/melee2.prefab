@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 3572207491075323285}
   - component: {fileID: 8984998805387191251}
   - component: {fileID: 1053020809}
+  - component: {fileID: 509367311}
+  - component: {fileID: 509367312}
   m_Layer: 0
   m_Name: melee2
-  m_TagString: Untagged
+  m_TagString: Shotguner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +113,11 @@ MonoBehaviour:
   Player: {fileID: 6150469988773105733, guid: 43b8ebae06306d546847bcbb5efd6c60, type: 3}
   MoveSpeed: 4
   MaxDist: 5
-  MinDist: 1
-  agent: {fileID: 0}
+  MinDist: 1.5
+  Canlookaround: 0
+  freezeTimer: 0
+  canFreeze: 0
+  speedLower: 0
 --- !u!54 &8984998805387191251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,6 +156,31 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &509367311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572207491075323282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090ddb8df8fd26c4ea0e6f1b9e0c0fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &509367312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572207491075323282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573edb113e7a91043b18f9bd32fa5b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &3572207491383963444
 GameObject:
   m_ObjectHideFlags: 0

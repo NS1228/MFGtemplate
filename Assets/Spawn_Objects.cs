@@ -19,6 +19,16 @@ public class Spawn_Objects : MonoBehaviour
     public float Turrettimerz;
     public bool buildtimer;
 
+    Animator anim;
+
+    public bool animPlay;
+    public float animTimer;
+
+    public bool soundSwitch;
+    public float soundTimer;
+
+    AudioSource audios;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,19 +36,47 @@ public class Spawn_Objects : MonoBehaviour
         startCD = false;
         buildLimitReached = false;
         buildtimer = false;
-        
+        anim = this.GetComponent<Animator>();
+        audios = this.GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canBuild && canBuildNCD)
+        if(animPlay && Time.time >= animTimer)
         {
-            Instantiate(turret, transform.position + (transform.forward * 2 + transform.up * -0.5f),  transform.rotation);
+            animPlay = false;
+            anim.SetBool("Build", false);
+            Instantiate(turret, transform.position + (transform.forward * 2 + transform.up * 0.25f), transform.rotation);
             buildLimit += 1;
             buildLimitReached = true;
             buildtimer = true;
             Turrettimerz = Time.time + 10;
+            this.GetComponent<Thirsperson_character>().verSpeed = 2;
+            Thirsperson_character.speed = 4;
+            audios.volume = 1;
+            soundSwitch = false;
+            Mine_Sound.turretSFX = false;
+        }
+
+        if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.canBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && canBuild && canBuildNCD)
+            {
+                
+                anim.SetBool("Build", true);
+                animPlay = true;
+                animTimer = Time.time + 0.4f;
+                this.GetComponent<Thirsperson_character>().verSpeed = 0;
+                Thirsperson_character.speed = 0;
+                audios.volume = 0;
+                soundSwitch = true;
+                soundTimer = Time.time + 0.69f;
+                Mine_Sound.turretSFX = true;
+
+
+            }
 
             
         }

@@ -36,7 +36,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5592694335537920703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.765412, y: 0.6360891, z: -14.18468}
+  m_LocalPosition: {x: 4.563319, y: 2.3923013, z: -40.198074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5638763870083483824}
@@ -103,6 +103,11 @@ MonoBehaviour:
   hoverBoard: {fileID: 0}
   hBP: {fileID: 5638763870083483825}
   Seat: {fileID: 0}
+  canHB: 0
+  coolDown: 0
+  cooldownTimer: 0
+  reset: 0
+  resetTimer: 0
 --- !u!54 &5592694335537920700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 0
   canFly: 0
+  dropValue: 0
 --- !u!114 &5592694335537920690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +170,12 @@ MonoBehaviour:
   verSpeed: 0
   ballSpeed: 0
   boosterSpeed: 0
+  flightSpeed: 0
+  animator: {fileID: 0}
+  blend: 0
+  blendside: 0
+  doubleblend: 0
+  isGrounded: 0
 --- !u!114 &5592694335537920689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +220,10 @@ MonoBehaviour:
   canBounce: 0
   height: 0
   bouncyness: {fileID: 13400000, guid: 90c040142c2f57541b638a45c33ee352, type: 2}
+  cdStarter: 0
+  reset: 0
+  resetTimer: 0
+  jumpTimer: 0
 --- !u!114 &5592694335537920694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +238,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 0
   isGrounded: 0
+  animator: {fileID: 0}
+  jumpAnim: 0
+  canJump: 0
+  jumpTimer: 0
 --- !u!114 &5592694335537920693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,8 +256,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleporterdevice: {fileID: 6770490286025001716, guid: 89f2576ae57c05d41a33a1056b148153,
     type: 3}
-  throwForce: 0
+  throwForceLength: 0
+  throwForceHeight: 0
   playerCam: {fileID: 0}
+  tpdevices: 0
 --- !u!1 &5638763870083483825
 GameObject:
   m_ObjectHideFlags: 0

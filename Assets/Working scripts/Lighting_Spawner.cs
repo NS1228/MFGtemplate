@@ -15,15 +15,33 @@ public class Lighting_Spawner : MonoBehaviour
 
     public bool reset;
 
+    public float animTimer;
+    public bool deployLightning;
+
+    Animator anim;
+
+    AudioSource audios;
 
     public void Start ()
     {
-
+        anim = this.GetComponent<Animator>();
+        audios = this.GetComponent<AudioSource>();
     }
 
     // Randomly activates an inactive game object
     public void Update()
     {
+        if(deployLightning && Time.time >= animTimer)
+        {
+            deployLightning = false;
+            anim.SetBool("Lightning", false);
+            Thirsperson_character.speed = 4;
+            this.GetComponent<Thirsperson_character>().verSpeed = 2;
+            audios.volume = 1;
+            Mine_Sound.lightningSFX = false;
+
+        }
+        
         if (Input.GetKeyDown(KeyCode.E) && spawnYes)
         {
             
@@ -36,10 +54,17 @@ public class Lighting_Spawner : MonoBehaviour
             spawnYes = false;
             timer = Time.time + 5;
             switcherbool = true;
+            anim.SetBool("Lightning", true);
+            deployLightning = true;
+            animTimer = Time.time + 3.02f;
+            Thirsperson_character.speed = 0;
+            this.GetComponent<Thirsperson_character>().verSpeed = 0;
+            audios.volume = 0;
+            Mine_Sound.lightningSFX = true;
 
-            
-                
-            
+
+
+
         }
 
         Switchingthing();

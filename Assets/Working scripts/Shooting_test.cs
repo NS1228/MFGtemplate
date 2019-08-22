@@ -99,6 +99,8 @@ public class Shooting_test : MonoBehaviour
 
                 this.GetComponent<Ranged_enemyMovement>().MaxDist = 15;
                 this.GetComponent<Ranged_enemyMovement>().MinDist = 10;
+                
+
             }
             else
             {
@@ -108,7 +110,7 @@ public class Shooting_test : MonoBehaviour
 
                 this.GetComponent<Ranged_enemyMovement>().MaxDist = 1;
                 this.GetComponent<Ranged_enemyMovement>().MinDist = 1;
-
+                
 
 
 

@@ -28,7 +28,7 @@ public class Ranged_enemyMovement : MonoBehaviour
     {
         aiCANSHOOT = false;
         rb = GetComponent<Rigidbody>();
-        Canlookaround = false;
+        Canlookaround = true;
 
         grounded = true;
 
@@ -67,16 +67,17 @@ public class Ranged_enemyMovement : MonoBehaviour
                 //Here Call any function U want Like Shoot at here or something 
                 rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
                 aiCANSHOOT = true;
-
-
+                //Canlookaround = true;
+                
 
 
             }
             else
             {
                 aiCANSHOOT = false;
-                
-                
+               // Canlookaround = false;
+             
+
             }
 
         }

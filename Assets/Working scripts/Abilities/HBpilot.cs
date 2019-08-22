@@ -12,11 +12,14 @@ public class HBpilot : MonoBehaviour
     
 
     public GameObject pplayer;
+
+    Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
         move = true;
+        anim = pplayer.GetComponent<Animator>();
         
     }
 
@@ -24,6 +27,8 @@ public class HBpilot : MonoBehaviour
     void Update()
     {
         Test();
+       
+        
 
         //speed -= transform.forward.y * Time.deltaTime * 50.0f;
 

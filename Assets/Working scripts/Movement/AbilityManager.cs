@@ -9,6 +9,10 @@ public class AbilityManager : MonoBehaviour
     public static bool canBooster;
     public float boosterCooldown;
     public float boosterReset;
+
+    public bool boostCD;
+    public bool resetCD;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,14 +41,16 @@ public class AbilityManager : MonoBehaviour
 
     private void Abilities ()
     {
-        if (Input.GetKey(KeyCode.E) && canBooster)
+        if (Input.GetKey(KeyCode.Q) && canBooster)
         {
             hasBooster = true;
-            boosterCooldown = Time.time + 6f;
+            boosterCooldown = Time.time + 5f;
             canBooster = false;
+             boostCD = true;
+            
 
         }
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && hasBooster)
         {
             hasBooster = false;
         }
@@ -53,24 +59,22 @@ public class AbilityManager : MonoBehaviour
 
     private void Cooldowns ()
     {
-        if(Time.time >= boosterCooldown && hasBooster)
+       if(boostCD && Time.time >= boosterCooldown)
         {
+            boostCD = false;
+            resetCD = true;
+            boosterReset = Time.time + 6;
             hasBooster = false;
-            boosterReset = Time.time + 5f;
-
-            
-
-
         }
     }
 
 
     private void Resetcooldowns()
     {
-        if(Time.time >= boosterReset && !hasBooster)
+       if(resetCD && Time.time>=boosterReset)
         {
+            resetCD = false;
             canBooster = true;
-            
         }
     }
 

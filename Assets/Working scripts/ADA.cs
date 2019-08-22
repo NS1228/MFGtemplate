@@ -38,12 +38,13 @@ public class ADA : MonoBehaviour
     public float resetLightning = 0;
 
 
+    Animator anim;
+
+    public float animTimer;
+    public bool deployGrenades;
 
 
-
-    
-
-
+    AudioSource audios;
 
 
 
@@ -56,7 +57,9 @@ public class ADA : MonoBehaviour
 
         resetGrenadeFall = false;
         cooldownGrenadeFall = false;
-        
+        anim = this.GetComponent<Animator>();
+        audios = this.GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -65,6 +68,15 @@ public class ADA : MonoBehaviour
         ADAbilities();
         Cooldowns();
         Resetcooldowns();
+
+        if(deployGrenades && Time.time >= animTimer)
+        {
+            deployGrenades = false;
+            anim.SetBool("Grenade", false);
+            this.GetComponent<Thirsperson_character>().verSpeed = 2;
+            Thirsperson_character.speed = 4;
+            audios.volume = 1;
+        }
           
        
 
@@ -80,6 +92,12 @@ public class ADA : MonoBehaviour
             grenadeFallCooldown = Time.time + 10f;
             canGrenadeFall = false;
             cooldownGrenadeFall = true;
+            anim.SetBool("Grenade", true);
+            deployGrenades = true;
+            animTimer = Time.time + 1.59f;
+            this.GetComponent<Thirsperson_character>().verSpeed = 0;
+            Thirsperson_character.speed = 0;
+            audios.volume = 0;
         }
 
 

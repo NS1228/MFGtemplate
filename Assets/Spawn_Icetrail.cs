@@ -24,7 +24,7 @@ public class Spawn_Icetrail : MonoBehaviour
     {
         if (Time.time >= timer && grounded)
         {
-            Instantiate(iceTrail, transform.position + (transform.up * -0.85f), transform.rotation);
+            Instantiate(iceTrail, transform.position + (transform.up * -0.15f), transform.rotation);
             timer = Time.time + 0.15f;
 
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health_script : MonoBehaviour
 {
 
-    public int health = 100;
+    public float health = 100;
     // Start is called before the first frame update
     void Start()
     {

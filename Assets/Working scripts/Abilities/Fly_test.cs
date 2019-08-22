@@ -6,14 +6,18 @@ public class Fly_test : MonoBehaviour
 {
 
     public float value;
+     public bool canFly;
+    public float dropValue;
 
-    public bool canFly;
-    
+
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        value = 12;
+        anim = GetComponent<Animator>();
+        value = 4;
+        dropValue = 4;
     }
 
     // Update is called once per frame
@@ -21,60 +25,67 @@ public class Fly_test : MonoBehaviour
     {
         //print(Thirsperson_character.speed);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.C))
         {
+            anim.SetBool("isFlying", true);
             canFly = true;
-            transform.position += Vector3.up * Time.deltaTime * 10;
+            transform.position += Vector3.up * Time.deltaTime * value;
             this.GetComponent<Rigidbody>().useGravity = false;
 
-            value = 12;
-            Thirsperson_character.speed += 0.1f;
+            value += 0.05f;
 
-            if (Thirsperson_character.speed >= 18 )
+
+            //this.GetComponent<Thirsperson_character>().flightSpeed += 0.1f;
+            //Thirsperson_character.speed += 0.1f;
+
+            // if (this.GetComponent<Thirsperson_character>().flightSpeed == 10)
+            // {
+            //     this.GetComponent<Thirsperson_character>().flightSpeed = 10;
+            //  }
+            if (value >= 10)
             {
-                Thirsperson_character.speed = 18;
+                value = 10;
             }
 
-            
+
         }
         else
         {
             if (canFly)
             {
-                transform.position += Vector3.down * Time.deltaTime * value;
-                value += 0.25f;
-
-                Thirsperson_character.speed -= 0.5f;
-                if (Thirsperson_character.speed <= 10)
+                dropValue += 0.1f;
+                if (dropValue >= 10)
                 {
-                    Thirsperson_character.speed = 10;
+                    dropValue = 10;
                 }
+                //this.GetComponent<Rigidbody>().useGravity = true;
+                transform.position += Vector3.down * Time.deltaTime * dropValue;
 
-                if (value >= 25)
-                {
-                    value = 25;
-                }
             }
         }
 
-
-
-
+        
 
     }
 
     void OnCollisionEnter(Collision theCollision)
     {
-        if (theCollision.gameObject.name == "Floor")
+        if (theCollision.gameObject.tag == "Floor")
         {
             canFly = false;
             this.GetComponent<Rigidbody>().useGravity = true;
-            value = 12;
+            value = 4;
 
-           
+
+
 
         }
     }
+
+
+
+
+
 
 
 }

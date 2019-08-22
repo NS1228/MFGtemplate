@@ -13,13 +13,24 @@ public class Bouncy : MonoBehaviour
 
     float cdTimer;
 
+    public bool cdStarter;
+
+    public bool reset;
+    public float resetTimer;
+
+    public float jumpTimer;
+
+    Animator anim;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         cooldown = false;
         canBounce = false;
-        height = 4000;
+        
         rb = GetComponent<Rigidbody>();
+        anim = this.GetComponent<Animator>();
         
     }
 
@@ -33,40 +44,58 @@ public class Bouncy : MonoBehaviour
            
             //GetComponent<Rigidbody>().useGravity = false;
 
-            GetComponent<CapsuleCollider>().material = bouncyness;
+            GetComponent<BoxCollider>().material = bouncyness;
             cooldown = true;
-            cdTimer = Time.time + 8;
-
-
+            cdTimer = Time.time + 10;
+            cdStarter = true;
+            jumpTimer = Time.time + 1;
         }
 
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            GetComponent<CapsuleCollider>().material = null;
-            canBounce = false;
-        }
 
         
 
-
-        if(canBounce == true)
+        if (Time.time >= cdTimer && cdStarter)
         {
-            this.GetComponent<Normal_jump>().jumpHeight = 0;
-            
-
-        }
-        if(!canBounce)
-        {
-            this.GetComponent<Normal_jump>().jumpHeight = 2000;
-            
-        }
-
-        if (Time.time >= cdTimer)
-        {
-            cooldown = false;
-            GetComponent<CapsuleCollider>().material = null;
+            cdStarter = false;
+            this.GetComponent<BoxCollider>().material = null;
             canBounce = false;
+            anim.SetBool("Bounce", false);
+            reset = true;
+            resetTimer = Time.time + 12;
+
+            
+
+        }
+
+        if (Time.time >= resetTimer && reset)
+        {
+            reset = false;
+            cooldown = false;
+        }
+
+
+
+
+        if (Input.GetKey(KeyCode.F) && cooldown)
+        {
+            this.GetComponent<BoxCollider>().material = null;
+            canBounce = false;
+        }
+
+
+
+
+        if (canBounce == true && Time.time >= jumpTimer)
+        {
+            //this.GetComponent<Normal_jump>().jumpHeight = 0;
+            this.GetComponent<Normal_jump>().enabled = false;
+
+
+        }
+        if (!canBounce)
+        {
+            //this.GetComponent<Normal_jump>().jumpHeight = 300;
+            this.GetComponent<Normal_jump>().enabled = true;
 
         }
 
@@ -74,14 +103,25 @@ public class Bouncy : MonoBehaviour
 
     void OnCollisionEnter(Collision theCollision)
     {
-        if (theCollision.gameObject.name == "Floor" && canBounce)
+        if (theCollision.gameObject.tag == "Floor" && canBounce)
         {
             rb.AddForce(Vector3.up * height);
-
+            print("whats wrong");
+            anim.SetBool("Bounce", true);
+            Bounce_sound.bounceSFX = true;
         }
 
         
 
+    }
+
+    void OnCollisionExit (Collision theCollision)
+    {
+        if(theCollision.gameObject.tag == "Floor" && canBounce)
+        {
+            anim.SetBool("Bounce", false);
+            Bounce_sound.bounceSFX = false;
+        }
     }
 }
 

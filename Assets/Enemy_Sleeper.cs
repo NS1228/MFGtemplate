@@ -16,7 +16,17 @@ public class Enemy_Sleeper : MonoBehaviour
     public float resettimer;
 
     public bool stunDMG;
-    
+
+    Animator anim;
+
+    public bool playAnim;
+    public float animTimer;
+
+    public bool soundSwitch;
+    public float soundTimer;
+
+    AudioSource audios;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,23 +38,49 @@ public class Enemy_Sleeper : MonoBehaviour
 
         stunDMG = false;
 
+        anim = this.GetComponent<Animator>();
+
+        audios = this.GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-      
-        if(Input.GetKey(KeyCode.E) && !inUse)
+        if(playAnim && Time.time >= animTimer)
         {
-            HackThem = true;
-            timer = Time.time + 5f;
-            stopHack = true;
-            inUse = true;
-            stunDMG = true;
+            playAnim = false;
+            anim.SetBool("Sleeper", false);
+            this.GetComponent<Thirsperson_character>().verSpeed = 2;
+            Thirsperson_character.speed = 4;
+            audios.volume = 1;
+            soundSwitch = false;
+            Mine_Sound.sleeperSFX = false;
+        }
+
+        if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.canBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
+        {
+            if (Input.GetKey(KeyCode.E) && !inUse)
+            {
+                HackThem = true;
+                timer = Time.time + 5f;
+                stopHack = true;
+                inUse = true;
+                stunDMG = true;
+                anim.SetBool("Sleeper", true);
+                playAnim = true;
+                animTimer = Time.time + 2.18f;
+                this.GetComponent<Thirsperson_character>().verSpeed = 0;
+                Thirsperson_character.speed = 0;
+                audios.volume = 0;
+                soundSwitch = true;
+                soundTimer = Time.time + 0.69f;
+                Mine_Sound.sleeperSFX = true;
 
 
 
+            }
         }
 
         if(stopHack && Time.time >= timer)

@@ -27,6 +27,11 @@ public class Mine_Sound : MonoBehaviour
     public float lightningTimer;
     public AudioClip lightning;
 
+    public static bool grenadeSFX;
+    public bool canGrenade;
+    public float grenadeTimer;
+    public AudioClip grenade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +108,23 @@ public class Mine_Sound : MonoBehaviour
         else
         {
             canLightning = false;
+        }
+
+        if (grenadeSFX && canGrenade)
+        {
+            audioSource.PlayOneShot(grenade, 0.7F);
+            grenadeTimer = Time.time + 10f;
+        }
+
+        if (Time.time >= grenadeTimer)
+        {
+
+            canGrenade = true;
+
+        }
+        else
+        {
+            canGrenade = false;
         }
 
 

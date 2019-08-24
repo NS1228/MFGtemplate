@@ -68,7 +68,7 @@ public class Telport_device : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
        this.transform.position = telep.transform.position;
-        
+        Teleporting_Sound.tpSFX = false;
         //yield return new WaitForSeconds(1);
         Destroy(telep);
         print("yes");
@@ -80,7 +80,9 @@ public class Telport_device : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && !hasTP && tpdevices > 0)
         {
             anim.SetBool("highThrow", true);
+            Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
+            Thirsperson_character.speed = 0;
             tpdevices -= 1;
             telep = Instantiate(teleporterdevice, transform.position + (transform.forward * 0.1f) + (transform.up * 5f), transform.rotation);
             telep.transform.parent = playerCam;
@@ -93,15 +95,19 @@ public class Telport_device : MonoBehaviour
             StartCoroutine(Teleportthis());
             yield return new WaitForSeconds(1);
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
+            Thirsperson_character.speed = 4;
             anim.SetBool("highThrow", false);
             
+
 
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && !hasTP && tpdevices > 0)
         {
             anim.SetBool("lowThrow", true);
+            Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
+            Thirsperson_character.speed = 0;
             tpdevices -= 1;
             telep = Instantiate(teleporterdevice, transform.position + (transform.forward * 3f) + (transform.up * 0.5f), transform.rotation);
             telep.transform.parent = playerCam;
@@ -115,7 +121,8 @@ public class Telport_device : MonoBehaviour
             yield return new WaitForSeconds(1);
             anim.SetBool("lowThrow", false);
             this.GetComponent<Thirsperson_character>().verSpeed =  2;
-            
+            Thirsperson_character.speed = 4;
+
         }
 
     }

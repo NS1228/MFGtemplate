@@ -97,7 +97,7 @@ public class Thirsperson_character : MonoBehaviour
             }
 
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
                 Sound_Manager.strafeSFX = false;
@@ -180,7 +180,7 @@ public class Thirsperson_character : MonoBehaviour
 
 
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = false;
                 Sound_Manager.strafeSFX = true;
@@ -250,7 +250,7 @@ public class Thirsperson_character : MonoBehaviour
 
             }
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false )
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = false;
                 Sound_Manager.strafeSFX = true;
@@ -320,7 +320,7 @@ public class Thirsperson_character : MonoBehaviour
 
             }
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
                 Sound_Manager.strafeSFX = false;
@@ -396,7 +396,7 @@ public class Thirsperson_character : MonoBehaviour
 
             }
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false )
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
                 Sound_Manager.strafeSFX = false;
@@ -471,7 +471,7 @@ public class Thirsperson_character : MonoBehaviour
 
             }
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false )
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
                 Sound_Manager.strafeSFX = false;
@@ -548,7 +548,7 @@ public class Thirsperson_character : MonoBehaviour
 
             }
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false )
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
                 Sound_Manager.strafeSFX = false;
@@ -627,7 +627,7 @@ public class Thirsperson_character : MonoBehaviour
 
             }
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
                 Sound_Manager.strafeSFX = false;
@@ -723,7 +723,7 @@ public class Thirsperson_character : MonoBehaviour
 
 
 
-            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
+            if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = false;
                 Sound_Manager.strafeSFX = false;

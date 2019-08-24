@@ -76,6 +76,7 @@ public class ADA : MonoBehaviour
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;
             audios.volume = 1;
+            Mine_Sound.grenadeSFX = false;
         }
           
        
@@ -98,6 +99,7 @@ public class ADA : MonoBehaviour
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
             Thirsperson_character.speed = 0;
             audios.volume = 0;
+            Mine_Sound.grenadeSFX = true;
         }
 
 

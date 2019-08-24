@@ -48,7 +48,7 @@ public class Spawn_Objects : MonoBehaviour
         {
             animPlay = false;
             anim.SetBool("Build", false);
-            Instantiate(turret, transform.position + (transform.forward * 2 + transform.up * 0.25f), transform.rotation);
+            Instantiate(turret, transform.position + (transform.forward * 2 + transform.up * 0.36f), transform.rotation);
             buildLimit += 1;
             buildLimitReached = true;
             buildtimer = true;

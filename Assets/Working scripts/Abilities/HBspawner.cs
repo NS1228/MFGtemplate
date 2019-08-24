@@ -106,6 +106,7 @@ public class HBspawner : MonoBehaviour
             if (Time.time >= hbTimer)
             {
                 hoverBoard.SetActive(true);
+                HB_sound.hbSFX = true;
             }
 
            
@@ -124,11 +125,12 @@ public class HBspawner : MonoBehaviour
         }
         else
         {
-           
+            HB_sound.hbSFX = false;
             anim.SetBool("isHovering", false);
             hoverBoard.SetActive(false);
             this.gameObject.transform.parent = null;
             hoverBoard.transform.position = hBP.transform.position;
+            hoverBoard.transform.rotation = hBP.transform.rotation;
             this.gameObject.GetComponent<Rigidbody>().useGravity = true;
             this.gameObject.GetComponent<BoxCollider>().enabled = true;
             this.gameObject.GetComponent<Thirsperson_character>().enabled = true;

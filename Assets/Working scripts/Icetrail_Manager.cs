@@ -33,6 +33,7 @@ public class Icetrail_Manager : MonoBehaviour
             canUse = true;
             duration = true;
             durationTimer = Time.time + 10;
+            Icetrail_Sound.iceSFX = true;
         }
 
         if(duration && Time.time >= durationTimer)
@@ -41,6 +42,7 @@ public class Icetrail_Manager : MonoBehaviour
             cooldown = true;
             cooldownTimer = Time.time + 5;
             isUsing = true;
+            Icetrail_Sound.iceSFX = false;
         }
 
         if(cooldown && Time.time >= cooldownTimer)

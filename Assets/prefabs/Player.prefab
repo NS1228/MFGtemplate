@@ -36,7 +36,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5592694335537920703}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.563319, y: 2.3923013, z: -40.198074}
+  m_LocalPosition: {x: 17.56267, y: 2.5166788, z: 17.436182}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5638763870083483824}
@@ -108,6 +108,9 @@ MonoBehaviour:
   cooldownTimer: 0
   reset: 0
   resetTimer: 0
+  hbTimer: 0
+  defaultCam: {fileID: 0}
+  hbCAM: {fileID: 0}
 --- !u!54 &5592694335537920700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242,6 +245,8 @@ MonoBehaviour:
   jumpAnim: 0
   canJump: 0
   jumpTimer: 0
+  jumpSpeed: 0
+  speedTimer: 0
 --- !u!114 &5592694335537920693
 MonoBehaviour:
   m_ObjectHideFlags: 0

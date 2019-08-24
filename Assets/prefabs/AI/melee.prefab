@@ -106,8 +106,9 @@ GameObject:
   - component: {fileID: 8474962104418121395}
   - component: {fileID: 4089050929232093429}
   - component: {fileID: 4200415113774663986}
-  - component: {fileID: 7646282346218495289}
   - component: {fileID: 7511340048535364125}
+  - component: {fileID: 3966315161778687315}
+  - component: {fileID: -8234025345654020593}
   m_Layer: 0
   m_Name: melee
   m_TagString: Shotguner
@@ -237,19 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090ddb8df8fd26c4ea0e6f1b9e0c0fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7646282346218495289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8474962104418121396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8818eead724e443955aa05b50e4989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!195 &7511340048535364125
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -272,3 +260,33 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3966315161778687315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474962104418121396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e938563dee95f1f48ba14388e77fe689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 16
+  skinWidth: 1e-35
+--- !u!114 &-8234025345654020593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474962104418121396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573edb113e7a91043b18f9bd32fa5b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

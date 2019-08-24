@@ -11,8 +11,8 @@ public class Impact_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grednadeTimer = Time.time + 4f;
-        destroyTimer = Time.time + 4f;
+        grednadeTimer = Time.time + 6f;
+        destroyTimer = Time.time + 6f;
 
         grenadeSpawner = GameObject.FindGameObjectWithTag("gSpawner");
 

@@ -17,7 +17,7 @@ public class Orb_movement : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime * speed;
-        Destroy(gameObject, 10f);
+        
         //transform.rotation = 
 
 
@@ -28,6 +28,7 @@ public class Orb_movement : MonoBehaviour
     if(other.gameObject.tag == "Shotguner")
         {
             other.gameObject.GetComponent<AI_health>().health -= 100;
+            Destroy(gameObject, 10f);
         }
     }
 }

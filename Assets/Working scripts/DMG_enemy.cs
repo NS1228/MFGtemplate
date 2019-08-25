@@ -29,6 +29,7 @@ public class DMG_enemy : MonoBehaviour
         {
             AreaDamageEnemies();
             print("LEL");
+
         }
     }
 

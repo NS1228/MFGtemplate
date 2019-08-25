@@ -8,6 +8,8 @@ public class Player_takedamage : MonoBehaviour
     public float axeDamage;
     public float shotgunDamage;
 
+    public float canTakeDmg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,23 +24,24 @@ public class Player_takedamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Axe")
+        if (other.gameObject.tag == "Axe" && Time.time >= canTakeDmg)
         {
-            playerHealth -= axeDamage;
-            print("BITCH");
+            canTakeDmg = Time.time + 1.08f;
+            this.GetComponent<Health_script>().health -= axeDamage;
+            //print("BITCH");
         }
 
         if(other.gameObject.tag == "Bullet")
         {
             playerHealth -= shotgunDamage;
-            print("BITCH");
+            //print("BITCH");
         }
     }
 
 
     void Death ()
     {
-        if(playerHealth <= 0)
+        if(this.GetComponent<Health_script>().health <= 0)
         {
             gameObject.SetActive(false);
         }

@@ -21,6 +21,7 @@ TagManager:
   - Icetrail
   - Gems
   - Ballshoe
+  - Realenemy
   layers:
   - Default
   - TransparentFX
@@ -36,7 +37,7 @@ TagManager:
   - Player
   - Ice
   - AI
-  - 
+  - Orbs
   - 
   - 
   - 

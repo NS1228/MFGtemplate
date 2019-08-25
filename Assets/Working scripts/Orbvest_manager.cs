@@ -18,11 +18,17 @@ public class Orbvest_manager : MonoBehaviour
 
     public float resetcooldown;
     public bool CooldownReset;
+
+    public Animator anim;
+
+    public bool animPlay;
+    public float playTimer;
     // Start is called before the first frame update
     void Start()
     {
         isUsing = false;
         CooldownReset = false;
+        anim = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,15 +41,31 @@ public class Orbvest_manager : MonoBehaviour
 
    public void UsingVest ()
     {
-        if(Input.GetKey(KeyCode.E) && !isUsing)
+        if (animPlay && Time.time >= playTimer)
         {
+            animPlay = false;
+            anim.SetBool("Orbs", false);
             vestBarrel1.GetComponent<Orb_shooter>().enabled = true;
             vestBarrel2.GetComponent<Orb_shooter>().enabled = true;
             vestBarrel3.GetComponent<Orb_shooter>().enabled = true;
             vestBarrel4.GetComponent<Orb_shooter>().enabled = true;
             isUsing = true;
-            cooldown = Time.time + 8;
+            cooldown = Time.time + 10;
+            this.GetComponent<Thirsperson_character>().verSpeed = 2;
+            Thirsperson_character.speed = 4;
+            OrbClapSound.orbSFX = false;
+
+        }
+
+        if(Input.GetKey(KeyCode.E) && !isUsing)
+        {
             canCooldown = true;
+            animPlay = true;
+            playTimer = Time.time + 2.3f;
+            anim.SetBool("Orbs", true);
+            this.GetComponent<Thirsperson_character>().verSpeed = 0;
+            Thirsperson_character.speed = 0;
+            OrbClapSound.orbSFX = true;
         }
     }
 

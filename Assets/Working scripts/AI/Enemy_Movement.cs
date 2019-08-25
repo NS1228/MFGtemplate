@@ -7,13 +7,16 @@ public class Enemy_Movement : MonoBehaviour
 {
 
     public Transform Player;
+    public GameObject player;
     public float MoveSpeed = 4;
     public float MaxDist = 10;
     public float MinDist = 5;
 
-    
+    Animator anim;
 
     public bool Canlookaround;
+
+    public bool dmgTest;
 
     //public GameObject thePlayer;
 
@@ -25,16 +28,34 @@ public class Enemy_Movement : MonoBehaviour
     public bool canFreeze;
     public bool speedLower;
 
+    public bool dmgGiver;
+    public float dmgTimer;
+
+    public float axeDMG;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
         Canlookaround = false;
 
+        anim = this.GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        dmgTest = true;
+
     }
 
     void Update()
     {
+        if(dmgGiver && Time.time >= dmgTimer)
+        {
+            dmgGiver = false;
+            Player.GetComponent<Health_script>().health -= axeDMG;
+            // print(Player.GetComponent<Health_script>().health);
+            dmgTest = true;
+        }
+
 
         if (!Canlookaround)
         {
@@ -54,21 +75,43 @@ public class Enemy_Movement : MonoBehaviour
         {
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+            anim.SetBool("Run", true);
+            //anim.SetBool("Swing", false);
+           
 
+            
 
 
 
             if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
             {
                 //Here Call any function U want Like Shoot at here or something
-                rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+                rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
                 Canlookaround = true;
+                anim.SetBool("Swing", true);
+                
+                MoveSpeed = 0;
+
+                if (dmgTest)
+                {
+                    dmgGiver = true;
+                    dmgTimer = Time.time + 1.08f;
+                    dmgTest = false;
+                    
+                }
+                 
 
             }
             else
             {
                 Canlookaround = false;
-                
+                //anim.SetBool("Swing", false);
+                MoveSpeed = 4;
+                anim.SetBool("Swing", false);
+                dmgTest = true;
+                 dmgGiver = false;
+
+               
             }
 
         }

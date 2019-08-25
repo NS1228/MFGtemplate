@@ -18,6 +18,7 @@ public class Enemy_Sleeper : MonoBehaviour
     public bool stunDMG;
 
     Animator anim;
+    
 
     public bool playAnim;
     public float animTimer;
@@ -27,6 +28,7 @@ public class Enemy_Sleeper : MonoBehaviour
 
     AudioSource audios;
 
+    public static bool PlayAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,8 @@ public class Enemy_Sleeper : MonoBehaviour
             audios.volume = 1;
             soundSwitch = false;
             Mine_Sound.sleeperSFX = false;
+            PlayAnim = true;
+            
         }
 
         if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.canBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
@@ -90,7 +94,7 @@ public class Enemy_Sleeper : MonoBehaviour
 
             resetthis = true;
             resettimer = Time.time + 6;
-           
+            PlayAnim = false;
 
 
         }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -520,7 +520,7 @@ public class Buy_Gadgets : MonoBehaviour
         this.GetComponent<Orbvest_manager>().enabled = false;
         this.GetComponent<Icetrail_Manager>().enabled = false;
         this.GetComponent<Spawn_Objects>().enabled = false;
-        this.GetComponent<Enemy_Spawner>().enabled = false;
+        this.GetComponent<Enemy_Sleeper>().enabled = false;
         this.GetComponent<ADA>().enabled = false;
     }
 
@@ -556,7 +556,7 @@ public class Buy_Gadgets : MonoBehaviour
         this.GetComponent<Icetrail_Manager>().enabled = false;
         this.GetComponent<Spawn_Objects>().enabled = false;
         this.GetComponent<Lighting_Spawner>().enabled = false;
-        this.GetComponent<Enemy_Spawner>().enabled = false;
+        this.GetComponent<Enemy_Sleeper>().enabled = false;
     }
 
     public void SellGrenaqde()

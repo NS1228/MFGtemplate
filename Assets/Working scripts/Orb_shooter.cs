@@ -6,7 +6,7 @@ public class Orb_shooter : MonoBehaviour
 {
     public GameObject orbs;
     public Transform spawnPosition;
-    public float bulletImpulse;
+    //public float bulletImpulse;
 
     
 

@@ -15,7 +15,7 @@ public class Health_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Death();
     }
 
 
@@ -23,7 +23,7 @@ public class Health_script : MonoBehaviour
     {
         if(health <= 0)
         {
-            print("DEAD");
+            Destroy(gameObject);
         }
     }
 }

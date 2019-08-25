@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: -6012016509229175236}
   - component: {fileID: -3285849478847875192}
   - component: {fileID: -5129314817079463081}
-  - component: {fileID: -6895989311721365556}
+  - component: {fileID: 2975466387378545999}
   m_Layer: 0
   m_Name: newnewice
   m_TagString: Untagged
@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
---- !u!64 &-6895989311721365556
-MeshCollider:
+--- !u!65 &2975466387378545999
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,7 +179,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 2248583337015580385, guid: 74ea52184bccfaf46a0549463f703e29, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

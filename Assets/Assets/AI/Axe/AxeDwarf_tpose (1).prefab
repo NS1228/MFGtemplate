@@ -2065,9 +2065,10 @@ MonoBehaviour:
   Player: {fileID: 0}
   player: {fileID: 0}
   MoveSpeed: 4
-  MaxDist: 1.5
-  MinDist: 1.5
+  MaxDist: 1.7
+  MinDist: 1.4
   Canlookaround: 0
+  dmgTest: 0
   freezeTimer: 0
   canFreeze: 0
   speedLower: 0
@@ -2226,8 +2227,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1821674039430967309, guid: fb9f81e7484df344ca6279845352efc4, type: 3}
-  - {fileID: 7444853807588273257, guid: fb9f81e7484df344ca6279845352efc4, type: 3}
+  - {fileID: 2100000, guid: aa78bb982b1054e4ca038524a9763447, type: 2}
+  - {fileID: 2100000, guid: bde0451e9ffc57246b3d446baf2bffe7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

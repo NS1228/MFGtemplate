@@ -25,10 +25,11 @@ public class Orb_movement : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-    if(other.gameObject.tag == "Shotguner")
+    if(other.gameObject.tag == "Axer")
         {
-            other.gameObject.GetComponent<AI_health>().health -= 100;
-            Destroy(gameObject, 10f);
+            other.gameObject.GetComponent<AI_health>().health -= 40;
+            Destroy(gameObject);
+            print("COLLIDE");
         }
     }
 }

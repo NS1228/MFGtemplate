@@ -33,6 +33,14 @@ public class Enemy_Movement : MonoBehaviour
 
     public float axeDMG;
 
+    public bool dmgTestwo;
+    public float dmgTwoTimer;
+    public bool dmgLoop;
+
+    public bool isFrozen;
+    public bool isStun;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,12 +56,34 @@ public class Enemy_Movement : MonoBehaviour
 
     void Update()
     {
-        if(dmgGiver && Time.time >= dmgTimer)
+        if(!isFrozen)
+        {
+            anim.SetBool("Freeze", false);
+        }
+
+        if(MoveSpeed < 0)
+        {
+            MoveSpeed = 0;
+        }
+         
+        if (anim.GetBool("Dead") == true)
+        {
+            anim.SetBool("Swing", false);
+        }
+
+        if (dmgGiver && Time.time >= dmgTimer)
         {
             dmgGiver = false;
             Player.GetComponent<Health_script>().health -= axeDMG;
             // print(Player.GetComponent<Health_script>().health);
-            dmgTest = true;
+            dmgTestwo = true;
+        }
+
+        if(dmgLoop && Time.time >= dmgTwoTimer)
+        {
+            Player.GetComponent<Health_script>().health -= axeDMG;
+            dmgTestwo = true;
+            dmgLoop = false;
         }
 
 
@@ -75,8 +105,21 @@ public class Enemy_Movement : MonoBehaviour
         {
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            anim.SetBool("Run", true);
-            //anim.SetBool("Swing", false);
+
+            if (isFrozen && !speedLower)
+            {
+                anim.SetBool("Run", false);
+                //anim.SetBool("Swing", false);
+            }
+            else if (isStun)
+            {
+                anim.SetBool("Run", false);
+            }
+
+            else
+            {
+                anim.SetBool("Run", true);
+            }
            
 
             
@@ -92,12 +135,19 @@ public class Enemy_Movement : MonoBehaviour
                 
                 MoveSpeed = 0;
 
-                if (dmgTest)
+                if (dmgTest && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Sleep") == false)
                 {
                     dmgGiver = true;
-                    dmgTimer = Time.time + 1.08f;
+                    dmgTimer = Time.time + 0.25f;
                     dmgTest = false;
                     
+                }
+
+                if (dmgTestwo && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Sleep") == false)
+                {
+                    dmgTestwo = false;
+                    dmgTwoTimer = Time.time + 1.08f;
+                    dmgLoop = true;
                 }
                  
 
@@ -106,12 +156,24 @@ public class Enemy_Movement : MonoBehaviour
             {
                 Canlookaround = false;
                 //anim.SetBool("Swing", false);
-                MoveSpeed = 4;
+                
                 anim.SetBool("Swing", false);
                 dmgTest = true;
-                 dmgGiver = false;
+                dmgTestwo = false;
+                dmgLoop = false;
+                dmgGiver = false;
 
-               
+                if(!isFrozen && !isStun)
+                {
+                    MoveSpeed = 4;
+                    
+                }
+
+                
+
+                
+
+
             }
 
         }
@@ -119,9 +181,9 @@ public class Enemy_Movement : MonoBehaviour
         if (speedLower)
         {
 
-            MoveSpeed -= 0.25f * Time.deltaTime;
-            // print(MoveSpeed);
-
+            MoveSpeed -= 0.5f * Time.deltaTime;
+            
+            
 
         }
 
@@ -129,12 +191,15 @@ public class Enemy_Movement : MonoBehaviour
         {
             MoveSpeed = 0;
             speedLower = false;
+            anim.SetBool("Freeze", true);
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
         {
             MoveSpeed = 4;
             canFreeze = false;
+            isFrozen = false;
+            anim.SetBool("Freeze",false);
         }
     }
 
@@ -148,14 +213,14 @@ public class Enemy_Movement : MonoBehaviour
             meeleeGrounded = true;
         }
 
-        if (other.gameObject.tag == "Icetrail")
+        if (other.gameObject.tag == "Icetrail" && !canFreeze)
         {
-            this.gameObject.GetComponent<AI_health>().health -= 5f;
+            this.gameObject.GetComponent<AI_health>().health -= 15f;
             speedLower = true;
-            freezeTimer = Time.time + 10;
+            freezeTimer = Time.time + 3f;
             canFreeze = true;
             print("FREEZE");
-
+            isFrozen = true;
 
         }
     }

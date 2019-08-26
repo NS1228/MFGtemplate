@@ -41,6 +41,13 @@ public class Orbvest_manager : MonoBehaviour
 
    public void UsingVest ()
     {
+        if(isUsing && Input.GetKey(KeyCode.F))
+        { 
+            
+            cooldown = 0f;
+            
+        }
+
         if (animPlay && Time.time >= playTimer)
         {
             animPlay = false;
@@ -50,7 +57,7 @@ public class Orbvest_manager : MonoBehaviour
             vestBarrel3.GetComponent<Orb_shooter>().enabled = true;
             vestBarrel4.GetComponent<Orb_shooter>().enabled = true;
             isUsing = true;
-            cooldown = Time.time + 10;
+           
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;
             OrbClapSound.orbSFX = false;
@@ -60,6 +67,7 @@ public class Orbvest_manager : MonoBehaviour
         if(Input.GetKey(KeyCode.E) && !isUsing)
         {
             canCooldown = true;
+            cooldown = Time.time + 14.3f;
             animPlay = true;
             playTimer = Time.time + 2.3f;
             anim.SetBool("Orbs", true);
@@ -81,7 +89,8 @@ public class Orbvest_manager : MonoBehaviour
             CooldownReset = true;
             resetcooldown = Time.time + 5;
             canCooldown = false;
-
+            
+            
         }
     }
 

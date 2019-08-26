@@ -15,6 +15,8 @@ public class Icetrail_Manager : MonoBehaviour
     public float cooldownTimer;
 
     public bool canUse;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,11 @@ public class Icetrail_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.F) && canUse)
+        {
+            durationTimer = 0;
+        }
+
         if (Input.GetKey(KeyCode.E) && !isUsing && !canUse)
         {
             this.gameObject.GetComponent<Spawn_Icetrail>().enabled = true;

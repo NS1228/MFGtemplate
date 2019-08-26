@@ -11,6 +11,9 @@ public class Sleeping_Enemies : MonoBehaviour
     public bool inRange;
 
     Animator anim;
+
+    public bool takeSleepDMG;
+    public float dmgTimer;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,11 @@ public class Sleeping_Enemies : MonoBehaviour
       if(Enemy_Sleeper.PlayAnim)
         {
             anim.SetBool("Sleep", true);
+            this.GetComponent<Enemy_Movement>().enabled = false;
+            // this.GetComponent<Ranged_enemyFire>().enabled = false;
+            takeSleepDMG = true;
+            dmgTimer = Time.time + 5f;
+            anim.SetBool("Swing", false);
         }
       else
         {
@@ -62,9 +70,6 @@ public class Sleeping_Enemies : MonoBehaviour
 
         if (player.GetComponent<Enemy_Sleeper>().HackThem == true && inRange)
         {
-            this.GetComponent<Enemy_Movement>().enabled = false;
-             this.GetComponent<Ranged_enemyFire>().enabled = false;
-            
             
         
 
@@ -74,14 +79,26 @@ public class Sleeping_Enemies : MonoBehaviour
 
         if (player.GetComponent<Enemy_Sleeper>().HackThem == false)
         {
-            gameObject.GetComponent<Enemy_Movement>().enabled = true;
-            //gameObject.GetComponent<Ranged_enemyFire>().enabled = true;
+            if (anim.GetBool("Dead") == false)
+            {
+                gameObject.GetComponent<Enemy_Movement>().enabled = true;
+                //gameObject.GetComponent<Ranged_enemyFire>().enabled = true;
+            }
           
 
 
         }
 
-     
+        if(takeSleepDMG && Time.time >= dmgTimer)
+        {
+            takeSleepDMG = false;
+            this.GetComponent<AI_health>().health -= 20;
+        }
+
+        if (anim.GetBool("Dead") == true)
+        {
+            anim.SetBool("Sleep", false);
+        }
        
      
       

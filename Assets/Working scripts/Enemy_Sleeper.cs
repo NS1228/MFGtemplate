@@ -61,6 +61,7 @@ public class Enemy_Sleeper : MonoBehaviour
             Mine_Sound.sleeperSFX = false;
             PlayAnim = true;
             
+            
         }
 
         if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.canBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
@@ -68,7 +69,7 @@ public class Enemy_Sleeper : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && !inUse)
             {
                 HackThem = true;
-                timer = Time.time + 5f;
+                timer = Time.time + 9.18f;
                 stopHack = true;
                 inUse = true;
                 stunDMG = true;
@@ -93,7 +94,7 @@ public class Enemy_Sleeper : MonoBehaviour
             HackThem = false;
 
             resetthis = true;
-            resettimer = Time.time + 6;
+            resettimer = Time.time + 7;
             PlayAnim = false;
 
 

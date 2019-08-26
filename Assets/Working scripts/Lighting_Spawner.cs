@@ -31,6 +31,11 @@ public class Lighting_Spawner : MonoBehaviour
     // Randomly activates an inactive game object
     public void Update()
     {
+        if(Input.GetKey(KeyCode.F) && !spawnYes)
+        {
+            timer = 0;
+        }
+
         if(deployLightning && Time.time >= animTimer)
         {
             deployLightning = false;
@@ -40,19 +45,21 @@ public class Lighting_Spawner : MonoBehaviour
             audios.volume = 1;
             Mine_Sound.lightningSFX = false;
 
-        }
-        
-        if (Input.GetKeyDown(KeyCode.E) && spawnYes)
-        {
-            
             GameObject selection = arrayOfGameObjects
             .Where(i => !i.activeSelf)
             .OrderBy(n => Random.value).FirstOrDefault();
 
             // selection will be null if all game objects are already active
             if (selection != null) selection.SetActive(true);
+
+        }
+        
+        if (Input.GetKeyDown(KeyCode.E) && spawnYes)
+        {
+            
+            
             spawnYes = false;
-            timer = Time.time + 5;
+            timer = Time.time + 8.02f;
             switcherbool = true;
             anim.SetBool("Lightning", true);
             deployLightning = true;
@@ -80,6 +87,7 @@ public class Lighting_Spawner : MonoBehaviour
             
             arrayOfGameObjects[0].SetActive(false);
             arrayOfGameObjects[1].SetActive(false);
+            arrayOfGameObjects[2].SetActive(false);
 
             cooldownTimer = Time.time + 5f;
             reset = true;

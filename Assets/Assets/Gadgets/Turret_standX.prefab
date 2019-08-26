@@ -173,9 +173,9 @@ MonoBehaviour:
   target: {fileID: 0}
   rotSpeed: 4
   parent: {fileID: 7911127248089738916}
-  enemyTag: Shotguner
+  enemyTag: Axer
   range: 10
-  fireDelay: 0
+  fireDelay: 0.4
   spawnLocation: {fileID: 6597275200640533704}
   prefab: {fileID: 459041775008430709, guid: 39be2d002a8b41145bc47c9bbb53e893, type: 3}
   speed: 5

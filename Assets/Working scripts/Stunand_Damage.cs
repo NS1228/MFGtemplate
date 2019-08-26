@@ -31,19 +31,19 @@ public class Stunand_Damage : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Shotguner") 
+        if (other.gameObject.tag == "Axer") 
         {
-            other.gameObject.GetComponent<Ranged_enemyMovement>().MoveSpeed = 0;
+            other.gameObject.GetComponent<Enemy_Movement>().MoveSpeed = 0;
             frozenObject = other.gameObject;
             timer = Time.time + 1;
             print("yes");
             Unfreeze = true;
-            frozenObject.GetComponent<AI_health>().health -= 10;
-
+            frozenObject.GetComponent<AI_health>().health -= 40;
+            frozenObject.GetComponent<Enemy_Movement>().isStun = true;
         }
 
 
-        if(other.gameObject.tag == "Player")
+       /* if(other.gameObject.tag == "Player")
         {
             Player.GetComponent<Thirsperson_character>().verSpeed = 0;
             Thirsperson_character.speed = 0;
@@ -57,7 +57,7 @@ public class Stunand_Damage : MonoBehaviour
 
             print("yes");
 
-        }
+        } */
 
 
 
@@ -65,14 +65,14 @@ public class Stunand_Damage : MonoBehaviour
 
     void Unstun ()
     {
-        if(Time.time >= timer && Unfreeze && frozenObject != Player)
+        if(Time.time >= timer && Unfreeze && frozenObject.tag == "Axer")
         {
-            frozenObject.gameObject.GetComponent<Ranged_enemyMovement>().MoveSpeed = 4;
+            frozenObject.gameObject.GetComponent<Enemy_Movement>().MoveSpeed = 4;
             Unfreeze = false;
             Destroy(this.gameObject);
             Destroy(parent.gameObject);
+            frozenObject.GetComponent<Enemy_Movement>().isStun = false;
 
-            
 
         }
         if(Time.time >= timer && Unfreeze && frozenObject == Player)

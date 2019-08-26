@@ -25,7 +25,7 @@ public class DMG_enemy : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Shotguner")
+        if (collision.gameObject.tag == "Axer")
         {
             AreaDamageEnemies();
             print("LEL");

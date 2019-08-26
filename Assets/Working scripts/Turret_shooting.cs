@@ -14,7 +14,7 @@ public class Turret_shooting : MonoBehaviour
 
     public Transform parent;
 
-    public string enemyTag = "Shotguner";
+    public string enemyTag = "Axer";
 
     public float range = 10;
 
@@ -87,7 +87,7 @@ public class Turret_shooting : MonoBehaviour
 
         if(target != null && Time.time >= fireDelay)
         {
-            target.GetComponent<AI_health>().health -= 50;
+            target.GetComponent<AI_health>().health -= 40;
             fireDelay = Time.time + 2;
 
 

@@ -7,6 +7,8 @@ public class Freeze_Enemy : MonoBehaviour
 
     public float timer;
     Rigidbody m_Rigidbody;
+
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,14 @@ public class Freeze_Enemy : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Shotguner")
+        if(collision.gameObject.tag == "Axer")
         {
-            collision.gameObject.GetComponent<Ranged_enemyMovement>().MoveSpeed -= 1;
+            collision.gameObject.GetComponent<Enemy_Movement>().MoveSpeed -= 1;
             timer = Time.time + 5;
+
+            collision.gameObject.GetComponent<Enemy_Movement>().isFrozen = true;
+
+            
         }
 
         

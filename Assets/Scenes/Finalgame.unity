@@ -2913,6 +2913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652725993b146064eaea48f5c2aaaa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetEnmy: {fileID: 0}
   player: {fileID: 597116032}
   inSight: 0
   shooting: 1
@@ -6920,6 +6921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652725993b146064eaea48f5c2aaaa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetEnmy: {fileID: 0}
   player: {fileID: 1156001906}
   inSight: 0
   shooting: 1
@@ -25950,10 +25952,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1877368748}
-    - target: {fileID: 2762198218479161528, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
+    - target: {fileID: 2762198218479161533, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Center.y
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a, type: 3}

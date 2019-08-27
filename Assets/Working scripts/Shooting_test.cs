@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting_test : MonoBehaviour
 {
-
+    public GameObject targetEnmy;
     public Transform player;
     public bool inSight;
 
@@ -29,17 +29,17 @@ public class Shooting_test : MonoBehaviour
     {
         inSight = false;
         anim = this.GetComponent<Animator>();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
 
+        Debug.DrawRay(transform.position, transform.forward);
 
         float highAcc = Random.Range(0.0f, 1f);
-       
+
         //isHit = random > 1.0f - hitAccuracy;
 
         // print(canFire);
@@ -64,32 +64,32 @@ public class Shooting_test : MonoBehaviour
             canFire = true;
             fireDelay = Time.time + 1;
 
-            
-                 print(highAcc);
-                
-                shooting -= highAcc;
-                if (shooting >= 0.6f)
-                {
-                    playerHealth -= playerDMG;
-                    print("TAKEDAMAGE");
-                    player.GetComponent<Health_script>().health -= 20;
-                }
+
+            print(highAcc);
+
+            shooting -= highAcc;
+            if (shooting >= 0.6f)
+            {
+                playerHealth -= playerDMG;
+                print("TAKEDAMAGE");
+                player.GetComponent<Health_script>().health -= 20;
+            }
 
 
 
-            
+
 
         }
         else
         {
             canFire = false;
             shooting = 1;
-           
+
         }
 
 
         RaycastHit hit;
-       
+
         var rayDirection = player.position - transform.position;
         if (Physics.Raycast(transform.position, rayDirection, out hit))
         {
@@ -101,26 +101,35 @@ public class Shooting_test : MonoBehaviour
 
                 this.GetComponent<New_ShotgunMovement>().MaxDist = 6.5f;
                 this.GetComponent<New_ShotgunMovement>().MinDist = 4;
-                
+
 
             }
             else
             {
                 // there is something obstructing the view
                 // print("can't see");
-              inSight = false;
+                inSight = false;
 
-              //this.GetComponent<New_ShotgunMovement>().MaxDist = 2;
-              // this.GetComponent<New_ShotgunMovement>().MinDist = 2;
-                
+                //this.GetComponent<New_ShotgunMovement>().MaxDist = 2;
+                // this.GetComponent<New_ShotgunMovement>().MinDist = 2;
+
 
 
 
 
 
             }
-        }
-    }
 
-   
+            RaycastHit objectHit;
+            // Shoot raycast
+            if (Physics.Raycast(transform.position, transform.forward, out objectHit, 50))
+            {
+                //Debug.Log("Raycast hitted to: " + objectHit.collider);
+                targetEnmy = objectHit.collider.gameObject;
+
+            }
+        }
+
+
+    }
 }

@@ -61,6 +61,17 @@ public class Enemy_Movement : MonoBehaviour
             anim.SetBool("Freeze", false);
         }
 
+        if(isStun)
+        {
+            anim.SetBool("Stun", true);
+        }
+        if(!isStun)
+        {
+            anim.SetBool("Stun", false);
+        }
+
+        
+
         if(MoveSpeed < 0)
         {
             MoveSpeed = 0;
@@ -74,14 +85,19 @@ public class Enemy_Movement : MonoBehaviour
         if (dmgGiver && Time.time >= dmgTimer)
         {
             dmgGiver = false;
-            Player.GetComponent<Health_script>().health -= axeDMG;
+          
+                Player.GetComponent<Health_script>().health -= axeDMG;
+           
             // print(Player.GetComponent<Health_script>().health);
             dmgTestwo = true;
         }
 
         if(dmgLoop && Time.time >= dmgTwoTimer)
         {
-            Player.GetComponent<Health_script>().health -= axeDMG;
+            
+                Player.GetComponent<Health_script>().health -= axeDMG;
+           
+            
             dmgTestwo = true;
             dmgLoop = false;
         }
@@ -114,6 +130,8 @@ public class Enemy_Movement : MonoBehaviour
             else if (isStun)
             {
                 anim.SetBool("Run", false);
+                
+               
             }
 
             else
@@ -135,7 +153,7 @@ public class Enemy_Movement : MonoBehaviour
                 
                 MoveSpeed = 0;
 
-                if (dmgTest && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Sleep") == false)
+                if (dmgTest && this.anim.GetCurrentAnimatorStateInfo(2).IsName("Sleep") == false && this.anim.GetCurrentAnimatorStateInfo(4).IsName("Stun") == false && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Freeze") == false)
                 {
                     dmgGiver = true;
                     dmgTimer = Time.time + 0.25f;
@@ -143,7 +161,7 @@ public class Enemy_Movement : MonoBehaviour
                     
                 }
 
-                if (dmgTestwo && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Sleep") == false)
+                if (dmgTestwo && this.anim.GetCurrentAnimatorStateInfo(2).IsName("Sleep") == false && this.anim.GetCurrentAnimatorStateInfo(4).IsName("Stun") == false && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Freeze") == false)
                 {
                     dmgTestwo = false;
                     dmgTwoTimer = Time.time + 1.08f;
@@ -219,7 +237,7 @@ public class Enemy_Movement : MonoBehaviour
             speedLower = true;
             freezeTimer = Time.time + 3f;
             canFreeze = true;
-            print("FREEZE");
+            //print("FREEZE");
             isFrozen = true;
 
         }

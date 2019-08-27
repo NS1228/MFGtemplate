@@ -2026,7 +2026,7 @@ MonoBehaviour:
   sendTriggerMessage: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 10288
   skinWidth: 1e-35
 --- !u!195 &2082514520233723988
 NavMeshAgent:
@@ -2079,6 +2079,7 @@ MonoBehaviour:
   dmgTwoTimer: 0
   dmgLoop: 0
   isFrozen: 0
+  isStun: 0
 --- !u!114 &2082514520233723986
 MonoBehaviour:
   m_ObjectHideFlags: 0

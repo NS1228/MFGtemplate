@@ -69,7 +69,10 @@ public class Turret_shooting : MonoBehaviour
 
         if(nearestEnemy != null && shortestDistance <= range)
         {
-            target = nearestEnemy.transform;
+            if (nearestEnemy.GetComponent<Animator>().GetBool("Dead") == false)
+            {
+                target = nearestEnemy.transform;
+            }
             // parent.transform.LookAt(target.transform.position);
             Vector3 dir = target.position - parent.transform.position;
             Quaternion Lookdirection = Quaternion.LookRotation(dir);

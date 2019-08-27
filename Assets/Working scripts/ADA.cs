@@ -90,7 +90,7 @@ public class ADA : MonoBehaviour
         {
             
             isGrenadeFall = true;
-            grenadeFallCooldown = Time.time + 10f;
+            grenadeFallCooldown = Time.time + 9.59f;
             canGrenadeFall = false;
             cooldownGrenadeFall = true;
             anim.SetBool("Grenade", true);
@@ -122,11 +122,12 @@ public class ADA : MonoBehaviour
            grenadeCooldownReset = Time.time + 10f;
            resetGrenadeFall = true;
             cooldownGrenadeFall = false;
+            grednadespawner.GetComponent<Grenade_drop>().grenadeLimit = 0;
 
         }
        else if (grenadeFallCooldown >= Time.time && cooldownGrenadeFall)
         {
-            print("is using");
+            //print("is using");
             resetGrenadeFall = false;
         }
     }
@@ -137,11 +138,11 @@ public class ADA : MonoBehaviour
         {
             canGrenadeFall = true;
             resetGrenadeFall = false;
-            print("can use now");
+           // print("can use now");
         }
         else if (grenadeCooldownReset >= Time.time && resetGrenadeFall)
         {
-            print("on cooldown");
+           // print("on cooldown");
         }
     }
    

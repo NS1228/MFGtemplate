@@ -9,6 +9,7 @@ public class Ranged_enemyMovement : MonoBehaviour
     public float MaxDist = 15;
     public float MinDist = 10;
 
+    public bool rangedGrounded;
 
     public static bool aiCANSHOOT;
 
@@ -22,7 +23,12 @@ public class Ranged_enemyMovement : MonoBehaviour
     public float freezeTimer;
     public bool canFreeze;
     public bool speedLower;
-  
+
+    Animator anim;
+
+    public bool isFrozen;
+    public bool isStun;
+
 
     void Start()
     {
@@ -34,11 +40,37 @@ public class Ranged_enemyMovement : MonoBehaviour
 
         canFreeze = false;
         speedLower = false;
+
+        anim = this.GetComponent<Animator>();
     }
         
     void Update()
     {
-        
+
+        if (!isFrozen)
+        {
+            anim.SetBool("Freeze", false);
+        }
+
+        if (isStun)
+        {
+            anim.SetBool("Stun", true);
+        }
+        if (!isStun)
+        {
+            anim.SetBool("Stun", false);
+        }
+
+        if (MoveSpeed < 0)
+        {
+            MoveSpeed = 0;
+        }
+
+        if (anim.GetBool("Dead") == true)
+        {
+            anim.SetBool("Shoot", false);
+        }
+
 
         if (!Canlookaround)
         {
@@ -59,13 +91,31 @@ public class Ranged_enemyMovement : MonoBehaviour
         {
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
-
-
-            if (Vector3.Distance(transform.position, Player.position) <= MaxDist && grounded)
+            anim.SetBool("Shotgun", false);
+            if (isFrozen && !speedLower)
             {
+                anim.SetBool("Run", false);
+                //anim.SetBool("Swing", false);
+            }
+            else if (isStun)
+            {
+                anim.SetBool("Run", false);
+
+
+            }
+
+            else
+            {
+                anim.SetBool("Run", true);
+            }
+
+
+            if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
+            {
+                anim.SetBool("Shotgun", true);
+
                 //Here Call any function U want Like Shoot at here or something 
-                rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+                rb.constraints =  RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
                 aiCANSHOOT = true;
                 //Canlookaround = true;
                 
@@ -75,50 +125,60 @@ public class Ranged_enemyMovement : MonoBehaviour
             else
             {
                 aiCANSHOOT = false;
-               // Canlookaround = false;
-             
+                // Canlookaround = false;
+                if (!isFrozen && !isStun)
+                {
+                    MoveSpeed = 4;
+
+                }
 
             }
 
         }
 
-        if(speedLower )
+        if (speedLower)
         {
 
-            MoveSpeed -= 0.25f * Time.deltaTime;
-           // print(MoveSpeed);
-           
+            MoveSpeed -= 0.5f * Time.deltaTime;
+
+
 
         }
 
-        if(MoveSpeed <= 0 && speedLower)
+        if (MoveSpeed <= 0 && speedLower)
         {
             MoveSpeed = 0;
             speedLower = false;
+            anim.SetBool("Freeze", true);
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
         {
             MoveSpeed = 4;
             canFreeze = false;
+            isFrozen = false;
+            anim.SetBool("Freeze", false);
         }
     }
 
+
+
+
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Floor")
+        if (other.gameObject.tag == "Floor")
         {
-            grounded = true;
+            rangedGrounded = true;
         }
 
-        if(other.gameObject.tag == "Icetrail")
+        if (other.gameObject.tag == "Icetrail" && !canFreeze)
         {
-           this.gameObject.GetComponent<AI_health>().health -= 5f;
+            this.gameObject.GetComponent<AI_health>().health -= 15f;
             speedLower = true;
-          freezeTimer = Time.time + 10;
+            freezeTimer = Time.time + 3f;
             canFreeze = true;
-            print("FREEZE");
-            
+            //print("FREEZE");
+            isFrozen = true;
 
         }
     }
@@ -127,13 +187,13 @@ public class Ranged_enemyMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Floor")
         {
-            grounded = false;
+            rangedGrounded = false;
         }
     }
 
-    
 
-    
+
+
 
 
 

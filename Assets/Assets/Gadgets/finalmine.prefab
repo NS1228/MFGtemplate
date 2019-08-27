@@ -106,7 +106,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1182973644548095926, guid: 6e4ca20db4ed097448ba9798e6f40d54, type: 3}
+  - {fileID: 2100000, guid: 15ffce1bb0a721044baa2f14bd8364a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: {x: 0, y: 0, z: 0}
-  radius: 5
+  radius: 1.75
   damage: 0
 --- !u!54 &339462525334616428
 Rigidbody:

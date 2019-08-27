@@ -22,23 +22,24 @@ public class Shooting_test : MonoBehaviour
 
     public bool canFire;
     public float fireDelay = 0;
+
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         inSight = false;
-
+        anim = this.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+        
 
 
-
-        float highAcc = Random.Range(0.0f, 0.5f);
-        float medAcc = Random.Range(0.0f, 0.75f);
-        float lowAcc = Random.Range(0.0f, 1f);
+        float highAcc = Random.Range(0.0f, 1f);
+       
         //isHit = random > 1.0f - hitAccuracy;
 
         // print(canFire);
@@ -58,36 +59,37 @@ public class Shooting_test : MonoBehaviour
 
 
 
-        if (Ranged_enemyMovement.aiCANSHOOT && inSight && Time.time >= fireDelay && Ranged_enemyMovement.grounded)
+        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay)
         {
             canFire = true;
-            fireDelay = Time.time + 2;
+            fireDelay = Time.time + 1;
 
-            if (Thirsperson_character.speed <= 4)
-            {
-               // print(highAcc);
-
+            
+                 print(highAcc);
+                
                 shooting -= highAcc;
-                if (shooting >= 0.75f)
+                if (shooting >= 0.6f)
                 {
                     playerHealth -= playerDMG;
-                    //print("TAKEDAMAGE");
+                    print("TAKEDAMAGE");
                     player.GetComponent<Health_script>().health -= 20;
                 }
 
 
 
-            }
+            
 
         }
         else
         {
             canFire = false;
             shooting = 1;
+           
         }
 
 
         RaycastHit hit;
+       
         var rayDirection = player.position - transform.position;
         if (Physics.Raycast(transform.position, rayDirection, out hit))
         {
@@ -97,8 +99,8 @@ public class Shooting_test : MonoBehaviour
                 //print("see");
                 inSight = true;
 
-                this.GetComponent<Ranged_enemyMovement>().MaxDist = 15;
-                this.GetComponent<Ranged_enemyMovement>().MinDist = 10;
+                this.GetComponent<New_ShotgunMovement>().MaxDist = 6.5f;
+                this.GetComponent<New_ShotgunMovement>().MinDist = 4;
                 
 
             }
@@ -106,10 +108,10 @@ public class Shooting_test : MonoBehaviour
             {
                 // there is something obstructing the view
                 // print("can't see");
-                inSight = false;
+              inSight = false;
 
-                this.GetComponent<Ranged_enemyMovement>().MaxDist = 1;
-                this.GetComponent<Ranged_enemyMovement>().MinDist = 1;
+              //this.GetComponent<New_ShotgunMovement>().MaxDist = 2;
+              // this.GetComponent<New_ShotgunMovement>().MinDist = 2;
                 
 
 
@@ -119,4 +121,6 @@ public class Shooting_test : MonoBehaviour
             }
         }
     }
+
+   
 }

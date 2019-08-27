@@ -8,29 +8,39 @@ public class Impact_script : MonoBehaviour
     public float grednadeTimer;
     public float destroyTimer;
     public GameObject grenadeSpawner;
+
+    public bool canDrop;
+    public bool canDie;
+
     // Start is called before the first frame update
     void Start()
     {
-        grednadeTimer = Time.time + 6f;
+        grednadeTimer = Time.time + 9.59f;
         destroyTimer = Time.time + 6f;
 
         grenadeSpawner = GameObject.FindGameObjectWithTag("gSpawner");
-
-
+        canDrop = true;
+        canDie = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >= grednadeTimer)
+        if(Time.time >= grednadeTimer && canDrop)
         {
 
             grenadeSpawner.GetComponent<Grenade_drop>().grenadeLimit -= 1;
+            canDrop = false;
         }
 
-        if(Time.time >= destroyTimer)
+        if(Time.time >= destroyTimer && canDie)
         {
-            Destroy(this.gameObject);
+             Destroy(this.gameObject);
+            grenadeSpawner.GetComponent<Grenade_drop>().grenadeLimit -= 1;
+            canDie = false;
+            // this.GetComponent<Greande_Kill>().timetoBlow = true;
+
         } 
         
     }

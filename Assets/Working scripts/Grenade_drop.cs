@@ -45,13 +45,17 @@ public class Grenade_drop : MonoBehaviour
             }
 
 
-       
+
+        if (grenadeLimit <= 0)
+        {
+            grenadeLimit = 0;
+        }
 
 
-        
+
         //print(grenadeLimit);
 
-      
+
 
     }
 

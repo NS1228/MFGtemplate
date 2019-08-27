@@ -23,7 +23,7 @@ public class AI_health : MonoBehaviour
     void Update()
     {
         Death();
-        print(health);
+       // print(health);
     }
 
    void Death ()

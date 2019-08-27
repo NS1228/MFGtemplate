@@ -4,26 +4,72 @@ using UnityEngine;
 
 public class Greande_Kill : MonoBehaviour
 {
+    public Vector3 location;
+    public float radius;
+    public float damage;
 
-    public GameObject Player;
+    public bool timetoBlow;
+    public float blowTime;
+
+    public GameObject gSpawner;
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        location = this.transform.position;
+       
     }
 
     // Update is called once per frame
+
+
     void Update()
     {
-
-        
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.tag == "Player")
+        if(Time.time >= blowTime && timetoBlow)
         {
-            Player.GetComponent<Health_script>().health -= 10;
+            timetoBlow = false;
+            Destroy(gameObject);
+        }
+
+        Collider[] cols = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider col in cols)
+        {
+            if (col && col.tag == "Axer")
+            { // if object has the right tag
+              // assuming the enemy script is called EnemyScript
+               AI_health script = col.GetComponent<AI_health>();
+                script.health -= 10; // apply damage 5
+                Destroy(gameObject);
+
+            }
+          
+
         }
     }
+
+
+     void OnCollisionEnter(Collision other)
+     {
+     if(other.gameObject.name == "Floor")
+       {
+            timetoBlow = true;
+            blowTime = Time.time + 3f;
+
+       
+      }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

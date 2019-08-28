@@ -41,7 +41,16 @@ public class Greande_Kill : MonoBehaviour
                 Destroy(gameObject);
 
             }
-          
+
+            if (col && col.tag == "Shotguner")
+            { // if object has the right tag
+              // assuming the enemy script is called EnemyScript
+                AI_health script = col.GetComponent<AI_health>();
+                script.health -= 10; // apply damage 5
+                Destroy(gameObject);
+
+            }
+
 
         }
     }

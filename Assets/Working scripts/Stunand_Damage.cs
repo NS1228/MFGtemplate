@@ -42,22 +42,34 @@ public class Stunand_Damage : MonoBehaviour
             frozenObject.GetComponent<Enemy_Movement>().isStun = true;
         }
 
+        if (other.gameObject.tag == "Shotguner")
 
-       /* if(other.gameObject.tag == "Player")
         {
-            Player.GetComponent<Thirsperson_character>().verSpeed = 0;
-            Thirsperson_character.speed = 0;
-            Player.GetComponent<Health_script>().health -= 10;
-
-
+            other.gameObject.GetComponent<New_ShotgunMovement>().MoveSpeed = 0;
             frozenObject = other.gameObject;
             timer = Time.time + 1;
-            Unfreeze = true;
-
-
             print("yes");
+            Unfreeze = true;
+            frozenObject.GetComponent<AI_health>().health -= 40;
+            frozenObject.GetComponent<New_ShotgunMovement>().isStun = true;
+        }
 
-        } */
+
+        /* if(other.gameObject.tag == "Player")
+         {
+             Player.GetComponent<Thirsperson_character>().verSpeed = 0;
+             Thirsperson_character.speed = 0;
+             Player.GetComponent<Health_script>().health -= 10;
+
+
+             frozenObject = other.gameObject;
+             timer = Time.time + 1;
+             Unfreeze = true;
+
+
+             print("yes");
+
+         } */
 
 
 
@@ -75,7 +87,18 @@ public class Stunand_Damage : MonoBehaviour
 
 
         }
-        if(Time.time >= timer && Unfreeze && frozenObject == Player)
+
+        if (Time.time >= timer && Unfreeze && frozenObject.tag == "Shotguner")
+        {
+            frozenObject.gameObject.GetComponent<New_ShotgunMovement>().MoveSpeed = 4;
+            Unfreeze = false;
+            Destroy(this.gameObject);
+            Destroy(parent.gameObject);
+            frozenObject.GetComponent<New_ShotgunMovement>().isStun = false;
+
+
+        }
+        if (Time.time >= timer && Unfreeze && frozenObject == Player)
         {
             Player.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;

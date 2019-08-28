@@ -1382,8 +1382,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1821674039430967309, guid: 7ed3d7c7302d1b24aa73818f52e891b2, type: 3}
-  - {fileID: 7444853807588273257, guid: 7ed3d7c7302d1b24aa73818f52e891b2, type: 3}
+  - {fileID: 2100000, guid: 6d2d2de888bf7fd4382d20eb55092645, type: 2}
+  - {fileID: 2100000, guid: 4326ce3367715d04aa10a12f9d3b65a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1735,6 +1735,8 @@ MonoBehaviour:
   something: 0
   canFire: 1
   fireDelay: 0
+  ammo: 0
+  shootTiming: 0
 --- !u!114 &2762198218479161511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,7 +1744,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6157724381815861888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3c25156f04b15e45b3a5565f539e3d5, type: 3}
   m_Name: 
@@ -1796,18 +1798,21 @@ MonoBehaviour:
   Player: {fileID: 0}
   player: {fileID: 0}
   MoveSpeed: 4
-  MaxDist: 6.5
-  MinDist: 4
+  MaxDist: 9
+  MinDist: 1.4
   Canlookaround: 0
   canShoot: 0
   freezeTimer: 0
   canFreeze: 0
   speedLower: 0
+  reload: 0
   isFrozen: 0
   isStun: 0
   animShooting: 0
   reShoot: 0
   shootTimer: 0
+  realoading: 0
+  timeforReload: 0
 --- !u!195 &2762198218479161531
 NavMeshAgent:
   m_ObjectHideFlags: 0

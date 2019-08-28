@@ -15,6 +15,8 @@ public class Turret_shooting : MonoBehaviour
     public Transform parent;
 
     public string enemyTag = "Axer";
+   
+
 
     public float range = 10;
 
@@ -37,22 +39,22 @@ public class Turret_shooting : MonoBehaviour
     void Update()
     {
 
-      /*  Collider[] cols = Physics.OverlapSphere(transform.position, range);
-        foreach (Collider col in cols)
-        {
-            if (col && col.tag == "Shotguner" &&  Time.time >= fireDelay)
-            { // if object has the right tag...
-              // assuming the enemy script is called EnemyScript
-                
-                    col.GetComponent<AI_health>().health -= 10;
-                    fireDelay = Time.time + 1;
-                Instantiate(prefab, spawnLocation.transform.position + transform.forward, transform.rotation);
-                prefab.transform.position = rangedShooters.transform.position * speed * Time.deltaTime;
-                rangedShooters = col.gameObject;
-            }
-        } */
+        /*  Collider[] cols = Physics.OverlapSphere(transform.position, range);
+          foreach (Collider col in cols)
+          {
+              if (col && col.tag == "Shotguner" &&  Time.time >= fireDelay)
+              { // if object has the right tag...
+                // assuming the enemy script is called EnemyScript
 
-       
+                      col.GetComponent<AI_health>().health -= 10;
+                      fireDelay = Time.time + 1;
+                  Instantiate(prefab, spawnLocation.transform.position + transform.forward, transform.rotation);
+                  prefab.transform.position = rangedShooters.transform.position * speed * Time.deltaTime;
+                  rangedShooters = col.gameObject;
+              }
+          } */
+
+
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;

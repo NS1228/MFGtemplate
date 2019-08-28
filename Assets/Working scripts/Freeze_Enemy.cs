@@ -33,6 +33,7 @@ public class Freeze_Enemy : MonoBehaviour
             
         }
 
+
         
 
 

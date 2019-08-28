@@ -8,6 +8,7 @@ public class Shooting_test : MonoBehaviour
     public Transform player;
     public bool inSight;
 
+
     [Range(0.0f, 1.0f)]
     //public float goodacc = 0.1f;
     //public float medacc = 0.45f;
@@ -22,6 +23,11 @@ public class Shooting_test : MonoBehaviour
 
     public bool canFire;
     public float fireDelay = 0;
+    public float ammo = 0;
+
+    public float shootTiming;
+    
+ 
 
     Animator anim;
     // Start is called before the first frame update
@@ -29,12 +35,15 @@ public class Shooting_test : MonoBehaviour
     {
         inSight = false;
         anim = this.GetComponent<Animator>();
+        canFire = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+
 
         Debug.DrawRay(transform.position, transform.forward);
 
@@ -53,27 +62,86 @@ public class Shooting_test : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            print("DEAD");
+            //print("DEAD");
         }
 
 
 
 
-        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay)
+        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay && ammo <= 5)
         {
-            canFire = true;
-            fireDelay = Time.time + 1;
+            
+                canFire = true;
+                fireDelay = Time.time + 1;
+            
+            
+            ammo += 1;
 
+            if(ammo == 6)
+            {
+                this.GetComponent<New_ShotgunMovement>().reload = true;
+                this.GetComponent<New_ShotgunMovement>().timeforReload = Time.time + 2.5f;
+                this.GetComponent<New_ShotgunMovement>().realoading = true;
+            }
+            
 
             print(highAcc);
 
             shooting -= highAcc;
-            if (shooting >= 0.6f)
-            {
-                playerHealth -= playerDMG;
-                print("TAKEDAMAGE");
-                player.GetComponent<Health_script>().health -= 20;
-            }
+            if (AbilityManager.hasBooster)
+                if (shooting >= 0.65f)
+                {
+                    playerHealth -= playerDMG;
+                    print("TAKEDAMAGE -booster");
+                    player.GetComponent<Health_script>().health -= 5;
+                }
+            if (player.GetComponent<Rollerskates>().skating)
+                if (shooting >= 0.70f)
+                {
+                    playerHealth -= playerDMG;
+                    print("TAKEDAMAGE -rs");
+                    player.GetComponent<Health_script>().health -= 5;
+                }
+            if (player.GetComponent<Thirsperson_character>().hasBall)
+                if (shooting >= 0.75f)
+                {
+                    playerHealth -= playerDMG;
+                    print("TAKEDAMAGE -bs");
+                    player.GetComponent<Health_script>().health -= 5;
+                }
+            if (player.GetComponent<Bouncy>().canBounce)
+                if (shooting >= 0.80f)
+                {
+                    playerHealth -= playerDMG;
+                    print("TAKEDAMAGE -bounce");
+                    player.GetComponent<Health_script>().health -= 5;
+                }
+            if (player.GetComponent<Fp_Cooldown>().flyCD)
+                if (shooting >= 0.85f)
+                {
+                    playerHealth -= playerDMG;
+                    print("TAKEDAMAGE -fp");
+                    player.GetComponent<Health_script>().health -= 5;
+                }
+            if (HBspawner.Riding)
+                if (shooting >= 0.90f)
+                {
+                    playerHealth -= playerDMG;
+                    print("TAKEDAMAGE -hb");
+                    player.GetComponent<Health_script>().health -= 5;
+                }
+            if (!player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Fp_Cooldown>().flyCD && !player.GetComponent<Bouncy>().canBounce && !player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Rollerskates>().skating && !AbilityManager.hasBooster)
+                if (shooting >= 0.60f)
+                {
+
+                    playerHealth -= playerDMG;
+                    
+                    if (this.anim.GetCurrentAnimatorStateInfo(1).IsName("Shoot"))
+                    {
+                        player.GetComponent<Health_script>().health -= 5;
+                        print("TAKEDAMAGE -normal");
+                    }
+                }
 
 
 
@@ -82,54 +150,73 @@ public class Shooting_test : MonoBehaviour
         }
         else
         {
-            canFire = false;
-            shooting = 1;
+            
+                canFire = false;
+                shooting = 1;
+            
 
         }
 
 
-        RaycastHit hit;
+        /*   RaycastHit hit;
 
-        var rayDirection = player.position - transform.position;
-        if (Physics.Raycast(transform.position, rayDirection, out hit))
-        {
-            if (hit.transform == player)
+            var rayDirection = player.position - transform.position;
+            if (Physics.Raycast(transform.position, rayDirection, out hit))
             {
-                // enemy can see the player!
-                //print("see");
+                if (hit.transform == player)
+                {
+                    // enemy can see the player!
+                    //print("see");
+                    inSight = true;
+
+                    this.GetComponent<New_ShotgunMovement>().MaxDist = 6.5f;
+                    this.GetComponent<New_ShotgunMovement>().MinDist = 4;
+
+
+                }
+                else
+                {
+                    // there is something obstructing the view
+                    // print("can't see");
+                    inSight = false;
+
+                    //this.GetComponent<New_ShotgunMovement>().MaxDist = 2;
+                    // this.GetComponent<New_ShotgunMovement>().MinDist = 2;
+
+
+
+
+
+
+                } */
+
+        RaycastHit objectHit;
+        // Shoot raycast
+        if (Physics.Raycast(transform.position + (transform.up * 1.5f), transform.forward, out objectHit, 50))
+        {
+            //Debug.Log("Raycast hitted to: " + objectHit.collider);
+            targetEnmy = objectHit.collider.gameObject;
+
+            if (targetEnmy == GameObject.FindGameObjectWithTag("Player"))
+            {
                 inSight = true;
-
-                this.GetComponent<New_ShotgunMovement>().MaxDist = 6.5f;
-                this.GetComponent<New_ShotgunMovement>().MinDist = 4;
-
+                this.GetComponent<New_ShotgunMovement>().MaxDist = 9f;
+                this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
 
             }
             else
             {
-                // there is something obstructing the view
-                // print("can't see");
                 inSight = false;
-
-                //this.GetComponent<New_ShotgunMovement>().MaxDist = 2;
-                // this.GetComponent<New_ShotgunMovement>().MinDist = 2;
-
-
-
-
-
-
+                this.GetComponent<New_ShotgunMovement>().MaxDist = 1.4f;
+                this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
             }
 
-            RaycastHit objectHit;
-            // Shoot raycast
-            if (Physics.Raycast(transform.position, transform.forward, out objectHit, 50))
-            {
-                //Debug.Log("Raycast hitted to: " + objectHit.collider);
-                targetEnmy = objectHit.collider.gameObject;
-
-            }
         }
-
-
     }
 }
+
+       
+
+    
+
+

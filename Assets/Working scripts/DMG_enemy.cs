@@ -31,6 +31,16 @@ public class DMG_enemy : MonoBehaviour
             print("LEL");
 
         }
+
+       else if (collision.gameObject.tag == "Shotguner")
+        {
+            AreaDamageEnemies();
+            print("LEL");
+
+        }
+
+      
+       
     }
 
 

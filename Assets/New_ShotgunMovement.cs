@@ -28,7 +28,7 @@ public class New_ShotgunMovement : MonoBehaviour
     public bool speedLower;
 
 
-
+    public bool reload;
    // AnimationClip shootAnim;
 
    
@@ -39,7 +39,10 @@ public class New_ShotgunMovement : MonoBehaviour
 
     public bool animShooting;
     public bool reShoot;
-    public float shootTimer; 
+    public float shootTimer;
+
+    public bool realoading;
+    public float timeforReload;
 
 
     void Start()
@@ -58,7 +61,22 @@ public class New_ShotgunMovement : MonoBehaviour
 
     void Update()
     {
-        if(reShoot && Time.time >= shootTimer)
+        if(reload && anim.GetBool("Sleep") == false)
+        {
+            anim.SetBool("Reload", true);
+            anim.SetBool("Shotgun", false);
+           
+        }
+
+        if(realoading && Time.time >=  timeforReload)
+        {
+            anim.SetBool("Reload", false);
+            reload = false;
+            this.GetComponent<Shooting_test>().ammo = 0;
+            realoading = false;
+        }
+
+        if(reShoot && Time.time >= shootTimer && !reload)
         {
             reShoot = false;
             anim.Play("Shoot", 1, 0f);
@@ -91,6 +109,7 @@ public class New_ShotgunMovement : MonoBehaviour
         if (anim.GetBool("Dead") == true)
         {
             anim.SetBool("Shotgun", false);
+            anim.SetBool("reload", false);
             canShoot = false;
         }
 
@@ -147,10 +166,15 @@ public class New_ShotgunMovement : MonoBehaviour
                 //Here Call any function U want Like Shoot at here or something
                 rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
                 Canlookaround = true;
-                anim.SetBool("Shotgun", true);
-               
-                canShoot = true;
 
+                if (!reload)
+                {
+                    anim.SetBool("Shotgun", true);
+                    canShoot = false;
+                }
+
+                    canShoot = true;
+                
                 MoveSpeed = 0;
 
 
@@ -170,6 +194,7 @@ public class New_ShotgunMovement : MonoBehaviour
                 //anim.SetBool("Swing", false);
 
                 anim.SetBool("Shotgun", false);
+                anim.SetBool("Reload",false);
                 canShoot = false;
 
                 if (!isFrozen && !isStun)

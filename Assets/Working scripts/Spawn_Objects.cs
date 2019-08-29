@@ -60,9 +60,9 @@ public class Spawn_Objects : MonoBehaviour
             Mine_Sound.turretSFX = false;
         }
 
-        if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.canBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
+        if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
-            if (Input.GetKeyDown(KeyCode.E) && canBuild && canBuildNCD)
+            if (Input.GetKeyDown(KeyCode.E) && canBuild && canBuildNCD )
             {
                 
                 anim.SetBool("Build", true);

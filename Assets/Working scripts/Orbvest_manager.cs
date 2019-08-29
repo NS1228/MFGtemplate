@@ -64,7 +64,7 @@ public class Orbvest_manager : MonoBehaviour
 
         }
 
-        if(Input.GetKey(KeyCode.E) && !isUsing)
+        if(Input.GetKey(KeyCode.E) && !isUsing && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
             canCooldown = true;
             cooldown = Time.time + 14.3f;

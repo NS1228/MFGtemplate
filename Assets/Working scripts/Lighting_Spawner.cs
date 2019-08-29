@@ -54,7 +54,7 @@ public class Lighting_Spawner : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown(KeyCode.E) && spawnYes)
+        if (Input.GetKeyDown(KeyCode.E) && spawnYes && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
             
             

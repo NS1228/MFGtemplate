@@ -25583,25 +25583,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlowholeDwarf_tpose
       objectReference: {fileID: 0}
-    - target: {fileID: 8049475169543356069, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 6480155242714598582, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.72
+      value: -15.482
       objectReference: {fileID: 0}
     - target: {fileID: 6480155242714598582, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.985
+      value: 4.092
       objectReference: {fileID: 0}
     - target: {fileID: 6480155242714598582, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.08
+      value: 13.53
       objectReference: {fileID: 0}
     - target: {fileID: 6480155242714598582, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
         type: 3}
@@ -25643,11 +25638,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2059435936403040175, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
+    - target: {fileID: 8296172668288613566, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
         type: 3}
-      propertyPath: m_AgentTypeID
-      value: -1923039037
-      objectReference: {fileID: 0}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1877368763}
+    - target: {fileID: 8296172668288613566, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1877368748}
+    - target: {fileID: 8296172668288613567, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1877368763}
+    - target: {fileID: 8296172668288613568, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1877368763}
+    - target: {fileID: 8296172668288613568, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1877368748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44, type: 3}
 --- !u!1001 &2082514520670597911
@@ -25762,7 +25777,7 @@ PrefabInstance:
     - target: {fileID: 6157724381815861888, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7147204275015483539, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
         type: 3}
@@ -25929,62 +25944,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &8296172668288613565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8049475169543356069, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
-    type: 3}
-  m_PrefabInstance: {fileID: 2059435937767670296}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8296172668288613566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668288613565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a91911d1f4e65894e9ef9eb14345cd1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1877368763}
-  player: {fileID: 1877368748}
-  MoveSpeed: 4
-  MaxDist: 100
-  MinDist: 0
-  Canlookaround: 0
-  canShoot: 0
-  freezeTimer: 0
-  canFreeze: 0
-  speedLower: 0
-  isFrozen: 0
-  isStun: 0
-  animShooting: 0
-  reShoot: 0
-  shootTimer: 0
---- !u!114 &8296172668288613567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172668288613565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebc48a3828ea584b8418e009681b336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetEnmy: {fileID: 0}
-  player: {fileID: 1877368763}
-  inSight: 0
-  shooting: 1
-  playerHealth: 100
-  playerDMG: 20
-  something: 0
-  canFire: 0
-  fireDelay: 0
-  shootTiming: 0
-  shootTimer: 0
 --- !u!1 &9176710197166081155
 GameObject:
   m_ObjectHideFlags: 0

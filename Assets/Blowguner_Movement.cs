@@ -64,7 +64,7 @@ public class Blowguner_Movement : MonoBehaviour
         if (reShoot && this.GetComponent<Blowgun_Shooting>().inSight)
         {
             reShoot = false;
-            anim.Play("Blowgun", 1, 0f);
+            anim.Play("Blowgun", 0, 0f);
             animShooting = true;
             anim.SetBool("Blowgun", false);
             anim.SetBool("Idle", true);

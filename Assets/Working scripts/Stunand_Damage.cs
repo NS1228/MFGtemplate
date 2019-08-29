@@ -54,6 +54,18 @@ public class Stunand_Damage : MonoBehaviour
             frozenObject.GetComponent<New_ShotgunMovement>().isStun = true;
         }
 
+        if (other.gameObject.tag == "Blowguner")
+
+        {
+            other.gameObject.GetComponent<Blowguner_Movement>().MoveSpeed = 0;
+            frozenObject = other.gameObject;
+            timer = Time.time + 1;
+            print("yes");
+            Unfreeze = true;
+            frozenObject.GetComponent<AI_health>().health -= 40;
+            frozenObject.GetComponent<Blowguner_Movement>().isStun = true;
+        }
+
 
         /* if(other.gameObject.tag == "Player")
          {
@@ -95,6 +107,17 @@ public class Stunand_Damage : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(parent.gameObject);
             frozenObject.GetComponent<New_ShotgunMovement>().isStun = false;
+
+
+        }
+
+        if (Time.time >= timer && Unfreeze && frozenObject.tag == "Blowguner")
+        {
+            frozenObject.gameObject.GetComponent<Blowguner_Movement>().MoveSpeed = 4;
+            Unfreeze = false;
+            Destroy(this.gameObject);
+            Destroy(parent.gameObject);
+            frozenObject.GetComponent<Blowguner_Movement>().isStun = false;
 
 
         }

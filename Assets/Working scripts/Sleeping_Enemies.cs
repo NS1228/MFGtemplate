@@ -59,6 +59,15 @@ public class Sleeping_Enemies : MonoBehaviour
                 dmgTimer = Time.time + 5f;
                 anim.SetBool("Shotgun", false);
             }
+            if (this.gameObject.tag == "Blowguner")
+            {
+                anim.SetBool("Sleep", true);
+                this.GetComponent<Blowguner_Movement>().enabled = false;
+                // this.GetComponent<Ranged_enemyFire>().enabled = false;
+                takeSleepDMG = true;
+                dmgTimer = Time.time + 5f;
+                anim.SetBool("Blowgun", false);
+            }
 
 
 
@@ -104,6 +113,10 @@ public class Sleeping_Enemies : MonoBehaviour
                 if(this.gameObject.tag == "Shotguner")
                 {
                     gameObject.GetComponent<New_ShotgunMovement>().enabled = true;
+                }
+                if (this.gameObject.tag == "Blowguner")
+                {
+                    gameObject.GetComponent<Blowguner_Movement>().enabled = true;
                 }
             }
           

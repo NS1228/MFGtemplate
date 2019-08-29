@@ -38,6 +38,13 @@ public class Orb_movement : MonoBehaviour
             Destroy(gameObject);
             print("COLLIDE");
         }
+
+        if (other.gameObject.tag == "Blowguner")
+        {
+            other.gameObject.GetComponent<AI_health>().health -= 40;
+            Destroy(gameObject);
+            print("COLLIDE");
+        }
     }
 
 

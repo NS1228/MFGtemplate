@@ -1954,9 +1954,12 @@ GameObject:
   - component: {fileID: 2059435936403040160}
   - component: {fileID: 2059435936403040175}
   - component: {fileID: 2059435936403040174}
-  m_Layer: 0
+  - component: {fileID: 8296172668288613566}
+  - component: {fileID: 8296172668288613567}
+  - component: {fileID: 8296172668288613568}
+  m_Layer: 13
   m_Name: BlowholeDwarf_tpose
-  m_TagString: Untagged
+  m_TagString: Blowguner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1968,7 +1971,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049475169543356069}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.161, y: 2.985, z: 12.894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2062,7 +2065,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8049475169543356069}
   m_Enabled: 1
-  m_AgentTypeID: -902729914
+  m_AgentTypeID: -1923039037
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -2093,6 +2096,74 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 7728
   skinWidth: 1e-35
+--- !u!114 &8296172668288613566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049475169543356069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91911d1f4e65894e9ef9eb14345cd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  player: {fileID: 0}
+  MoveSpeed: 4
+  MaxDist: 100
+  MinDist: 0
+  Canlookaround: 0
+  canShoot: 0
+  freezeTimer: 0
+  canFreeze: 0
+  speedLower: 0
+  isFrozen: 0
+  isStun: 0
+  animShooting: 0
+  reShoot: 0
+  shootTimer: 0
+--- !u!114 &8296172668288613567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049475169543356069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebc48a3828ea584b8418e009681b336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetEnmy: {fileID: 0}
+  player: {fileID: 0}
+  inSight: 0
+  shooting: 1
+  playerHealth: 100
+  playerDMG: 20
+  something: 0
+  canFire: 0
+  fireDelay: 0
+  shootTiming: 0
+  shootTimer: 0
+--- !u!114 &8296172668288613568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049475169543356069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c25156f04b15e45b3a5565f539e3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  player: {fileID: 0}
+  range: 15
+  inRange: 0
+  takeSleepDMG: 0
+  dmgTimer: 0
 --- !u!1 &8072448517848748885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,7 +2208,7 @@ GameObject:
   - component: {fileID: 7186661397587113990}
   m_Layer: 0
   m_Name: Dwarf_body
-  m_TagString: Untagged
+  m_TagString: Blowguner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

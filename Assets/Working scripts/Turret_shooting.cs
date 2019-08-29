@@ -15,8 +15,10 @@ public class Turret_shooting : MonoBehaviour
     public Transform parent;
 
     public string enemyTag = "Axer";
-   
+    public string enemyShotgun = "Shotguner";
+    public string enemyBlowgun = "Blowguner";
 
+    public GameObject[] test;
 
     public float range = 10;
 
@@ -29,10 +31,10 @@ public class Turret_shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+       
         
-       // rangedShooters = GameObject.FindGameObjectWithTag("Shotguner");
-        
+        // rangedShooters = GameObject.FindGameObjectWithTag("Shotguner");
+
     }
 
     // Update is called once per frame
@@ -57,19 +59,39 @@ public class Turret_shooting : MonoBehaviour
 
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        GameObject[] enemiestwo = GameObject.FindGameObjectsWithTag(enemyShotgun);
+        GameObject[] enemiesthree = GameObject.FindGameObjectsWithTag(enemyBlowgun);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if(distanceToEnemy < shortestDistance)
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+        foreach (GameObject enemy in enemiestwo)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+        foreach (GameObject enemy in enemiesthree)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
         }
 
-        if(nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= range)
         {
             if (nearestEnemy.GetComponent<Animator>().GetBool("Dead") == false)
             {
@@ -81,34 +103,34 @@ public class Turret_shooting : MonoBehaviour
             Vector3 rotation = Quaternion.Lerp(parent.rotation, Lookdirection, Time.deltaTime * rotSpeed).eulerAngles;
             parent.rotation = Quaternion.Euler(rotation.x, rotation.y, 0f);
 
-            
+
         }
 
 
-        if(target == null)
+        if (target == null)
         {
             return;
         }
 
-        if(target != null && Time.time >= fireDelay)
+        if (target != null && Time.time >= fireDelay)
         {
             target.GetComponent<AI_health>().health -= 40;
             fireDelay = Time.time + 2;
 
 
-         GameObject bulletGo =(GameObject)Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
+            GameObject bulletGo = (GameObject)Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
             Bullets bullet = bulletGo.GetComponent<Bullets>();
 
-            if(bullet != null)
+            if (bullet != null)
             {
-               bullet.Seek(target);
+                bullet.Seek(target);
             }
-           // Instantiate(prefab, spawnLocation.transform.position + transform.forward, transform.rotation);
-          //  prefab.transform.position = target.transform.position * speed * Time.deltaTime;
+            // Instantiate(prefab, spawnLocation.transform.position + transform.forward, transform.rotation);
+            //  prefab.transform.position = target.transform.position * speed * Time.deltaTime;
 
         }
 
-       
+
 
 
 
@@ -127,8 +149,10 @@ public class Turret_shooting : MonoBehaviour
              }
 
          } */
+
+
+
     }
 
-
-
+   
 }

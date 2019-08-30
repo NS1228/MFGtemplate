@@ -158,7 +158,7 @@ public class Blowguner_Movement : MonoBehaviour
 
                 if (this.GetComponent<Blowgun_Shooting>().inSight)
                 {
-                    
+                    Blowhole_Sound.blowgunSFX = true;
                     canShoot = true;
                 }
                 else
@@ -189,7 +189,7 @@ public class Blowguner_Movement : MonoBehaviour
             {
                 Canlookaround = false;
                 //anim.SetBool("Swing", false);
-
+                Blowhole_Sound.blowgunSFX = false;
                 anim.SetBool("Blowgun", false);
                 anim.SetBool("Idle", true);
               

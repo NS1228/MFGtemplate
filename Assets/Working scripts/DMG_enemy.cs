@@ -9,17 +9,28 @@ public class DMG_enemy : MonoBehaviour
      public float radius;
      public float damage;
 
-   
+    public AudioClip mineExp;
+    AudioSource audioSourcee;
+
+    public bool destroy;
+    public float destroyTimer;
+
     // Start is called before the first frame update
     void Start()
     {
         location = this.transform.position;
+        audioSourcee = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
        // AreaDamageEnemies();
+
+        if(destroy && Time.time >= destroyTimer)
+        {
+            Destroy(gameObject);
+        }
         
     }
 
@@ -63,9 +74,13 @@ public class DMG_enemy : MonoBehaviour
                 float proximity = (location - enemy.transform.position).magnitude;
                 float effect = 1 - (proximity / radius);
 
-
+                audioSourcee.PlayOneShot(mineExp, 0.7f);
                 enemy.GetComponent<AI_health>().health -= 50f;
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                this.GetComponent<MeshRenderer>().enabled = false;
+                this.GetComponent<BoxCollider>().enabled = false;
+                destroy = true;
+                destroyTimer = Time.time + 3f;
             }
         }
     }

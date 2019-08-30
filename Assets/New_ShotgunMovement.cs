@@ -81,7 +81,8 @@ public class New_ShotgunMovement : MonoBehaviour
             reShoot = false;
             anim.Play("Shoot", 1, 0f);
             animShooting = true;
-           
+            Shotgun_Sound.shotgunSFX = true;
+
         }
 
 
@@ -143,10 +144,12 @@ public class New_ShotgunMovement : MonoBehaviour
             {
                 anim.SetBool("Run", false);
                 //anim.SetBool("Swing", false);
+                Dwarf_Jog.dwarfjogSFX = false;
             }
             else if (isStun)
             {
                 anim.SetBool("Run", false);
+                Dwarf_Jog.dwarfjogSFX = false;
 
 
             }
@@ -154,6 +157,7 @@ public class New_ShotgunMovement : MonoBehaviour
             else
             {
                 anim.SetBool("Run", true);
+                Dwarf_Jog.dwarfjogSFX = true;
             }
 
 
@@ -169,7 +173,9 @@ public class New_ShotgunMovement : MonoBehaviour
 
                 if (!reload)
                 {
-                    anim.SetBool("Shotgun", true);
+                    Shotgun_Sound.shotgunSFX = true;
+                    Dwarf_Jog.dwarfjogSFX = false;
+                    
                     canShoot = false;
                 }
 
@@ -180,9 +186,11 @@ public class New_ShotgunMovement : MonoBehaviour
 
                 if (animShooting)
                 {
+                    
                     reShoot = true;
-                    shootTimer = Time.time + 0.71f;
+                    shootTimer = Time.time + 1f;
                     animShooting = false;
+                    anim.SetBool("Shotgun", true);
                 }
                
 
@@ -192,7 +200,7 @@ public class New_ShotgunMovement : MonoBehaviour
             {
                 Canlookaround = false;
                 //anim.SetBool("Swing", false);
-
+                Shotgun_Sound.shotgunSFX = false;
                 anim.SetBool("Shotgun", false);
                 anim.SetBool("Reload",false);
                 canShoot = false;

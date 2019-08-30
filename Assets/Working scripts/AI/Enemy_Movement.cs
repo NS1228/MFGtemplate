@@ -80,6 +80,7 @@ public class Enemy_Movement : MonoBehaviour
         if (anim.GetBool("Dead") == true)
         {
             anim.SetBool("Swing", false);
+            Axe_Sound.axeSFX = false;
         }
 
         if (dmgGiver && Time.time >= dmgTimer)
@@ -125,18 +126,21 @@ public class Enemy_Movement : MonoBehaviour
             if (isFrozen && !speedLower)
             {
                 anim.SetBool("Run", false);
+                Dwarf_Jog.dwarfjogSFX = false;
                 //anim.SetBool("Swing", false);
             }
             else if (isStun)
             {
                 anim.SetBool("Run", false);
-                
-               
+                Dwarf_Jog.dwarfjogSFX = false;
+
+
             }
 
             else
             {
                 anim.SetBool("Run", true);
+                Dwarf_Jog.dwarfjogSFX = true;
             }
            
 
@@ -150,7 +154,8 @@ public class Enemy_Movement : MonoBehaviour
                 rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
                 Canlookaround = true;
                 anim.SetBool("Swing", true);
-                
+                Dwarf_Jog.dwarfjogSFX = false;
+                Axe_Sound.axeSFX = true;
                 MoveSpeed = 0;
 
                 if (dmgTest && this.anim.GetCurrentAnimatorStateInfo(2).IsName("Sleep") == false && this.anim.GetCurrentAnimatorStateInfo(4).IsName("Stun") == false && this.anim.GetCurrentAnimatorStateInfo(3).IsName("Freeze") == false)
@@ -174,7 +179,7 @@ public class Enemy_Movement : MonoBehaviour
             {
                 Canlookaround = false;
                 //anim.SetBool("Swing", false);
-                
+                Axe_Sound.axeSFX = false;
                 anim.SetBool("Swing", false);
                 dmgTest = true;
                 dmgTestwo = false;

@@ -34,14 +34,29 @@ public class AI_health : MonoBehaviour
             anim.SetBool("Dead", true);
             dead = true;
             deadTimer = Time.time + 7.38f;
-            this.GetComponent<Enemy_Movement>().enabled = false;
             
+            Death_Sound.dwarfdeathSFX = true;
+
+            if(this.gameObject.tag == "Axer")
+            {
+                this.GetComponent<Enemy_Movement>().enabled = false;
+            }
+            if (this.gameObject.tag == "Shotguner")
+            {
+                this.GetComponent<New_ShotgunMovement>().enabled = false;
+            }
+            if (this.gameObject.tag == "Blowguner")
+            {
+                this.GetComponent<Blowguner_Movement>().enabled = false;
+            }
+
         }
 
         if(dead && Time.time >= deadTimer)
         {
             dead = false;
             Destroy(gameObject);
+            Death_Sound.dwarfdeathSFX = false;
         }
 
      

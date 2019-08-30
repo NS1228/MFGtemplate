@@ -25450,7 +25450,7 @@ PrefabInstance:
     - target: {fileID: 8054546071924281694, guid: eb4526058a2d9614bb705f18f126ce2a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6457078995602531149, guid: eb4526058a2d9614bb705f18f126ce2a,
         type: 3}
@@ -25536,15 +25536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShotgunDwarf_tpose (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6157724381815861888, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7147204275015483539, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: -15.1
       objectReference: {fileID: 0}
     - target: {fileID: 7147204275015483539, guid: df2aeecb44e6c9a47917fdd3dc7c2a8a,
         type: 3}

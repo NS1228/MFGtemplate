@@ -68,7 +68,7 @@ public class Shooting_test : MonoBehaviour
 
 
 
-        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay && ammo <= 5)
+        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay && ammo <= 6)
         {
             
                 canFire = true;
@@ -77,7 +77,7 @@ public class Shooting_test : MonoBehaviour
             
             ammo += 1;
 
-            if(ammo == 6)
+            if(ammo == 7)
             {
                 this.GetComponent<New_ShotgunMovement>().reload = true;
                 this.GetComponent<New_ShotgunMovement>().timeforReload = Time.time + 2.5f;

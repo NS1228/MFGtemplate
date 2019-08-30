@@ -72,21 +72,25 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("Ballshoe", false);
-                
+                this.GetComponent<Normal_jump>().enabled = true;
+
             }
 
             if(this.GetComponent<Rollerskates>().skating)
             {
                 animator.SetBool("isSkating", true);
+                
             }
             if (this.GetComponent<Rollerskates>().skating == false)
             {
                 animator.SetBool("isSkating", false);
+               
             }
             //  animator.SetBool("isSkating", false);
 
@@ -165,11 +169,14 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", true);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("BSleft", false);
+                this.GetComponent<Normal_jump>().enabled = true;
+
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -237,11 +244,13 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", true);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -307,11 +316,13 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("Ballshoe", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -383,11 +394,13 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("Ballshoe", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -458,11 +471,13 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("Ballshoe", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -535,11 +550,13 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("Ballshoe", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -614,11 +631,13 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("BSidle", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSright", false);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
                 this.GetComponent<Anim_testing>().enabled = false;
                 animator.SetBool("Ballshoe", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -691,14 +710,15 @@ public class Thirsperson_character : MonoBehaviour
         else
         {
 
-            // if skating anim is not played
-            animator.SetBool("isJog", false);
-            animator.SetBool("isIdle", true);
-            animator.SetBool("isLeftStrafe", false);
-            animator.SetBool("isRightStrafe", false);
-            animator.SetBool("Backwards", false);
-            animator.SetBool("isJump", false);
-
+            if (!Input.GetKey(KeyCode.Space))
+            {
+                animator.SetBool("isJog", false);
+                animator.SetBool("isIdle", true);
+                animator.SetBool("isLeftStrafe", false);
+                animator.SetBool("isRightStrafe", false);
+                animator.SetBool("Backwards", false);
+                animator.SetBool("isJump", false);
+            }
             //  animator.SetBool("isSkating", false);
 
             if (hasBall)
@@ -706,6 +726,7 @@ public class Thirsperson_character : MonoBehaviour
                 this.GetComponent<Anim_testing>().enabled = true;
                 animator.SetBool("Ballshoe", true);
                 animator.SetBool("BSidle", true);
+                this.GetComponent<Normal_jump>().enabled = false;
             }
             else
             {
@@ -713,6 +734,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("Ballshoe", false);
                 animator.SetBool("BSleft", false);
                 animator.SetBool("BSidle", false);
+                this.GetComponent<Normal_jump>().enabled = true;
             }
 
             if (this.GetComponent<Bouncy>().canBounce)
@@ -761,7 +783,7 @@ public class Thirsperson_character : MonoBehaviour
         }
 
 
-            if (thisrigidbody.velocity.y < -8)
+        if (thisrigidbody.velocity.y < -8 && !this.GetComponent<Rollerskates>().skating && !hasBall) 
             {
                 isGrounded = false;
             animator.SetBool("isFalling", true);

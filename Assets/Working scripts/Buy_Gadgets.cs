@@ -42,7 +42,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseBoosters()
     {
         Player.GetComponent<AbilityManager>().enabled = true;
-        Player.GetComponent<Normal_jump>().enabled = true;
+        
 
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
         Player.GetComponent<Bouncy>().enabled = false;
@@ -50,6 +50,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Telport_device>().enabled = false;
         Player.GetComponent<HBspawner>().enabled = false;
         Player.GetComponent<Rollerskates>().enabled = false;
+        Player.GetComponent<Fly_test>().enabled = false;
     }
 
     public void SellBoosters()
@@ -86,7 +87,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Fp_Cooldown>().enabled = false;
         Player.GetComponent<Telport_device>().enabled = false;
         Player.GetComponent<HBspawner>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = false;
+        Player.GetComponent<Fly_test>().enabled = false;
         Player.GetComponent<AbilityManager>().enabled = false;
 
     }
@@ -98,7 +99,7 @@ public class Buy_Gadgets : MonoBehaviour
         buyButtons[1].SetActive(true);
         sellButtons[1].SetActive(false);
         Player.GetComponent<Rollerskates>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = true;
+        
 
 
     }
@@ -129,7 +130,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Fp_Cooldown>().enabled = false;
         Player.GetComponent<Telport_device>().enabled = false;
         Player.GetComponent<HBspawner>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = false;
+        Player.GetComponent<Fly_test>().enabled = false;
         Player.GetComponent<AbilityManager>().enabled = false;
         Player.GetComponent<Rollerskates>().enabled = false;
 
@@ -142,7 +143,7 @@ public class Buy_Gadgets : MonoBehaviour
         buyButtons[2].SetActive(true);
         sellButtons[2].SetActive(false);
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = true;
+      
 
 
     }
@@ -165,7 +166,7 @@ public class Buy_Gadgets : MonoBehaviour
     {
 
         Player.GetComponent<Bouncy>().enabled = true;
-        Player.GetComponent<Normal_jump>().enabled = true;
+      
 
         Player.GetComponent<Fp_Cooldown>().enabled = false;
         Player.GetComponent<Telport_device>().enabled = false;
@@ -173,7 +174,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<AbilityManager>().enabled = false;
         Player.GetComponent<Rollerskates>().enabled = false;
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
-
+        Player.GetComponent<Fly_test>().enabled = false;
     }
 
     public void SellBouncy()
@@ -183,7 +184,7 @@ public class Buy_Gadgets : MonoBehaviour
         buyButtons[3].SetActive(true);
         sellButtons[3].SetActive(false);
         Player.GetComponent<Bouncy>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = true;
+     
 
 
     }
@@ -207,11 +208,11 @@ public class Buy_Gadgets : MonoBehaviour
     {
 
         Player.GetComponent<Fp_Cooldown>().enabled = true;
-
+        Player.GetComponent<Fly_test>().enabled = true;
 
         Player.GetComponent<Telport_device>().enabled = false;
         Player.GetComponent<HBspawner>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = false;
+        
         Player.GetComponent<AbilityManager>().enabled = false;
         Player.GetComponent<Rollerskates>().enabled = false;
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
@@ -226,7 +227,7 @@ public class Buy_Gadgets : MonoBehaviour
         buyButtons[4].SetActive(true);
         sellButtons[4].SetActive(false);
         Player.GetComponent<Fp_Cooldown>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = true;
+        Player.GetComponent<Fly_test>().enabled = false;
 
 
     }
@@ -249,7 +250,7 @@ public class Buy_Gadgets : MonoBehaviour
     {
 
         Player.GetComponent<Telport_device>().enabled = true;
-        Player.GetComponent<Normal_jump>().enabled = true;
+      
 
         Player.GetComponent<HBspawner>().enabled = false;
         Player.GetComponent<AbilityManager>().enabled = false;
@@ -257,7 +258,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
         Player.GetComponent<Bouncy>().enabled = false;
         Player.GetComponent<Fp_Cooldown>().enabled = false;
-
+        Player.GetComponent<Fly_test>().enabled = false;
 
     }
 
@@ -268,7 +269,7 @@ public class Buy_Gadgets : MonoBehaviour
         buyButtons[5].SetActive(true);
         sellButtons[5].SetActive(false);
         Player.GetComponent<Telport_device>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = true;
+       
         
 
     }
@@ -294,7 +295,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<HBspawner>().enabled = true;
 
 
-        Player.GetComponent<Normal_jump>().enabled = false;
+        Player.GetComponent<Fly_test>().enabled = false;
         Player.GetComponent<AbilityManager>().enabled = false;
         Player.GetComponent<Rollerskates>().enabled = false;
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false; 
@@ -311,7 +312,7 @@ public class Buy_Gadgets : MonoBehaviour
         buyButtons[6].SetActive(true);
         sellButtons[6].SetActive(false);
         Player.GetComponent<HBspawner>().enabled = false;
-        Player.GetComponent<Normal_jump>().enabled = true;
+      
         hbCamera.SetActive(false);
         defaultCamera.SetActive(true);
 

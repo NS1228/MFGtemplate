@@ -31,6 +31,7 @@ public class Fp_Cooldown : MonoBehaviour
         {
             cdTimer = 0;
             flyCD = true;
+            this.GetComponent<Normal_jump>().enabled = true;
         }
 
 
@@ -41,6 +42,7 @@ public class Fp_Cooldown : MonoBehaviour
             cdTimer = Time.time + 8;
             toFly = false;
             FP_Sound.fpSFX = true;
+            this.GetComponent<Normal_jump>().enabled = false;
 
             
         }
@@ -57,6 +59,7 @@ public class Fp_Cooldown : MonoBehaviour
             reset = true;
             resetTimer = Time.time + 10;
             anim.SetBool("isFlying", false);
+            this.GetComponent<Normal_jump>().enabled = true;
 
         }
 

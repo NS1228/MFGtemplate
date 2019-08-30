@@ -53,7 +53,7 @@ public class Normal_jump : MonoBehaviour
                 Sound_Manager.boostSFX = false;
                 Sound_Manager.bsSFX = false;
                 canJump = false;
-                jumpTimer = Time.time + 1.5f;
+                jumpTimer = Time.time + 1.75f;
                 jumpSpeed = true;
                 speedTimer = Time.time + 1.5f;
 

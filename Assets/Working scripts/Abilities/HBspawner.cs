@@ -116,7 +116,7 @@ public class HBspawner : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody>().useGravity = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.GetComponent<Thirsperson_character>().enabled = false;
-
+            this.GetComponent<Normal_jump>().enabled = false;
 
 
 
@@ -134,6 +134,7 @@ public class HBspawner : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody>().useGravity = true;
             this.gameObject.GetComponent<BoxCollider>().enabled = true;
             this.gameObject.GetComponent<Thirsperson_character>().enabled = true;
+            this.GetComponent<Normal_jump>().enabled = true;
         }
     }
 

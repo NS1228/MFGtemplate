@@ -30,7 +30,8 @@ public class Rollerskates : MonoBehaviour
     {
         if(skating && Input.GetKeyDown(KeyCode.F))
         {
-            skating = false; 
+            skating = false;
+           
         }
 
         if (!skating)
@@ -42,6 +43,7 @@ public class Rollerskates : MonoBehaviour
                 canSkate = false;
                 skateTimer = Time.time + 11;
                 skateCooldown = true;
+                
 
             }
         }
@@ -65,7 +67,7 @@ public class Rollerskates : MonoBehaviour
         {
             RS_Sound.skatingSFX = true;
             this.GetComponent<Thirsperson_character>().enabled = false;
-
+          
             transform.position += transform.forward * Time.deltaTime * speed;
             speed += 0.1f;
             if (speed >= 20)
@@ -76,6 +78,7 @@ public class Rollerskates : MonoBehaviour
 
         if(!skating)
         {
+           
             RS_Sound.skatingSFX = false;
             speed -= 0.1f;
             if (speed <= 8)

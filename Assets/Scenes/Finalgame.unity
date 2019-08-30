@@ -25348,6 +25348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlowholeDwarf_tpose
       objectReference: {fileID: 0}
+    - target: {fileID: 8049475169543356069, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6480155242714598582, guid: 7c4fd7f7eaeff454d8ac6a3d88771a44,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -28,6 +28,7 @@ public class Ballshoe_Cooldown : MonoBehaviour
             canBS = false;
             bsCooldown = true;
             bsTimer = Time.time + 12;
+            
         }
 
         if(bsCooldown && Time.time >= bsTimer)
@@ -36,6 +37,7 @@ public class Ballshoe_Cooldown : MonoBehaviour
             bsReset = true;
             resetTimer = Time.time + 6;
             bsCooldown = false;
+            
 
         }
 

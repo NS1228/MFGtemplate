@@ -186,7 +186,7 @@ public class Blowgun_Shooting : MonoBehaviour
 
         RaycastHit objectHit;
         // Shoot raycast
-        if (Physics.Raycast(transform.position + (transform.up * 1.5f), transform.forward, out objectHit, 50))
+        if (Physics.Raycast(transform.position + (transform.up * 1f), transform.forward, out objectHit, 50))
         {
             //Debug.Log("Raycast hitted to: " + objectHit.collider);
             targetEnmy = objectHit.collider.gameObject;

@@ -14,6 +14,10 @@ public class Sleeping_Enemies : MonoBehaviour
 
     public bool takeSleepDMG;
     public float dmgTimer;
+
+    public bool playAnim;
+
+    public bool sleepThis;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,8 @@ public class Sleeping_Enemies : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //stunDMG = false;
         anim = this.GetComponent<Animator>();
+
+        sleepThis = true;
        
     }
 
@@ -39,34 +45,24 @@ public class Sleeping_Enemies : MonoBehaviour
               inRange = false;
            } */
 
-      if(Enemy_Sleeper.PlayAnim)
+    /*  if(player.GetComponent<Enemy_Sleeper>().enemyAnim)
         {
             if (this.gameObject.tag == "Axer")
             {
                 anim.SetBool("Sleep", true);
-                this.GetComponent<Enemy_Movement>().enabled = false;
-                // this.GetComponent<Ranged_enemyFire>().enabled = false;
-                takeSleepDMG = true;
-                dmgTimer = Time.time + 5f;
                 anim.SetBool("Swing", false);
             }
             if (this.gameObject.tag == "Shotguner")
             {
                 anim.SetBool("Sleep", true);
-                this.GetComponent<New_ShotgunMovement>().enabled = false;
-                // this.GetComponent<Ranged_enemyFire>().enabled = false;
-                takeSleepDMG = true;
-                dmgTimer = Time.time + 5f;
+               
                 anim.SetBool("Shotgun", false);
             }
             if (this.gameObject.tag == "Blowguner")
             {
                 anim.SetBool("Sleep", true);
-                this.GetComponent<Blowguner_Movement>().enabled = false;
-                // this.GetComponent<Ranged_enemyFire>().enabled = false;
-                takeSleepDMG = true;
-                dmgTimer = Time.time + 5f;
                 anim.SetBool("Blowgun", false);
+
             }
 
 
@@ -75,7 +71,7 @@ public class Sleeping_Enemies : MonoBehaviour
       else
         {
             anim.SetBool("Sleep", false);
-        }
+        } */
 
         
 
@@ -92,10 +88,58 @@ public class Sleeping_Enemies : MonoBehaviour
            
         }
 
-        if (player.GetComponent<Enemy_Sleeper>().HackThem == true && inRange)
+
+
+        if (player.GetComponent<Enemy_Sleeper>().HackThem == true && player.GetComponent<Enemy_Sleeper>().enemyAnim && sleepThis)
         {
-            
-        
+            sleepThis = false;
+            if (inRange)
+            {
+
+                if (this.gameObject.tag == "Blowguner")
+                {
+                    this.GetComponent<Blowguner_Movement>().enabled = false;
+                    this.GetComponent<Blowgun_Shooting>().enabled = false;
+                    // this.GetComponent<Ranged_enemyFire>().enabled = false;
+                    takeSleepDMG = true;
+                    dmgTimer = Time.time + 5f;
+                    playAnim = true;
+
+                    anim.SetBool("Sleep", true);
+                    anim.SetBool("Blowgun", false);
+
+
+
+
+                }
+                if (this.gameObject.tag == "Shotguner")
+                {
+
+                    this.GetComponent<New_ShotgunMovement>().enabled = false;
+                    this.GetComponent<Shooting_test>().enabled = false;
+                    takeSleepDMG = true;
+                    dmgTimer = Time.time + 5f;
+                    playAnim = true;
+
+                    anim.SetBool("Sleep", true);
+                    anim.SetBool("Shotgun", false);
+
+
+                }
+                if (this.gameObject.tag == "Axer")
+                {
+
+                    this.GetComponent<Enemy_Movement>().enabled = false;
+                    takeSleepDMG = true;
+                    dmgTimer = Time.time + 5f;
+                    playAnim = true;
+
+                    anim.SetBool("Sleep", true);
+                    anim.SetBool("Swing", false);
+
+                }
+            }
+
 
 
 
@@ -109,14 +153,25 @@ public class Sleeping_Enemies : MonoBehaviour
                 {
                     gameObject.GetComponent<Enemy_Movement>().enabled = true;
                     //gameObject.GetComponent<Ranged_enemyFire>().enabled = true;
+                    playAnim = false;
+                    anim.SetBool("Sleep", false);
+                    sleepThis = true;
                 }
                 if(this.gameObject.tag == "Shotguner")
                 {
                     gameObject.GetComponent<New_ShotgunMovement>().enabled = true;
+                    gameObject.GetComponent<Shooting_test>().enabled = true;
+                    playAnim = false;
+                    anim.SetBool("Sleep", false);
+                    sleepThis = true;
                 }
                 if (this.gameObject.tag == "Blowguner")
                 {
                     gameObject.GetComponent<Blowguner_Movement>().enabled = true;
+                    this.GetComponent<Blowgun_Shooting>().enabled = true;
+                    playAnim = false;
+                    anim.SetBool("Sleep", false);
+                    sleepThis = true;
                 }
             }
           
@@ -128,6 +183,7 @@ public class Sleeping_Enemies : MonoBehaviour
         {
             takeSleepDMG = false;
             this.GetComponent<AI_health>().health -= 20;
+            
         }
 
         if (anim.GetBool("Dead") == true)

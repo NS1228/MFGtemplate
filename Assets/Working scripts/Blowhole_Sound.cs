@@ -22,7 +22,7 @@ public class Blowhole_Sound : MonoBehaviour
     {
         if (blowgunSFX && canBlowgun)
         {
-            audioSourcee.PlayOneShot(blowgun, 0.3f);
+            audioSourcee.PlayOneShot(blowgun, 0.7f);
             blowgunTimer = Time.time + 3f;
         }
 

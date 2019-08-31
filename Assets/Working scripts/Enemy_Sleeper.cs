@@ -28,7 +28,9 @@ public class Enemy_Sleeper : MonoBehaviour
 
     AudioSource audios;
 
-    public static bool PlayAnim;
+    public  bool PlayAnim;
+
+    public bool enemyAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +61,8 @@ public class Enemy_Sleeper : MonoBehaviour
             audios.volume = 1;
             soundSwitch = false;
             Mine_Sound.sleeperSFX = false;
-            PlayAnim = true;
+            // playAnim = true;
+            enemyAnim = true;
             
             
         }
@@ -95,7 +98,7 @@ public class Enemy_Sleeper : MonoBehaviour
 
             resetthis = true;
             resettimer = Time.time + 7;
-            PlayAnim = false;
+            enemyAnim = false;
 
 
         }

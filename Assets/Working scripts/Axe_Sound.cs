@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Axe_Sound : MonoBehaviour
 {
+    public GameObject dwarf;
+
     public AudioClip axe;
     AudioSource audioSourcee;
 
@@ -41,8 +43,17 @@ public class Axe_Sound : MonoBehaviour
 
         if (!axeSFX)
         {
-           // audioSourcee.Stop();
-           axeTimer = 0;
+            if (dwarf.GetComponent<Enemy_Movement>().isFrozen)
+            {
+                audioSourcee.Stop();
+            }
+            if(dwarf.GetComponent<Enemy_Movement>().isStun)
+            {
+                audioSourcee.Stop();
+            }
+           
+
+            axeTimer = 0;
         }
     }
 }

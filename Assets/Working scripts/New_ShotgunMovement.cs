@@ -44,6 +44,9 @@ public class New_ShotgunMovement : MonoBehaviour
     public bool realoading;
     public float timeforReload;
 
+    public bool freezeReShoot;
+    public float freezeShootTimer;
+
 
     void Start()
     {
@@ -61,7 +64,7 @@ public class New_ShotgunMovement : MonoBehaviour
 
     void Update()
     {
-        if(reload && anim.GetBool("Sleep") == false)
+        if(reload && anim.GetBool("Sleep") == false && !isFrozen)
         {
             anim.SetBool("Reload", true);
             anim.SetBool("Shotgun", false);
@@ -234,6 +237,9 @@ public class New_ShotgunMovement : MonoBehaviour
             MoveSpeed = 0;
             speedLower = false;
             anim.SetBool("Freeze", true);
+            Freeze_Soundy.freezeSFX = true;
+            MinDist = 500;
+            MaxDist = 500;
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
@@ -242,6 +248,19 @@ public class New_ShotgunMovement : MonoBehaviour
             canFreeze = false;
             isFrozen = false;
             anim.SetBool("Freeze", false);
+            Freeze_Soundy.freezeSFX = false;
+            freezeReShoot = true;
+            freezeShootTimer = Time.time + 0.5f;
+
+           
+            
+        }
+
+        if(freezeReShoot && Time.time >= freezeShootTimer)
+        {
+            MinDist = 1.4f;
+            MaxDist = 9;
+            freezeReShoot = false;
         }
     }
 

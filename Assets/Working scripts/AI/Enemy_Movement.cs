@@ -215,6 +215,9 @@ public class Enemy_Movement : MonoBehaviour
             MoveSpeed = 0;
             speedLower = false;
             anim.SetBool("Freeze", true);
+            Freeze_Soundy.freezeSFX = true;
+            MinDist = 500;
+            MaxDist = 500;
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
@@ -223,6 +226,10 @@ public class Enemy_Movement : MonoBehaviour
             canFreeze = false;
             isFrozen = false;
             anim.SetBool("Freeze",false);
+            Freeze_Soundy.freezeSFX = false;
+            MinDist = 1.4f;
+            MaxDist = 1.7f;
+
         }
     }
 

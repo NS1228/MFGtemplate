@@ -168,6 +168,7 @@ public class Sleeping_Enemies : MonoBehaviour
                 if (this.gameObject.tag == "Blowguner")
                 {
                     gameObject.GetComponent<Blowguner_Movement>().enabled = true;
+                    
                     this.GetComponent<Blowgun_Shooting>().enabled = true;
                     playAnim = false;
                     anim.SetBool("Sleep", false);

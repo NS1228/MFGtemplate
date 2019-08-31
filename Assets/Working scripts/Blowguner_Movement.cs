@@ -224,6 +224,9 @@ public class Blowguner_Movement : MonoBehaviour
             MoveSpeed = 0;
             speedLower = false;
             anim.SetBool("Freeze", true);
+            Freeze_Soundy.freezeSFX = true;
+            MaxDist = 500;
+            MinDist = 500;
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
@@ -232,6 +235,9 @@ public class Blowguner_Movement : MonoBehaviour
             canFreeze = false;
             isFrozen = false;
             anim.SetBool("Freeze", false);
+            Freeze_Soundy.freezeSFX = false;
+            MaxDist = 100;
+            MinDist = 0;
         }
     }
 

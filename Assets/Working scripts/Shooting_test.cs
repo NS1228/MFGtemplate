@@ -200,15 +200,20 @@ public class Shooting_test : MonoBehaviour
             if (targetEnmy == GameObject.FindGameObjectWithTag("Player"))
             {
                 inSight = true;
-                this.GetComponent<New_ShotgunMovement>().MaxDist = 9f;
-                this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
-
+                if (!this.GetComponent<New_ShotgunMovement>().isFrozen && !this.GetComponent<New_ShotgunMovement>().freezeReShoot)
+                {
+                    this.GetComponent<New_ShotgunMovement>().MaxDist = 9f;
+                    this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
+                }
             }
             else
             {
                 inSight = false;
-                this.GetComponent<New_ShotgunMovement>().MaxDist = 1.4f;
-                this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
+                if (!this.GetComponent<New_ShotgunMovement>().isFrozen)
+                {
+                    this.GetComponent<New_ShotgunMovement>().MaxDist = 1.4f;
+                    this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
+                }
             }
 
         }

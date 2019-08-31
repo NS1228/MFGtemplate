@@ -104,9 +104,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+               Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
@@ -116,9 +116,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = true;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 animator.SetFloat("Boost", 3f);
                 BS_sound.rollingSFX = false;
 
@@ -129,9 +129,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
                 
                  
@@ -142,9 +142,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -190,9 +190,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = true;
+                Strafe_Sound.strafeSFX = true;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
             }
@@ -200,9 +200,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = true;
+                Strafe_Sound.bsSFX = true;
                 animator.SetFloat("Boost", 3f);
                 
             }
@@ -210,18 +210,18 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -262,9 +262,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = true;
+                Strafe_Sound.strafeSFX = true;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
             }
@@ -272,9 +272,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = true;
+                Strafe_Sound.bsSFX = true;
                 animator.SetFloat("Boost", 3f);
                 
             }
@@ -282,18 +282,18 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -334,9 +334,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
@@ -346,9 +346,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = true;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 3f);
                 
@@ -357,9 +357,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
                
                 
@@ -369,9 +369,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -412,9 +412,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
@@ -423,9 +423,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = true;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 3f);
                 
@@ -434,9 +434,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
 
 
@@ -446,9 +446,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -489,9 +489,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
@@ -500,9 +500,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = true;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 3f);
                 
@@ -511,9 +511,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
 
 
@@ -523,9 +523,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -568,9 +568,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 1f);
                 
@@ -580,9 +580,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = true;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 3f);
                 
@@ -591,9 +591,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
 
 
@@ -603,9 +603,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -649,9 +649,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = true;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 1f);
                
@@ -660,9 +660,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = true;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 animator.SetFloat("Boost", 3f);
                
@@ -671,9 +671,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = true;
 
 
@@ -683,9 +683,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
 
             }
@@ -693,9 +693,9 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && FP_Sound.fpSFX == true)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 
 
@@ -748,18 +748,18 @@ public class Thirsperson_character : MonoBehaviour
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
             }
 
             if (!hasBall && AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                BS_sound.rollingSFX = false;
                 
             }
@@ -767,9 +767,9 @@ public class Thirsperson_character : MonoBehaviour
             if (hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false)
             {
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 BS_sound.rollingSFX = false;
                 //turn on sound for ballshoe//
 

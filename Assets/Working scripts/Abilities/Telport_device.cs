@@ -93,7 +93,7 @@ public class Telport_device : MonoBehaviour
             telep.transform.parent = null;
             telep.GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForceHeight);
             StartCoroutine(Teleportthis());
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;
             anim.SetBool("highThrow", false);
@@ -118,7 +118,7 @@ public class Telport_device : MonoBehaviour
             telep.transform.parent = null;
             telep.GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForceLength);
             StartCoroutine(Teleportthis());
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             anim.SetBool("lowThrow", false);
             this.GetComponent<Thirsperson_character>().verSpeed =  2;
             Thirsperson_character.speed = 4;

@@ -93,10 +93,9 @@ public class Turret_shooting : MonoBehaviour
 
         if (nearestEnemy != null && shortestDistance <= range)
         {
-            if (nearestEnemy.GetComponent<Animator>().GetBool("Dead") == false)
-            {
+            
                 target = nearestEnemy.transform;
-            }
+             
             // parent.transform.LookAt(target.transform.position);
             Vector3 dir = target.position - parent.transform.position;
             Quaternion Lookdirection = Quaternion.LookRotation(dir);
@@ -105,6 +104,16 @@ public class Turret_shooting : MonoBehaviour
 
 
         }
+
+        if(nearestEnemy.GetComponent<Animator>().GetBool("Dead") == true)
+        {
+            nearestEnemy.gameObject.tag = "Fire";
+           
+        }
+
+        
+
+       
 
 
         if (target == null)

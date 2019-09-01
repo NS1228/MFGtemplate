@@ -13,6 +13,9 @@ public class Axe_Sound : MonoBehaviour
     public bool canAxe;
     public float axeTimer;
 
+    public bool soundSwitch;
+    public float switchTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +54,18 @@ public class Axe_Sound : MonoBehaviour
             {
                 audioSourcee.Stop();
             }
-           
 
+            soundSwitch = true;
+            switchTimer = Time.time + 1f;
+
+           // audioSourcee.Stop();
+            
+        }
+
+        if(soundSwitch && Time.time >= switchTimer)
+        {
+            soundSwitch = false;
+            audioSourcee.Stop();
             axeTimer = 0;
         }
     }

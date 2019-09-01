@@ -1,5 +1,148 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1210723456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210723457}
+  - component: {fileID: 1210723459}
+  - component: {fileID: 1210723458}
+  m_Layer: 13
+  m_Name: freeze_sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1210723457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210723456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6480155242714598582}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1210723459
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210723456}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1210723458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210723456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0c6157ca5778948897af865f643245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeze: {fileID: 8300000, guid: 140e2ff560d3ef844b37844f2dcdfc98, type: 3}
+  canFreeze: 0
+  freezeTimer: 0
 --- !u!1 &1558129208
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +587,36 @@ MonoBehaviour:
   dwarfdeath: {fileID: 8300000, guid: 6295c1268f665f24391cd976bd5c1530, type: 3}
   canDwarfDeath: 0
   dwarfdeathTimer: 0
+--- !u!1 &1129160715973025883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3437988830626758052}
+  m_Layer: 13
+  m_Name: fb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3437988830626758052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129160715973025883}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.89400005, z: 0.636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6480155242714598582}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135288396162441893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2522,8 @@ Transform:
   - {fileID: 8637266697654827140}
   - {fileID: 6779307439898504752}
   - {fileID: 1558129209}
+  - {fileID: 1210723457}
+  - {fileID: 3437988830626758052}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2494,6 +2669,8 @@ MonoBehaviour:
   animShooting: 0
   reShoot: 0
   shootTimer: 0
+  freezeReShoot: 0
+  freezeShootTimer: 0
 --- !u!114 &8296172668288613567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2517,6 +2694,9 @@ MonoBehaviour:
   fireDelay: 0
   shootTiming: 0
   shootTimer: 0
+  fireBall: {fileID: 8807010254667011160, guid: 29912944fdc87774e96ac281bbc04616,
+    type: 3}
+  fbPosition: {fileID: 1129160715973025883}
 --- !u!114 &8296172668288613568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,6 +2759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8637266697654827140}
   - component: {fileID: 7186661397587113990}
+  - component: {fileID: 728361250}
   m_Layer: 0
   m_Name: Dwarf_body
   m_TagString: Blowguner
@@ -2702,6 +2883,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00002142787, y: -0.09899777, z: 0.024077713}
     m_Extent: {x: 0.61958313, y: 0.68244475, z: 0.2839548}
   m_DirtyAABB: 0
+--- !u!114 &728361250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247655657197441727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aad214c3ab914b4292c1284420dd41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8284754249519632164
 GameObject:
   m_ObjectHideFlags: 0

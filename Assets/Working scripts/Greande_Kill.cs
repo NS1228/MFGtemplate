@@ -96,16 +96,29 @@ public class Greande_Kill : MonoBehaviour
     }
 
 
-     void OnCollisionEnter(Collision other)
-     {
-     if(other.gameObject.name == "Floor")
-       {
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Floor")
+        {
             timetoBlow = true;
             blowTime = Time.time + 3f;
+            Grenade_Bounce.gbounceSFX = true;
+            print("bounce sound");
 
-       
-      }
-   }
+
+        }
+    }
+
+        void OnCollisionExit(Collision other)
+        {
+            if (other.gameObject.tag == "Floor")
+            {
+               
+                Grenade_Bounce.gbounceSFX = false;
+            print("bounce off");
+
+            }
+        }
 
 
 

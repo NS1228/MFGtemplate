@@ -23,7 +23,7 @@ public class Grenade_Sound : MonoBehaviour
         if (grenadexpSFX && canGrenadexp)
         {
             audioSourcee.PlayOneShot(grenadexp, 0.7f);
-            grenadexpTimer = Time.time + 0.7f;
+            grenadexpTimer = Time.time + 2.4f;
         }
 
         if (Time.time >= grenadexpTimer)

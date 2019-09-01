@@ -36,9 +36,13 @@ public class Impact_script : MonoBehaviour
 
         if(Time.time >= destroyTimer && canDie)
         {
-             Destroy(this.gameObject);
+            this.GetComponent<SphereCollider>().enabled = false;
+            this.GetComponent<MeshRenderer>().enabled = false;
             grenadeSpawner.GetComponent<Grenade_drop>().grenadeLimit -= 1;
             canDie = false;
+            this.GetComponent<Greande_Kill>().blowTime = Time.time + 3;
+            this.GetComponent<Greande_Kill>().timetoBlow = true;
+            Grenade_Sound.grenadexpSFX = true;
             // this.GetComponent<Greande_Kill>().timetoBlow = true;
 
         } 

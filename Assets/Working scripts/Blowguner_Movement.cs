@@ -40,7 +40,10 @@ public class Blowguner_Movement : MonoBehaviour
     public bool reShoot;
     public float shootTimer;
 
-   
+    public bool freezeReShoot;
+    public float freezeShootTimer;
+
+
 
 
     void Start()
@@ -236,8 +239,15 @@ public class Blowguner_Movement : MonoBehaviour
             isFrozen = false;
             anim.SetBool("Freeze", false);
             Freeze_Soundy.freezeSFX = false;
+            freezeReShoot = true;
+            freezeShootTimer = Time.time + 0.5f;
+        }
+
+        if (freezeReShoot && Time.time >= freezeShootTimer)
+        {
             MaxDist = 100;
             MinDist = 0;
+            freezeReShoot = false;
         }
     }
 

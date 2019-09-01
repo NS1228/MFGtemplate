@@ -30,6 +30,9 @@ public class Blowgun_Shooting : MonoBehaviour
     public float shootTimer;
 
     Animator anim;
+
+    public GameObject fireBall;
+    public GameObject fbPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +76,7 @@ public class Blowgun_Shooting : MonoBehaviour
 
             canFire = true;
             fireDelay = Time.time + 3;
-
+            Instantiate(fireBall, fbPosition.transform.position, fbPosition.transform.rotation);
 
 
 
@@ -89,6 +92,7 @@ public class Blowgun_Shooting : MonoBehaviour
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -booster");
                     player.GetComponent<Health_script>().health -= 20;
+                    Instantiate(fireBall, fbPosition.transform.position, fbPosition.transform.rotation);
                 }
             if (player.GetComponent<Rollerskates>().skating)
                 if (shooting >= 0.70f)
@@ -131,8 +135,8 @@ public class Blowgun_Shooting : MonoBehaviour
 
                     playerHealth -= playerDMG;
 
-                   
-                        player.GetComponent<Health_script>().health -= 20;
+                    
+                    player.GetComponent<Health_script>().health -= 20;
                         print("TAKEDAMAGE -normal");
                     
                 }

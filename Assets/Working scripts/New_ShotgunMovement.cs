@@ -47,6 +47,8 @@ public class New_ShotgunMovement : MonoBehaviour
     public bool freezeReShoot;
     public float freezeShootTimer;
 
+   
+
 
     void Start()
     {

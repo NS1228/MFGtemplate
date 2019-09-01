@@ -116,7 +116,7 @@ public class Turret_shooting : MonoBehaviour
         {
             target.GetComponent<AI_health>().health -= 40;
             fireDelay = Time.time + 2;
-
+            Turret_Audio.turretSFX = true;
 
             GameObject bulletGo = (GameObject)Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
             Bullets bullet = bulletGo.GetComponent<Bullets>();
@@ -129,6 +129,11 @@ public class Turret_shooting : MonoBehaviour
             //  prefab.transform.position = target.transform.position * speed * Time.deltaTime;
 
         }
+        else
+        {
+            Turret_Audio.turretSFX = false;
+        }
+
 
 
 

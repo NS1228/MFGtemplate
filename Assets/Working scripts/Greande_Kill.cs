@@ -11,6 +11,9 @@ public class Greande_Kill : MonoBehaviour
     public bool timetoBlow;
     public float blowTime;
 
+    public bool destroy;
+    public float destroyTimer;
+
     public GameObject gSpawner;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +30,13 @@ public class Greande_Kill : MonoBehaviour
         if(Time.time >= blowTime && timetoBlow)
         {
             timetoBlow = false;
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            destroy = true;
+            destroyTimer = Time.time + 3;
+            this.GetComponent<SphereCollider>().enabled = false;
+            this.GetComponent<MeshRenderer>().enabled = false;
+
+            Grenade_Sound.grenadexpSFX = true;
         }
 
         Collider[] cols = Physics.OverlapSphere(transform.position, radius);
@@ -38,7 +47,12 @@ public class Greande_Kill : MonoBehaviour
               // assuming the enemy script is called EnemyScript
                AI_health script = col.GetComponent<AI_health>();
                 script.health -= 10; // apply damage 5
-                Destroy(gameObject);
+
+                destroy = true;
+                destroyTimer = Time.time + 3;
+                this.GetComponent<SphereCollider>().enabled = false;
+                this.GetComponent<MeshRenderer>().enabled = false;
+                Grenade_Sound.grenadexpSFX = true;
 
             }
 
@@ -47,7 +61,12 @@ public class Greande_Kill : MonoBehaviour
               // assuming the enemy script is called EnemyScript
                 AI_health script = col.GetComponent<AI_health>();
                 script.health -= 10; // apply damage 5
-                Destroy(gameObject);
+
+                destroy = true;
+                destroyTimer = Time.time + 3;
+                this.GetComponent<SphereCollider>().enabled = false;
+                this.GetComponent<MeshRenderer>().enabled = false;
+                Grenade_Sound.grenadexpSFX = true;
 
             }
 
@@ -56,12 +75,24 @@ public class Greande_Kill : MonoBehaviour
               // assuming the enemy script is called EnemyScript
                 AI_health script = col.GetComponent<AI_health>();
                 script.health -= 10; // apply damage 5
-                Destroy(gameObject);
+
+                destroy = true;
+                destroyTimer = Time.time + 3;
+                this.GetComponent<SphereCollider>().enabled = false;
+                this.GetComponent<MeshRenderer>().enabled = false;
+                Grenade_Sound.grenadexpSFX = true;
 
             }
 
 
         }
+
+        if (destroy && Time.time >= destroyTimer)
+        {
+            Destroy(gameObject);
+        }
+
+
     }
 
 

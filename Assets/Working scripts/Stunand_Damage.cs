@@ -40,6 +40,7 @@ public class Stunand_Damage : MonoBehaviour
             Unfreeze = true;
             frozenObject.GetComponent<AI_health>().health -= 40;
             frozenObject.GetComponent<Enemy_Movement>().isStun = true;
+            Electric_Sound.shockSFX = true;
         }
 
         if (other.gameObject.tag == "Shotguner")
@@ -52,6 +53,7 @@ public class Stunand_Damage : MonoBehaviour
             Unfreeze = true;
             frozenObject.GetComponent<AI_health>().health -= 40;
             frozenObject.GetComponent<New_ShotgunMovement>().isStun = true;
+            Electric_Sound.shockSFX = true;
         }
 
         if (other.gameObject.tag == "Blowguner")
@@ -64,6 +66,7 @@ public class Stunand_Damage : MonoBehaviour
             Unfreeze = true;
             frozenObject.GetComponent<AI_health>().health -= 40;
             frozenObject.GetComponent<Blowguner_Movement>().isStun = true;
+            Electric_Sound.shockSFX = true;
         }
 
 
@@ -96,6 +99,7 @@ public class Stunand_Damage : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(parent.gameObject);
             frozenObject.GetComponent<Enemy_Movement>().isStun = false;
+            Electric_Sound.shockSFX = false;
 
 
         }
@@ -107,6 +111,7 @@ public class Stunand_Damage : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(parent.gameObject);
             frozenObject.GetComponent<New_ShotgunMovement>().isStun = false;
+            Electric_Sound.shockSFX = false;
 
 
         }
@@ -118,6 +123,7 @@ public class Stunand_Damage : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(parent.gameObject);
             frozenObject.GetComponent<Blowguner_Movement>().isStun = false;
+            Electric_Sound.shockSFX = false;
 
 
         }

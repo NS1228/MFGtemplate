@@ -12,6 +12,9 @@ public class Orb_movement : MonoBehaviour
     public AudioClip orbExp;
     AudioSource audioSourcee;
 
+    public GameObject orbexp;
+    public GameObject expPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class Orb_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         transform.position += transform.forward * Time.deltaTime * speed;
         
         //transform.rotation = 
@@ -43,6 +47,7 @@ public class Orb_movement : MonoBehaviour
             destroyTimer = Time.time + 3f;
             print("COLLIDE");
             audioSourcee.PlayOneShot(orbExp, 0.7f);
+            Instantiate(orbexp, expPoint.transform.position, expPoint.transform.rotation);
         }
 
         if (other.gameObject.tag == "Shotguner")
@@ -54,6 +59,7 @@ public class Orb_movement : MonoBehaviour
             destroyTimer = Time.time + 3f;
             print("COLLIDE");
             audioSourcee.PlayOneShot(orbExp, 0.7f);
+            Instantiate(orbexp, expPoint.transform.position, expPoint.transform.rotation);
         }
 
         if (other.gameObject.tag == "Blowguner")
@@ -65,6 +71,7 @@ public class Orb_movement : MonoBehaviour
             destroyTimer = Time.time + 3f;
             print("COLLIDE");
             audioSourcee.PlayOneShot(orbExp, 0.7f);
+            Instantiate(orbexp, expPoint.transform.position, expPoint.transform.rotation);
         }
     }
 

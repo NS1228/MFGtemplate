@@ -26,8 +26,11 @@ public class Shooting_test : MonoBehaviour
     public float ammo = 0;
 
     public float shootTiming;
-    
- 
+
+    public GameObject muzzle;
+    public GameObject muzzlePos;
+
+
 
     Animator anim;
     // Start is called before the first frame update
@@ -73,7 +76,7 @@ public class Shooting_test : MonoBehaviour
             
                 canFire = true;
                 fireDelay = Time.time + 1;
-            
+            Instantiate(muzzle, muzzlePos.transform.position, muzzlePos.transform.rotation);
             
             ammo += 1;
 

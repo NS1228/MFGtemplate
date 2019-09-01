@@ -15,6 +15,9 @@ public class DMG_enemy : MonoBehaviour
     public bool destroy;
     public float destroyTimer;
 
+    public GameObject explosion;
+    public GameObject explosionPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +84,7 @@ public class DMG_enemy : MonoBehaviour
                 this.GetComponent<BoxCollider>().enabled = false;
                 destroy = true;
                 destroyTimer = Time.time + 3f;
+                Instantiate(explosion, explosionPoint.transform.position, explosionPoint.transform.rotation);
             }
         }
     }

@@ -15,10 +15,17 @@ public class Greande_Kill : MonoBehaviour
     public float destroyTimer;
 
     public GameObject gSpawner;
+
+    public GameObject gexp;
+    public GameObject gexpPoint;
+
+    public bool addTimer;
     // Start is called before the first frame update
     void Start()
     {
         location = this.transform.position;
+        addTimer = true;
+
        
     }
 
@@ -37,6 +44,9 @@ public class Greande_Kill : MonoBehaviour
             this.GetComponent<MeshRenderer>().enabled = false;
 
             Grenade_Sound.grenadexpSFX = true;
+
+            Instantiate(gexp, gexpPoint.transform.position, gexpPoint.transform.rotation);
+            print("EXPLOSE NOW");
         }
 
         Collider[] cols = Physics.OverlapSphere(transform.position, radius);
@@ -54,6 +64,8 @@ public class Greande_Kill : MonoBehaviour
                 this.GetComponent<MeshRenderer>().enabled = false;
                 Grenade_Sound.grenadexpSFX = true;
 
+                Instantiate(gexp, gexpPoint.transform.position, gexpPoint.transform.rotation);
+
             }
 
             if (col && col.tag == "Shotguner")
@@ -68,6 +80,7 @@ public class Greande_Kill : MonoBehaviour
                 this.GetComponent<MeshRenderer>().enabled = false;
                 Grenade_Sound.grenadexpSFX = true;
 
+                Instantiate(gexp, gexpPoint.transform.position, gexpPoint.transform.rotation);
             }
 
             if (col && col.tag == "Blowguner")
@@ -81,6 +94,8 @@ public class Greande_Kill : MonoBehaviour
                 this.GetComponent<SphereCollider>().enabled = false;
                 this.GetComponent<MeshRenderer>().enabled = false;
                 Grenade_Sound.grenadexpSFX = true;
+
+                Instantiate(gexp, gexpPoint.transform.position, gexpPoint.transform.rotation);
 
             }
 
@@ -100,10 +115,14 @@ public class Greande_Kill : MonoBehaviour
     {
         if (other.gameObject.tag == "Floor")
         {
-            timetoBlow = true;
-            blowTime = Time.time + 3f;
+            if (addTimer)
+            {
+                timetoBlow = true;
+                blowTime = Time.time + 3f;
+                addTimer = false;
+            }
             Grenade_Bounce.gbounceSFX = true;
-            print("bounce sound");
+           // print("bounce sound");
 
 
         }
@@ -115,7 +134,7 @@ public class Greande_Kill : MonoBehaviour
             {
                
                 Grenade_Bounce.gbounceSFX = false;
-            print("bounce off");
+           // print("bounce off");
 
             }
         }

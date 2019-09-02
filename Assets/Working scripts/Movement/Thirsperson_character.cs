@@ -187,7 +187,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("isLeftStrafe", false);
                 Sound_Manager.jogSFX = false;
                 Strafe_Sound.strafeSFX = false;
-
+                animator.SetBool("isIdle", true);
             }
 
 
@@ -263,7 +263,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("isRightStrafe", false);
                 Sound_Manager.jogSFX = false;
                 Strafe_Sound.strafeSFX = false;
-
+                animator.SetBool("isIdle", true);
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false && !this.GetComponent<Bouncy>().canBounce)
@@ -337,7 +337,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("isJog", false);
                 Sound_Manager.jogSFX = false;
                 Strafe_Sound.strafeSFX = false;
-
+                animator.SetBool("isIdle", true);
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false && !this.GetComponent<Bouncy>().canBounce)
@@ -496,7 +496,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("isJog", false);
                 Sound_Manager.jogSFX = false;
                 Strafe_Sound.strafeSFX = false;
-
+                animator.SetBool("isIdle", true);
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false && !this.GetComponent<Bouncy>().canBounce)
@@ -577,7 +577,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("isJog", false);
                 Sound_Manager.jogSFX = false;
                 Strafe_Sound.strafeSFX = false;
-
+                animator.SetBool("isIdle", true);
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false && !this.GetComponent<Bouncy>().canBounce)
@@ -660,7 +660,7 @@ public class Thirsperson_character : MonoBehaviour
                 animator.SetBool("isJog", false);
                 Sound_Manager.jogSFX = false;
                 Strafe_Sound.strafeSFX = false;
-
+                animator.SetBool("isIdle", true);
             }
 
             if (!hasBall && !AbilityManager.hasBooster && Jump_sound.jumpSFX == false && Teleporting_Sound.muteWalk == false && HB_sound.hbSFX == false && !this.GetComponent<Bouncy>().canBounce)

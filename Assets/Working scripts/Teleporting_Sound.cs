@@ -34,7 +34,7 @@ public class Teleporting_Sound : MonoBehaviour
             muteWalking = true;
             muteTimer = Time.time + 1;
             Sound_Manager.jogSFX = false;
-            Sound_Manager.strafeSFX = false;
+            Strafe_Sound.strafeSFX = false;
             player.GetComponent<Normal_jump>().enabled = false;
           
             
@@ -57,7 +57,7 @@ public class Teleporting_Sound : MonoBehaviour
         {
             muteWalk = false;
             Sound_Manager.jogSFX = true;
-            Sound_Manager.strafeSFX = true;
+            Strafe_Sound.strafeSFX = true;
             muteWalking = false;
             player.GetComponent<Normal_jump>().enabled = true;
 

@@ -49,9 +49,9 @@ public class Normal_jump : MonoBehaviour
                 this.GetComponent<Thirsperson_character>().verSpeed = 1.5f;
                 Jump_sound.jumpSFX = true;
                 Sound_Manager.jogSFX = false;
-                Sound_Manager.strafeSFX = false;
+                Strafe_Sound.strafeSFX = false;
                 Sound_Manager.boostSFX = false;
-                Sound_Manager.bsSFX = false;
+                Strafe_Sound.bsSFX = false;
                 canJump = false;
                 jumpTimer = Time.time + 1.75f;
                 jumpSpeed = true;

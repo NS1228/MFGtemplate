@@ -2287,8 +2287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652725993b146064eaea48f5c2aaaa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEnmy: {fileID: 0}
-  player: {fileID: 0}
+  targetEnmy: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26,
+    type: 3}
+  player: {fileID: -4216859302048453862, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   inSight: 0
   shooting: 1
   playerHealth: 100
@@ -2312,8 +2313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c25156f04b15e45b3a5565f539e3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  player: {fileID: 0}
+  Player: {fileID: -4216859302048453862, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
+  player: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   range: 12.5
   inRange: 0
   takeSleepDMG: 0
@@ -2360,8 +2361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733139d70ce436447be96f566e0ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  player: {fileID: 0}
+  Player: {fileID: -4216859302048453862, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
+  player: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   MoveSpeed: 4
   MaxDist: 9
   MinDist: 1.4

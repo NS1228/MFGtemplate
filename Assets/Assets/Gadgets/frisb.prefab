@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 640753801076979663}
   - component: {fileID: 2902366509478047905}
   - component: {fileID: -8665975871292884115}
+  - component: {fileID: 7291268629037241295}
   m_Layer: 0
   m_Name: frisb
   m_TagString: Untagged
@@ -189,3 +190,20 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7291268629037241295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568956966922238850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e938563dee95f1f48ba14388e77fe689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  skinWidth: 1

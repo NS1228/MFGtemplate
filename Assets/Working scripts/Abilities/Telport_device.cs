@@ -24,6 +24,7 @@ public class Telport_device : MonoBehaviour
         StartCoroutine(AddTPD());
         tpdevices = 1;
         anim = this.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -67,11 +68,13 @@ public class Telport_device : MonoBehaviour
     IEnumerator Teleportthis()
     {
         yield return new WaitForSeconds(2);
-       this.transform.position = telep.transform.position;
+        
+        this.transform.position = telep.transform.position;
         Teleporting_Sound.tpSFX = false;
-        //yield return new WaitForSeconds(1);
-        Destroy(telep);
-        print("yes");
+        yield return new WaitForSeconds(4);
+       // this.GetComponent<DontGoThroughThings>().enabled = true;
+        // Destroy(telep);
+        // print("yes");
     }
 
 
@@ -79,6 +82,7 @@ public class Telport_device : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C) && !hasTP && tpdevices > 0)
         {
+            this.GetComponent<DontGoThroughThings>().enabled = false;
             anim.SetBool("highThrow", true);
             Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
@@ -94,6 +98,7 @@ public class Telport_device : MonoBehaviour
             telep.GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForceHeight);
             StartCoroutine(Teleportthis());
             yield return new WaitForSeconds(0.5f);
+            
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;
             anim.SetBool("highThrow", false);
@@ -104,6 +109,7 @@ public class Telport_device : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && !hasTP && tpdevices > 0)
         {
+            this.GetComponent<DontGoThroughThings>().enabled = false;
             anim.SetBool("lowThrow", true);
             Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
@@ -119,6 +125,7 @@ public class Telport_device : MonoBehaviour
             telep.GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForceLength);
             StartCoroutine(Teleportthis());
             yield return new WaitForSeconds(0.5f);
+            
             anim.SetBool("lowThrow", false);
             this.GetComponent<Thirsperson_character>().verSpeed =  2;
             Thirsperson_character.speed = 4;

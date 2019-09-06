@@ -39,7 +39,14 @@ public class DMG_enemy : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Axer")
+         if (collision.gameObject.tag == "Floor")
+        {
+            print("safe");
+                
+        }
+
+
+       else if (collision.gameObject.tag == "Axer")
         {
             AreaDamageEnemies();
             print("LEL");
@@ -58,6 +65,11 @@ public class DMG_enemy : MonoBehaviour
             AreaDamageEnemies();
             print("LEL");
 
+        }
+         else
+        {
+            print("YO");
+            Destroy(gameObject);
         }
 
 

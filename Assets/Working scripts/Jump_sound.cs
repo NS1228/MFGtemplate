@@ -5,6 +5,8 @@ using UnityEngine;
 public class Jump_sound : MonoBehaviour
 {
 
+    
+
     public AudioClip jump;
    AudioSource audioSourcee;
 
@@ -45,6 +47,8 @@ public class Jump_sound : MonoBehaviour
             //audioSourcee.Stop();
             jumpTimer = 0;
         }
+
+       
 
     }
 }

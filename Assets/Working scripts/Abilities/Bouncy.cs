@@ -21,6 +21,8 @@ public class Bouncy : MonoBehaviour
     public float jumpTimer;
 
     Animator anim;
+
+    public float jumpAllowed;
     
 
     // Start is called before the first frame update
@@ -46,7 +48,7 @@ public class Bouncy : MonoBehaviour
 
             GetComponent<BoxCollider>().material = bouncyness;
             cooldown = true;
-            cdTimer = Time.time + 10;
+            cdTimer = Time.time + 12;
             cdStarter = true;
             jumpTimer = Time.time + 1;
         }
@@ -61,7 +63,7 @@ public class Bouncy : MonoBehaviour
             canBounce = false;
             anim.SetBool("Bounce", false);
             reset = true;
-            resetTimer = Time.time + 12;
+            resetTimer = Time.time + 6;
 
             
 
@@ -101,14 +103,15 @@ public class Bouncy : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision theCollision)
+    void OnCollisionEnter(Collision theCollision) 
     {
-        if (theCollision.gameObject.tag == "Floor" && canBounce)
+        if (theCollision.gameObject.tag == "Floor" && canBounce && Time.time >= jumpAllowed)
         {
             rb.AddForce(Vector3.up * height);
             print("whats wrong");
             anim.SetBool("Bounce", true);
             Bounce_sound.bounceSFX = true;
+            jumpAllowed = Time.time + 0.5f;
         }
 
         

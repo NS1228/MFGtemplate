@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bounce_sound : MonoBehaviour
 {
+    public GameObject Player;
+
     AudioSource audioSource;
     public AudioClip skating;
 
@@ -32,6 +34,7 @@ public class Bounce_sound : MonoBehaviour
         if (Time.time >= bounceTimer)
         {
             canBounce = true;
+           // bounceSFX = false;
         }
         else
         {
@@ -40,8 +43,11 @@ public class Bounce_sound : MonoBehaviour
 
         if (!bounceSFX)
         {
+           // bounceTimer = 0;
             //audioSource.Stop();
            
         }
+
+        
     }
 }

@@ -10,6 +10,8 @@ public class HBspawner : MonoBehaviour
     public GameObject hBP;
     public GameObject Seat;
 
+    public bool isGrounded;
+
 
     public bool canHB;
 
@@ -28,7 +30,7 @@ public class HBspawner : MonoBehaviour
     //public GameObject empty;
     // Start is called before the first frame update
 
-   
+
     void Start()
     {
         Riding = false;
@@ -41,28 +43,28 @@ public class HBspawner : MonoBehaviour
     {
         Triggercheck();
         Spawner();
-        
 
 
 
-        if(coolDown && Time.time >= cooldownTimer)
+
+        if (coolDown && Time.time >= cooldownTimer)
         {
             coolDown = false;
             Riding = false;
 
             reset = true;
-            resetTimer = Time.time + 8;
-            
-        }
-        
+            resetTimer = Time.time + 3;
 
-        if(reset && Time.time >=  resetTimer)
+        }
+
+
+        if (reset && Time.time >= resetTimer)
         {
             canHB = true;
             reset = false;
         }
         // transform.localScale = new Vector3(1, 4, 0.5f);
-       // transform.localRotation = Quaternion.Euler(0, 0, 0);
+        // transform.localRotation = Quaternion.Euler(0, 0, 0);
 
 
     }
@@ -70,7 +72,7 @@ public class HBspawner : MonoBehaviour
 
     public void Triggercheck()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && canHB)
+        if (Input.GetKeyDown(KeyCode.Q) && canHB && this.GetComponent<Thirsperson_character>().isGrounded)
         {
             hbTimer = Time.time + 1f;
 
@@ -82,19 +84,19 @@ public class HBspawner : MonoBehaviour
                 cooldownTimer = Time.time + 10;
 
             }
-            
-           
+
+
         }
 
-        if(Input.GetKeyDown(KeyCode.F)&& Riding)
-            {
+        if (Input.GetKeyDown(KeyCode.F) && Riding)
+        {
 
             Riding = false;
         }
 
-           
 
-        
+
+
     }
 
     public void Spawner()
@@ -109,7 +111,7 @@ public class HBspawner : MonoBehaviour
                 HB_sound.hbSFX = true;
             }
 
-           
+
             //this.gameObject.transform.parent = hoverBoard.transform;
             this.transform.position = Seat.transform.position;
             this.transform.rotation = Seat.transform.rotation;
@@ -138,8 +140,21 @@ public class HBspawner : MonoBehaviour
         }
     }
 
-   
+    void OnCollisionEnter(Collision collision)
+    {
 
+        if (collision.gameObject.tag == "Floor")
+        {
+            isGrounded = true;
+        }
+    }
 
-  
+    void OnCollisionExit(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "Floor")
+        {
+            isGrounded = true;
+        }
+    }
 }

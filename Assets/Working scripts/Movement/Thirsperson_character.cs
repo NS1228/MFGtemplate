@@ -42,7 +42,10 @@ public class Thirsperson_character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (this.GetComponent<Bouncy>().canBounce == false)
+        {
+            GetComponent<BoxCollider>().material = null;
+        }
 
         PlayerMovement();
 

@@ -40,6 +40,11 @@ public class Bouncy : MonoBehaviour
     void Update()
     {
 
+        if(Input.GetKey(KeyCode.F) && canBounce)
+        {
+            cdTimer = 0;
+        }
+
         if (Input.GetKey(KeyCode.Space) && !cooldown)
         {
             canBounce = true;

@@ -21,6 +21,8 @@ public class Mine_Generator : MonoBehaviour
     public float soundTimer;
 
     AudioSource audios;
+
+   
    
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,14 @@ public class Mine_Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(soundSwitch && Time.time >= soundTimer)
+      
+
+      
+
+    
+       
+
+        if (soundSwitch && Time.time >= soundTimer)
         {
             audios.volume = 1;
             soundSwitch = false;
@@ -47,7 +56,7 @@ public class Mine_Generator : MonoBehaviour
         if (this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
 
-            if (currentMines <= maxMines && Input.GetKeyDown(KeyCode.E) && canMine)
+            if (maxMines >= 1 && Input.GetKeyDown(KeyCode.E) && canMine)
             {
                 anim.SetBool("dropMine", true);
                 animTimer = Time.time + 0.69f;
@@ -67,12 +76,16 @@ public class Mine_Generator : MonoBehaviour
         {
             Instantiate(Mines, transform.position + (transform.forward * 1 + transform.up * 0f), transform.rotation);
             maxMines -= 1;
-            currentMines++;
+            //currentMines++;
             anim.SetBool("dropMine", false);
             deployMine = false;
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;
-
+            
+            if(maxMines == 9)
+            {
+                StartCoroutine(AddMines());
+            }
 
 
         }
@@ -83,11 +96,12 @@ public class Mine_Generator : MonoBehaviour
 
     IEnumerator AddMines()
     {
-        if (maxMines <= 10)
+        if (maxMines <= 9)
         {
             yield return new WaitForSeconds(5.0f);
             maxMines++;
             StartCoroutine(AddMines());
+            
         }
     }
 

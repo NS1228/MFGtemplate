@@ -42,7 +42,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseBoosters()
     {
         Player.GetComponent<AbilityManager>().enabled = true;
-        
+        Player.GetComponent<Telport_device>().tpdevices = 1;
 
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
         Player.GetComponent<Bouncy>().enabled = false;
@@ -81,6 +81,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void useRS()
     {
         Player.GetComponent<Rollerskates>().enabled = true;
+        Player.GetComponent<Telport_device>().tpdevices = 1;
 
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
         Player.GetComponent<Bouncy>().enabled = false;
@@ -124,7 +125,7 @@ public class Buy_Gadgets : MonoBehaviour
     {
 
         Player.GetComponent<Ballshoe_Cooldown>().enabled = true;
-
+        Player.GetComponent<Telport_device>().tpdevices = 1;
 
         Player.GetComponent<Bouncy>().enabled = false;
         Player.GetComponent<Fp_Cooldown>().enabled = false;
@@ -166,7 +167,7 @@ public class Buy_Gadgets : MonoBehaviour
     {
 
         Player.GetComponent<Bouncy>().enabled = true;
-      
+        Player.GetComponent<Telport_device>().tpdevices = 1;
 
         Player.GetComponent<Fp_Cooldown>().enabled = false;
         Player.GetComponent<Telport_device>().enabled = false;
@@ -209,6 +210,7 @@ public class Buy_Gadgets : MonoBehaviour
 
         Player.GetComponent<Fp_Cooldown>().enabled = true;
         Player.GetComponent<Fly_test>().enabled = true;
+        Player.GetComponent<Telport_device>().tpdevices = 1;
 
         Player.GetComponent<Telport_device>().enabled = false;
         Player.GetComponent<HBspawner>().enabled = false;
@@ -250,7 +252,7 @@ public class Buy_Gadgets : MonoBehaviour
     {
 
         Player.GetComponent<Telport_device>().enabled = true;
-      
+        
 
         Player.GetComponent<HBspawner>().enabled = false;
         Player.GetComponent<AbilityManager>().enabled = false;
@@ -259,8 +261,8 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Bouncy>().enabled = false;
         Player.GetComponent<Fp_Cooldown>().enabled = false;
         Player.GetComponent<Fly_test>().enabled = false;
-
-    }
+       
+   }
 
     public void SellTeleporting()
     {
@@ -291,9 +293,9 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void UseHoverboarding ()
     {
-
+        Player.GetComponent<Telport_device>().tpdevices = 1;
         Player.GetComponent<HBspawner>().enabled = true;
-
+        
 
         Player.GetComponent<Fly_test>().enabled = false;
         Player.GetComponent<AbilityManager>().enabled = false;
@@ -372,6 +374,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseSleeper()
     {
         this.GetComponent<Enemy_Sleeper>().enabled = true;
+        Player.GetComponent<Mine_Generator>().maxMines = 3;
 
         this.GetComponent<Mine_Generator>().enabled = false;
         this.GetComponent<Orbvest_manager>().enabled = false;
@@ -410,6 +413,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseOrbs()
     {
         this.GetComponent<Orbvest_manager>().enabled = true;
+        Player.GetComponent<Mine_Generator>().maxMines = 3;
 
         this.GetComponent<Mine_Generator>().enabled = false;
         this.GetComponent<Enemy_Sleeper>().enabled = false;
@@ -445,6 +449,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseIceTrail()
     {
         this.GetComponent<Icetrail_Manager>().enabled = true;
+        Player.GetComponent<Mine_Generator>().maxMines = 3;
 
         this.GetComponent<Mine_Generator>().enabled = false;
         this.GetComponent<Orbvest_manager>().enabled = false;
@@ -481,6 +486,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseTurrets()
     {
         this.GetComponent<Spawn_Objects>().enabled = true;
+        Player.GetComponent<Mine_Generator>().maxMines = 3;
 
         this.GetComponent<Mine_Generator>().enabled = false;
         this.GetComponent<Orbvest_manager>().enabled = false;
@@ -516,6 +522,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseLightning()
     {
         this.GetComponent<Lighting_Spawner>().enabled = true;
+        Player.GetComponent<Mine_Generator>().maxMines = 3;
 
         this.GetComponent<Mine_Generator>().enabled = false;
         this.GetComponent<Orbvest_manager>().enabled = false;
@@ -551,6 +558,7 @@ public class Buy_Gadgets : MonoBehaviour
     public void UseGrenade()
     {
         this.GetComponent<ADA>().enabled = true;
+        Player.GetComponent<Mine_Generator>().maxMines = 3;
 
         this.GetComponent<Mine_Generator>().enabled = false;
         this.GetComponent<Orbvest_manager>().enabled = false;

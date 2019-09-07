@@ -67,12 +67,18 @@ public class Telport_device : MonoBehaviour
 
     IEnumerator Teleportthis()
     {
+        if (tpdevices == 5)
+        {
+            StartCoroutine(AddTPD());
+        }
+
         yield return new WaitForSeconds(2);
         
         this.transform.position = telep.transform.position;
         Teleporting_Sound.tpSFX = false;
-        yield return new WaitForSeconds(4);
-       // this.GetComponent<DontGoThroughThings>().enabled = true;
+       // yield return new WaitForSeconds(4);
+       // this.GetComponent<DontGoThroughThings>().skinWidth = 1;
+        // this.GetComponent<DontGoThroughThings>().enabled = true;
         // Destroy(telep);
         // print("yes");
     }
@@ -82,7 +88,8 @@ public class Telport_device : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C) && !hasTP && tpdevices > 0)
         {
-            this.GetComponent<DontGoThroughThings>().enabled = false;
+            
+
             anim.SetBool("highThrow", true);
             Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
@@ -102,14 +109,15 @@ public class Telport_device : MonoBehaviour
             this.GetComponent<Thirsperson_character>().verSpeed = 2;
             Thirsperson_character.speed = 4;
             anim.SetBool("highThrow", false);
-            
 
+            
 
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && !hasTP && tpdevices > 0)
         {
-            this.GetComponent<DontGoThroughThings>().enabled = false;
+            
+           
             anim.SetBool("lowThrow", true);
             Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
@@ -130,6 +138,8 @@ public class Telport_device : MonoBehaviour
             this.GetComponent<Thirsperson_character>().verSpeed =  2;
             Thirsperson_character.speed = 4;
 
+            
+
         }
 
     }
@@ -138,7 +148,7 @@ public class Telport_device : MonoBehaviour
     {
         if (tpdevices <= 5)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(4f);
             tpdevices++;
             StartCoroutine(AddTPD());
         }

@@ -77,6 +77,11 @@ public class ADA : MonoBehaviour
             Thirsperson_character.speed = 4;
             audios.volume = 1;
             Mine_Sound.grenadeSFX = false;
+
+            isGrenadeFall = true;
+            grenadeFallCooldown = Time.time + 9.59f;
+            canGrenadeFall = false;
+            cooldownGrenadeFall = true;
         }
           
        
@@ -89,10 +94,7 @@ public class ADA : MonoBehaviour
         if (canGrenadeFall && Input.GetKey(KeyCode.E) && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
             
-            isGrenadeFall = true;
-            grenadeFallCooldown = Time.time + 9.59f;
-            canGrenadeFall = false;
-            cooldownGrenadeFall = true;
+            
             anim.SetBool("Grenade", true);
             deployGrenades = true;
             animTimer = Time.time + 1.59f;

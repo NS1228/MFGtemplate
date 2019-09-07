@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 139564117591025194}
   - component: {fileID: 2762126404763278417}
   - component: {fileID: 1841862791652569470}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Frisbee_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2902366509478047905}
   - component: {fileID: -8665975871292884115}
   - component: {fileID: 7291268629037241295}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: frisb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

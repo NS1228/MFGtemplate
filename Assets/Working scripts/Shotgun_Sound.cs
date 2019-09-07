@@ -11,6 +11,9 @@ public class Shotgun_Sound : MonoBehaviour
     public bool canShotgun;
     public float shotgunTimer;
 
+    public bool soundSwitch;
+    public float switchTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,18 @@ public class Shotgun_Sound : MonoBehaviour
         {
             // audioSourcee.Stop();
             shotgunTimer = 0;
+
+            soundSwitch = true;
+            switchTimer = Time.time + 1f;
         }
+
+        if (soundSwitch && Time.time >= switchTimer)
+        {
+            soundSwitch = false;
+            audioSourcee.Stop();
+            shotgunTimer = 0;
+        }
+
+
     }
 }

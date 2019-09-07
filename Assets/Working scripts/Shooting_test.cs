@@ -71,7 +71,7 @@ public class Shooting_test : MonoBehaviour
 
 
 
-        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay && ammo <= 6)
+        if (this.GetComponent<New_ShotgunMovement>().canShoot && inSight && Time.time >= fireDelay && ammo <= 6 && !this.GetComponent<New_ShotgunMovement>().isFrozen && !this.GetComponent<New_ShotgunMovement>().isStun)
         {
             
                 canFire = true;

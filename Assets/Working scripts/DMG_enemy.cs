@@ -66,11 +66,7 @@ public class DMG_enemy : MonoBehaviour
             print("LEL");
 
         }
-         else
-        {
-            print("YO");
-            Destroy(gameObject);
-        }
+        
 
 
 
@@ -98,6 +94,7 @@ public class DMG_enemy : MonoBehaviour
                 destroyTimer = Time.time + 3f;
                 Instantiate(explosion, explosionPoint.transform.position, explosionPoint.transform.rotation);
             }
+            
         }
     }
 }

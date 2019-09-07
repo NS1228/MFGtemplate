@@ -43,7 +43,7 @@ public class Sound_Manager : MonoBehaviour
     {
 
 
-        if (jogSFX && canJog)
+        if (jogSFX && canJog && this.GetComponent<Thirsperson_character>().isGrounded)
         {
             //audioSource.Play();
             audioSource.PlayOneShot(impact, 0.7F);
@@ -84,7 +84,7 @@ public class Sound_Manager : MonoBehaviour
 
         
 
-        if (strafeSFX && canStrafe)
+        if (strafeSFX && canStrafe )
         {
             //audioSource.Play();
             audioSource.PlayOneShot(strafe, 0.7f);
@@ -107,7 +107,7 @@ public class Sound_Manager : MonoBehaviour
         }
 
 
-        if (boostSFX && canBoost)
+        if (boostSFX && canBoost && this.GetComponent<Thirsperson_character>().isGrounded)
         {
             audioSource.PlayOneShot(boost, 0.7f);
             boostTimer = Time.time + 3f;

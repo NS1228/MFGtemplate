@@ -17,6 +17,8 @@ public class Strafe_Sound : MonoBehaviour
 
     AudioSource audioSource;
 
+    public GameObject Player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class Strafe_Sound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (strafeSFX && canStrafe)
+        if (strafeSFX && canStrafe && Player.GetComponent<Thirsperson_character>().isGrounded)
         {
             //audioSource.Play();
             audioSource.PlayOneShot(strafe, 0.7f);
@@ -44,7 +46,7 @@ public class Strafe_Sound : MonoBehaviour
         }
 
 
-        if (bsSFX && canBS)
+        if (bsSFX && canBS && Player.GetComponent<Thirsperson_character>().isGrounded)
         {
             audioSource.PlayOneShot(boostStrafe, 0.7f);
             bsTimer = Time.time + 4.05f;

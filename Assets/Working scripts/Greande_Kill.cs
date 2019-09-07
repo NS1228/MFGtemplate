@@ -20,11 +20,15 @@ public class Greande_Kill : MonoBehaviour
     public GameObject gexpPoint;
 
     public bool addTimer;
+
+    public float DieNow;
     // Start is called before the first frame update
     void Start()
     {
         location = this.transform.position;
         addTimer = true;
+
+        DieNow = Time.time + 12;
 
        
     }
@@ -47,7 +51,12 @@ public class Greande_Kill : MonoBehaviour
 
             Instantiate(gexp, gexpPoint.transform.position, gexpPoint.transform.rotation);
             print("EXPLOSE NOW");
+
+
+            
         }
+
+        
 
         Collider[] cols = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider col in cols)
@@ -103,6 +112,11 @@ public class Greande_Kill : MonoBehaviour
         }
 
         if (destroy && Time.time >= destroyTimer)
+        {
+            Destroy(gameObject);
+        }
+
+        if(Time.time >= DieNow)
         {
             Destroy(gameObject);
         }

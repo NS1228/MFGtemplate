@@ -11,6 +11,9 @@ public class Blowhole_Sound : MonoBehaviour
     public bool canBlowgun;
     public float blowgunTimer;
 
+    public bool soundSwitch;
+    public float switchTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,11 @@ public class Blowhole_Sound : MonoBehaviour
         {
             // audioSourcee.Stop();
             blowgunTimer = 0;
+
+            soundSwitch = true;
+           
         }
+
+       
     }
 }

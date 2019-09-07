@@ -71,7 +71,7 @@ public class Blowgun_Shooting : MonoBehaviour
 
 
 
-        if (this.GetComponent<Blowguner_Movement>().canShoot && inSight && Time.time >= fireDelay && Time.time >= shootTimer)
+        if (this.GetComponent<Blowguner_Movement>().canShoot && inSight && Time.time >= fireDelay && Time.time >= shootTimer && !this.GetComponent<Blowguner_Movement>().isFrozen && !this.GetComponent<Blowguner_Movement>().isStun)
         {
 
             canFire = true;

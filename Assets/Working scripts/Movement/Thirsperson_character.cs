@@ -888,6 +888,9 @@ public class Thirsperson_character : MonoBehaviour
 
            
 
+
+
+
         }
 
         }
@@ -900,7 +903,9 @@ public class Thirsperson_character : MonoBehaviour
                 //
 
             }
-        }
+
+     
+    }
     }
 
         

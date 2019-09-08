@@ -56,7 +56,7 @@ public class Normal_jump : MonoBehaviour
                 jumpTimer = Time.time + 1.75f;
                 jumpSpeed = true;
                 speedTimer = Time.time + 1.5f;
-
+                Time.fixedDeltaTime = 0.02f;
 
             }
             else
@@ -72,7 +72,8 @@ public class Normal_jump : MonoBehaviour
         if(!canJump && Time.time >=  jumpTimer)
         {
             canJump = true;
-            
+            Time.fixedDeltaTime = 0.0075f;
+
         }
 
         //print(jumpHeight);

@@ -56,6 +56,7 @@ public class Bouncy : MonoBehaviour
             cdTimer = Time.time + 12;
             cdStarter = true;
             jumpTimer = Time.time + 1;
+            Time.fixedDeltaTime = 0.02f;
         }
 
 
@@ -69,8 +70,8 @@ public class Bouncy : MonoBehaviour
             anim.SetBool("Bounce", false);
             reset = true;
             resetTimer = Time.time + 6;
+            Time.fixedDeltaTime = 0.0075f;   
 
-            
 
         }
 
@@ -96,6 +97,7 @@ public class Bouncy : MonoBehaviour
         {
             //this.GetComponent<Normal_jump>().jumpHeight = 0;
             this.GetComponent<Normal_jump>().enabled = false;
+            
 
 
         }
@@ -103,7 +105,7 @@ public class Bouncy : MonoBehaviour
         {
             //this.GetComponent<Normal_jump>().jumpHeight = 300;
             this.GetComponent<Normal_jump>().enabled = true;
-
+            
         }
 
     }

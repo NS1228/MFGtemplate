@@ -32,8 +32,8 @@ public class DontGoThroughThings : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (this.GetComponent<Telport_device>().enabled == false)
-        {
+        
+        
             //have we moved more than our minimum extent?
             Vector3 movementThisStep = myRigidbody.position - previousPosition;
             float movementSqrMagnitude = movementThisStep.sqrMagnitude;
@@ -60,4 +60,3 @@ public class DontGoThroughThings : MonoBehaviour
             previousPosition = myRigidbody.position;
         }
     }
-}

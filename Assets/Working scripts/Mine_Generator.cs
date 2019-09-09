@@ -67,7 +67,9 @@ public class Mine_Generator : MonoBehaviour
                 soundSwitch = true;
                 soundTimer = Time.time + 0.69f;
                 Mine_Sound.mineSFX = true;
-                
+
+                this.GetComponent<Shop_Menu>().enabled = false;
+
 
             }
         }
@@ -87,6 +89,7 @@ public class Mine_Generator : MonoBehaviour
                 StartCoroutine(AddMines());
             }
 
+            this.GetComponent<Shop_Menu>().enabled = true;
 
         }
 

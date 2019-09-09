@@ -29,6 +29,8 @@ public class Normal_jump : MonoBehaviour
 
     void Update()
     {
+        
+
         if (rb.velocity.y < -8)
         {
             isGrounded = false;
@@ -56,7 +58,12 @@ public class Normal_jump : MonoBehaviour
                 jumpTimer = Time.time + 1.75f;
                 jumpSpeed = true;
                 speedTimer = Time.time + 1.5f;
-                Time.fixedDeltaTime = 0.02f;
+                
+
+                if(AbilityManager.hasBooster)
+                {
+                    Time.fixedDeltaTime = 0.02f;
+                }
 
             }
             else
@@ -72,8 +79,17 @@ public class Normal_jump : MonoBehaviour
         if(!canJump && Time.time >=  jumpTimer)
         {
             canJump = true;
-            Time.fixedDeltaTime = 0.0075f;
 
+            if (AbilityManager.hasBooster)
+            {
+                Time.fixedDeltaTime = 0.0075f;
+            }
+            else
+            {
+                Time.fixedDeltaTime = 0.02f;
+            }
+
+            
         }
 
         //print(jumpHeight);

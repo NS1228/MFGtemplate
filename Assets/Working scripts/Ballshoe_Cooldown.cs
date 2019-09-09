@@ -28,7 +28,9 @@ public class Ballshoe_Cooldown : MonoBehaviour
             canBS = false;
             bsCooldown = true;
             bsTimer = Time.time + 12;
-            
+            Time.fixedDeltaTime = 0.0075f;
+            this.GetComponent<Shop_Menu>().enabled = false;
+
         }
 
         if(bsCooldown && Time.time >= bsTimer)
@@ -37,7 +39,9 @@ public class Ballshoe_Cooldown : MonoBehaviour
             bsReset = true;
             resetTimer = Time.time + 6;
             bsCooldown = false;
-            
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
+
 
         }
 
@@ -50,7 +54,9 @@ public class Ballshoe_Cooldown : MonoBehaviour
         if(!canBS && Input.GetKey(KeyCode.F))
         {
             Ballshoe.SetActive(false);
-            
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
+
         }
         
     }

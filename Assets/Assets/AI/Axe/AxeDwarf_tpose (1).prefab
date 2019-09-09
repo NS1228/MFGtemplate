@@ -2582,6 +2582,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c920169516abd1c4a908ffade5c19026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 8216688747423169860}
+  weapon: {fileID: 735170272233775450}
+  defaultMat:
+  - {fileID: 2100000, guid: aa78bb982b1054e4ca038524a9763447, type: 2}
+  - {fileID: 2100000, guid: bde0451e9ffc57246b3d446baf2bffe7, type: 2}
+  frozenMat:
+  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
+  defaultWeapon:
+  - {fileID: 1075984584162554836, guid: dd6167765115c6542ae94d042259ee4a, type: 3}
+  frozenWeapon:
+  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
   Player: {fileID: -4216859302048453862, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   player: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   MoveSpeed: 4

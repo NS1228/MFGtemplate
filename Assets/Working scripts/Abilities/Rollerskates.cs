@@ -43,7 +43,9 @@ public class Rollerskates : MonoBehaviour
                 canSkate = false;
                 skateTimer = Time.time + 11;
                 skateCooldown = true;
-                
+                Time.fixedDeltaTime = 0.0075f;
+                this.GetComponent<Shop_Menu>().enabled = false;
+
 
             }
         }
@@ -78,7 +80,9 @@ public class Rollerskates : MonoBehaviour
 
         if(!skating)
         {
-           
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
+
             RS_Sound.skatingSFX = false;
             speed -= 0.1f;
             if (speed <= 8)
@@ -102,6 +106,7 @@ public class Rollerskates : MonoBehaviour
             resetTimer = Time.time + 18;
             skating = false;
             animator.SetBool("isSkating", false);
+            
         }
 
         if(skateReset && Time.time >= resetTimer)

@@ -47,12 +47,16 @@ public class AbilityManager : MonoBehaviour
             boosterCooldown = Time.time + 5f;
             canBooster = false;
              boostCD = true;
-            
+            Time.fixedDeltaTime = 0.0075f;
+            this.GetComponent<Shop_Menu>().enabled = false;
+
 
         }
         if(Input.GetKeyDown(KeyCode.F) && hasBooster)
         {
             hasBooster = false;
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
     }
@@ -63,8 +67,10 @@ public class AbilityManager : MonoBehaviour
         {
             boostCD = false;
             resetCD = true;
-            boosterReset = Time.time + 6;
+            boosterReset = Time.time + 5;
             hasBooster = false;
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
     }
 

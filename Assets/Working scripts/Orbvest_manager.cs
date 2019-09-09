@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Orbvest_manager : MonoBehaviour
 {
+    public GameObject charatcer;
+
      public GameObject vestBarrel1;
      public GameObject vestBarrel2;
      public GameObject vestBarrel3;
      public GameObject vestBarrel4;
 
+   public Material[] deafultMat;
    
+
+    public Material[] orbMat;
+    
 
     public float cooldown;
 
@@ -29,6 +36,7 @@ public class Orbvest_manager : MonoBehaviour
         isUsing = false;
         CooldownReset = false;
         anim = this.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -45,7 +53,13 @@ public class Orbvest_manager : MonoBehaviour
         { 
             
             cooldown = 0f;
-            
+            this.GetComponent<Shop_Menu>().enabled = true;
+
+            charatcer.gameObject.GetComponent<Renderer>().materials = deafultMat;
+
+
+
+
         }
 
         if (animPlay && Time.time >= playTimer)
@@ -62,6 +76,9 @@ public class Orbvest_manager : MonoBehaviour
             Thirsperson_character.speed = 4;
             OrbClapSound.orbSFX = false;
 
+            charatcer.gameObject.GetComponent<Renderer>().materials = orbMat;
+            
+
         }
 
         if(Input.GetKey(KeyCode.E) && !isUsing && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
@@ -74,6 +91,7 @@ public class Orbvest_manager : MonoBehaviour
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
             Thirsperson_character.speed = 0;
             OrbClapSound.orbSFX = true;
+            this.GetComponent<Shop_Menu>().enabled = false;
         }
     }
 
@@ -89,8 +107,12 @@ public class Orbvest_manager : MonoBehaviour
             CooldownReset = true;
             resetcooldown = Time.time + 5;
             canCooldown = false;
+            this.GetComponent<Shop_Menu>().enabled = true;
+
+            charatcer.gameObject.GetComponent<Renderer>().materials = deafultMat;
             
             
+
         }
     }
 

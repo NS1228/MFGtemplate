@@ -86,6 +86,8 @@ public class Enemy_Sleeper : MonoBehaviour
                 soundTimer = Time.time + 0.69f;
                 Mine_Sound.sleeperSFX = true;
 
+                this.GetComponent<Shop_Menu>().enabled = false;
+
 
 
             }
@@ -99,6 +101,7 @@ public class Enemy_Sleeper : MonoBehaviour
             resetthis = true;
             resettimer = Time.time + 7;
             enemyAnim = false;
+            this.GetComponent<Shop_Menu>().enabled = true;
 
 
         }

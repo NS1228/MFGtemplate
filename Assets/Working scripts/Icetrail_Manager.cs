@@ -32,6 +32,7 @@ public class Icetrail_Manager : MonoBehaviour
         if (Input.GetKey(KeyCode.F) && canUse)
         {
             durationTimer = 0;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
         if (Input.GetKey(KeyCode.E) && !isUsing && !canUse && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
@@ -41,6 +42,7 @@ public class Icetrail_Manager : MonoBehaviour
             duration = true;
             durationTimer = Time.time + 10;
             Icetrail_Sound.iceSFX = true;
+            this.GetComponent<Shop_Menu>().enabled = false;
         }
 
         if(duration && Time.time >= durationTimer)
@@ -50,6 +52,7 @@ public class Icetrail_Manager : MonoBehaviour
             cooldownTimer = Time.time + 5;
             isUsing = true;
             Icetrail_Sound.iceSFX = false;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
         if(cooldown && Time.time >= cooldownTimer)

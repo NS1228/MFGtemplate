@@ -2361,6 +2361,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733139d70ce436447be96f566e0ed61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 5238906449852014234}
+  weapon: {fileID: 7422196199899404317}
+  defaultMat:
+  - {fileID: 2100000, guid: 6d2d2de888bf7fd4382d20eb55092645, type: 2}
+  - {fileID: 2100000, guid: 4326ce3367715d04aa10a12f9d3b65a3, type: 2}
+  frozenMat:
+  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
+  defaultWeapon:
+  - {fileID: 184393931516061863, guid: 036fbf61e0ec3d041a502d98a39f7667, type: 3}
+  frozenWeapon:
+  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
   Player: {fileID: -4216859302048453862, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   player: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   MoveSpeed: 4
@@ -2878,6 +2889,8 @@ MonoBehaviour:
   shotgun: {fileID: 8300000, guid: 223656104adc3924eb5ebc0e0bbb0832, type: 3}
   canShotgun: 0
   shotgunTimer: 0
+  soundSwitch: 0
+  switchTimer: 0
 --- !u!1 &7483145490135262002
 GameObject:
   m_ObjectHideFlags: 0

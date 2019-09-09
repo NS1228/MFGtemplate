@@ -23,6 +23,8 @@ public class Health_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        print(Time.fixedDeltaTime);
         Death();
 
         if (ragdollTime <= Time.time && isDead)

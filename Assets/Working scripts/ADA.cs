@@ -82,6 +82,9 @@ public class ADA : MonoBehaviour
             grenadeFallCooldown = Time.time + 9.59f;
             canGrenadeFall = false;
             cooldownGrenadeFall = true;
+            this.GetComponent<Shop_Menu>().enabled = true;
+
+
         }
           
        
@@ -102,6 +105,8 @@ public class ADA : MonoBehaviour
             Thirsperson_character.speed = 0;
             audios.volume = 0;
             Mine_Sound.grenadeSFX = true;
+
+            this.GetComponent<Shop_Menu>().enabled = false;
         }
 
 
@@ -125,6 +130,8 @@ public class ADA : MonoBehaviour
            resetGrenadeFall = true;
             cooldownGrenadeFall = false;
             grednadespawner.GetComponent<Grenade_drop>().grenadeLimit = 0;
+
+            
 
         }
        else if (grenadeFallCooldown >= Time.time && cooldownGrenadeFall)

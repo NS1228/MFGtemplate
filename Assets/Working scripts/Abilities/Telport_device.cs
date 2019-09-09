@@ -76,8 +76,9 @@ public class Telport_device : MonoBehaviour
         
         this.transform.position = telep.transform.position;
         Teleporting_Sound.tpSFX = false;
-       // yield return new WaitForSeconds(4);
-       // this.GetComponent<DontGoThroughThings>().skinWidth = 1;
+        this.GetComponent<Shop_Menu>().enabled = true;
+        // yield return new WaitForSeconds(4);
+        // this.GetComponent<DontGoThroughThings>().skinWidth = 1;
         // this.GetComponent<DontGoThroughThings>().enabled = true;
         // Destroy(telep);
         // print("yes");
@@ -89,6 +90,7 @@ public class Telport_device : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && !hasTP && tpdevices > 0)
         {
             
+            this.GetComponent<Shop_Menu>().enabled = false;
 
             anim.SetBool("highThrow", true);
             Teleporting_Sound.tpSFX = true;
@@ -116,8 +118,8 @@ public class Telport_device : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && !hasTP && tpdevices > 0)
         {
-            
-           
+            this.GetComponent<Shop_Menu>().enabled = false;
+
             anim.SetBool("lowThrow", true);
             Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;

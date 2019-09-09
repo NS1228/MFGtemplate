@@ -5,6 +5,12 @@ using UnityEngine.AI;
 
 public class Enemy_Movement : MonoBehaviour
 {
+    public GameObject character;
+    public GameObject weapon;
+    public Material[] defaultMat;
+    public Material[] frozenMat;
+    public Material[] defaultWeapon;
+    public Material[] frozenWeapon;
 
     public Transform Player;
     public GameObject player;
@@ -218,6 +224,8 @@ public class Enemy_Movement : MonoBehaviour
             Freeze_Soundy.freezeSFX = true;
             MinDist = 500;
             MaxDist = 500;
+            character.gameObject.GetComponent<Renderer>().materials = frozenMat;
+            weapon.gameObject.GetComponent<Renderer>().materials = frozenWeapon;
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
@@ -229,6 +237,8 @@ public class Enemy_Movement : MonoBehaviour
             Freeze_Soundy.freezeSFX = false;
             MinDist = 1.4f;
             MaxDist = 1.7f;
+            character.gameObject.GetComponent<Renderer>().materials = defaultMat;
+            weapon.gameObject.GetComponent<Renderer>().materials = defaultWeapon;
 
         }
     }

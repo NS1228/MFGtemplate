@@ -44,6 +44,12 @@ public class Spawn_Objects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKey(KeyCode.F) && canBuildNCD)
+        {
+            Turrettimerz = 0;
+            this.GetComponent<Shop_Menu>().enabled = true;
+        }
+
         if(animPlay && Time.time >= animTimer)
         {
             animPlay = false;
@@ -74,6 +80,7 @@ public class Spawn_Objects : MonoBehaviour
                 soundSwitch = true;
                 soundTimer = Time.time + 0.69f;
                 Mine_Sound.turretSFX = true;
+                this.GetComponent<Shop_Menu>().enabled = false;
 
 
             }
@@ -87,6 +94,7 @@ public class Spawn_Objects : MonoBehaviour
             startCD = true;
             timer = Time.time + 5f;
             buildLimitReached = false;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
         if(buildtimer && Time.time >= Turrettimerz)
@@ -95,6 +103,7 @@ public class Spawn_Objects : MonoBehaviour
             canBuildNCD = false;
             startCD = true;
             timer = Time.time + 5f;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
         Cooldown();

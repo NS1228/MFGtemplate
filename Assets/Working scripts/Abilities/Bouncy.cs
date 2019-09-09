@@ -56,7 +56,8 @@ public class Bouncy : MonoBehaviour
             cdTimer = Time.time + 12;
             cdStarter = true;
             jumpTimer = Time.time + 1;
-            Time.fixedDeltaTime = 0.02f;
+            
+            this.GetComponent<Shop_Menu>().enabled = false;
         }
 
 
@@ -70,7 +71,8 @@ public class Bouncy : MonoBehaviour
             anim.SetBool("Bounce", false);
             reset = true;
             resetTimer = Time.time + 6;
-            Time.fixedDeltaTime = 0.0075f;   
+            this.GetComponent<Shop_Menu>().enabled = true;
+
 
 
         }

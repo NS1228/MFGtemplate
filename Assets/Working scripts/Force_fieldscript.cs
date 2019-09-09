@@ -18,7 +18,10 @@ public class Force_fieldscript : MonoBehaviour
     public Vector3 wave3;
     public Vector3 wave4;
     public Vector3 wave5;
-   
+
+    public GameObject spawn1;
+    public GameObject spawn2;
+
 
 
     // Start is called before the first frame update
@@ -37,11 +40,14 @@ public class Force_fieldscript : MonoBehaviour
         if (Time.time >= moveTimer1)
         {
             this.transform.position = Vector3.MoveTowards(this.transform.position, wave1, speed * Time.deltaTime);
+            spawn1.SetActive(true);
 
         }
         if (Time.time >= moveTimer2)
         {
             this.transform.position = Vector3.MoveTowards(this.transform.position, wave2, speed * Time.deltaTime);
+            spawn1.SetActive(false);
+            spawn2.SetActive(true);
 
         }
         if (Time.time >= moveTimer3)

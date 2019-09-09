@@ -54,6 +54,8 @@ public class HBspawner : MonoBehaviour
 
             reset = true;
             resetTimer = Time.time + 3;
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
 
         }
 
@@ -82,6 +84,8 @@ public class HBspawner : MonoBehaviour
                 canHB = false;
                 coolDown = true;
                 cooldownTimer = Time.time + 10;
+                Time.fixedDeltaTime = 0.0075f;
+                this.GetComponent<Shop_Menu>().enabled = false;
 
             }
 
@@ -92,6 +96,8 @@ public class HBspawner : MonoBehaviour
         {
 
             Riding = false;
+            Time.fixedDeltaTime = 0.02f;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
 

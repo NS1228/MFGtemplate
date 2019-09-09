@@ -34,6 +34,7 @@ public class Lighting_Spawner : MonoBehaviour
         if(Input.GetKey(KeyCode.F) && !spawnYes)
         {
             timer = 0;
+            this.GetComponent<Shop_Menu>().enabled = true;
         }
 
         if(deployLightning && Time.time >= animTimer)
@@ -68,6 +69,7 @@ public class Lighting_Spawner : MonoBehaviour
             this.GetComponent<Thirsperson_character>().verSpeed = 0;
             audios.volume = 0;
             Mine_Sound.lightningSFX = true;
+            this.GetComponent<Shop_Menu>().enabled = false;
 
 
 
@@ -92,7 +94,7 @@ public class Lighting_Spawner : MonoBehaviour
             cooldownTimer = Time.time + 5f;
             reset = true;
 
-
+            this.GetComponent<Shop_Menu>().enabled = true;
 
         }
     }

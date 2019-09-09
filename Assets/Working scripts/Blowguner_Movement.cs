@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Blowguner_Movement : MonoBehaviour
 {
+    public GameObject character;
+    public GameObject weapon;
+    public Material[] defaultMat;
+    public Material[] frozenMat;
+    public Material[] defaultWeapon;
+    public Material[] frozenWeapon;
+
+
+
     public Transform Player;
     public GameObject player;
     public float MoveSpeed = 4;
@@ -230,6 +239,8 @@ public class Blowguner_Movement : MonoBehaviour
             Freeze_Soundy.freezeSFX = true;
             MaxDist = 500;
             MinDist = 500;
+            character.gameObject.GetComponent<Renderer>().materials = frozenMat;
+            weapon.gameObject.GetComponent<Renderer>().materials = frozenWeapon;
         }
 
         if (Time.time >= freezeTimer && canFreeze == true)
@@ -241,6 +252,8 @@ public class Blowguner_Movement : MonoBehaviour
             Freeze_Soundy.freezeSFX = false;
             freezeReShoot = true;
             freezeShootTimer = Time.time + 0.5f;
+            character.gameObject.GetComponent<Renderer>().materials = defaultMat;
+            weapon.gameObject.GetComponent<Renderer>().materials = defaultWeapon;
         }
 
         if (freezeReShoot && Time.time >= freezeShootTimer)

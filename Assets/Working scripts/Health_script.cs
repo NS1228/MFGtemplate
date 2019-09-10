@@ -24,6 +24,11 @@ public class Health_script : MonoBehaviour
     void Update()
     {
 
+        if(health >= 100)
+        {
+            health = 100;
+        }
+
         print(Time.fixedDeltaTime);
         Death();
 

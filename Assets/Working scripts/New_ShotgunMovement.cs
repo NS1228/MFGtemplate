@@ -132,13 +132,13 @@ public class New_ShotgunMovement : MonoBehaviour
         
 
 
-        if (!Canlookaround)
+        if (!Canlookaround && !isFrozen)
         {
             Vector3 lookAtPosition = Player.position;
             lookAtPosition.y = transform.position.y;
             transform.LookAt(lookAtPosition);
         }
-        if (Canlookaround)
+        if (Canlookaround && !isFrozen)
         {
             Vector3 lookAtPosition = Player.position;
             lookAtPosition.y = transform.position.y;

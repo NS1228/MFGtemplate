@@ -6,7 +6,7 @@ public class Pillar : MonoBehaviour
 {
     public GameObject Player;
 
-    public bool canUse;
+   
     public float pillarGem;
 
     public GameObject portal;
@@ -20,38 +20,15 @@ public class Pillar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pillarGem >= 5)
+        if(pillarGem >= 4)
         {
             portal.SetActive(true);
         }
         
 
-        if(canUse)
-        {
-            if (Input.GetKey(KeyCode.X) && Player.GetComponent<Gem_Inventory>().noOfGems >= 1)
-            {
-                Player.GetComponent<Gem_Inventory>().noOfGems -= 1;
-                pillarGem = +1;
-            }
-        }
+       
         
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            canUse = true;
-
-        }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            canUse = false;
-
-        }
-    }
+    
 }

@@ -92,59 +92,91 @@ public class Shooting_test : MonoBehaviour
 
             shooting -= highAcc;
             if (AbilityManager.hasBooster)
+            {
                 if (shooting >= 0.65f)
                 {
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -booster");
-                    player.GetComponent<Health_script>().health -= 5;
+                    targetEnmy.GetComponent<Health_script>().health -= 5;
+                    Grunt_Sound.gruntSFX = true;
                 }
-            if (player.GetComponent<Rollerskates>().skating)
+            }
+
+            else if (targetEnmy.GetComponent<Rollerskates>().skating)
+            {
                 if (shooting >= 0.70f)
                 {
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -rs");
-                    player.GetComponent<Health_script>().health -= 5;
+                    targetEnmy.GetComponent<Health_script>().health -= 5;
+                    Grunt_Sound.gruntSFX = true;
                 }
-            if (player.GetComponent<Thirsperson_character>().hasBall)
+            }
+
+            else if (targetEnmy.GetComponent<Thirsperson_character>().hasBall)
+            {
                 if (shooting >= 0.75f)
                 {
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -bs");
-                    player.GetComponent<Health_script>().health -= 5;
+                    targetEnmy.GetComponent<Health_script>().health -= 5;
+                    Grunt_Sound.gruntSFX = true;
                 }
-            if (player.GetComponent<Bouncy>().canBounce)
+            }
+
+            else if (targetEnmy.GetComponent<Bouncy>().canBounce)
+            {
                 if (shooting >= 0.80f)
                 {
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -bounce");
-                    player.GetComponent<Health_script>().health -= 5;
+                    targetEnmy.GetComponent<Health_script>().health -= 5;
+                    Grunt_Sound.gruntSFX = true;
                 }
-            if (player.GetComponent<Fp_Cooldown>().flyCD)
+            }
+
+            else if (targetEnmy.GetComponent<Fp_Cooldown>().flyCD)
+            {
                 if (shooting >= 0.85f)
                 {
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -fp");
-                    player.GetComponent<Health_script>().health -= 5;
+                    targetEnmy.GetComponent<Health_script>().health -= 5;
+                    Grunt_Sound.gruntSFX = true;
                 }
-            if (HBspawner.Riding)
+            }
+            else if (HBspawner.Riding)
+            {
                 if (shooting >= 0.90f)
                 {
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     print("TAKEDAMAGE -hb");
-                    player.GetComponent<Health_script>().health -= 5;
+                    targetEnmy.GetComponent<Health_script>().health -= 5;
+                    Grunt_Sound.gruntSFX = true;
                 }
-            if (!player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Fp_Cooldown>().flyCD && !player.GetComponent<Bouncy>().canBounce && !player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Rollerskates>().skating && !AbilityManager.hasBooster)
+            }
+          else if (!targetEnmy.GetComponent<Thirsperson_character>().hasBall && !targetEnmy.GetComponent<Thirsperson_character>().hasBall && !targetEnmy.GetComponent<Fp_Cooldown>().flyCD && !targetEnmy.GetComponent<Bouncy>().canBounce && !targetEnmy.GetComponent<Thirsperson_character>().hasBall && !targetEnmy.GetComponent<Rollerskates>().skating && !AbilityManager.hasBooster)
+            {
                 if (shooting >= 0.60f)
                 {
                     DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
-                    
+                    Grunt_Sound.gruntSFX = true;
+
                     if (this.anim.GetCurrentAnimatorStateInfo(1).IsName("Shoot"))
                     {
-                        player.GetComponent<Health_script>().health -= 5;
+                        targetEnmy.GetComponent<Health_script>().health -= 5;
                         print("TAKEDAMAGE -normal");
                     }
                 }
+                
+            }
 
 
 

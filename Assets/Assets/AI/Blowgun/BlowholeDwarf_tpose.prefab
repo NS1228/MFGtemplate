@@ -2662,7 +2662,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: cd81c1a038cabc14585d175e39637b4e, type: 2}
   - {fileID: 2100000, guid: ebe15937264c383468ec6f138b659bf6, type: 2}
   frozenMat:
-  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
+  - {fileID: 2100000, guid: c87bc4b4e934e2d44870debe4877377a, type: 2}
+  - {fileID: 2100000, guid: 94460b14080da2c41a9a73476cbfcd89, type: 2}
   defaultWeapon:
   - {fileID: 1777420385127354177, guid: 7a23ba29d26581c41b424594c4ebb2b4, type: 3}
   frozenWeapon:
@@ -2696,7 +2697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc48a3828ea584b8418e009681b336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEnmy: {fileID: 8247655657197441727}
+  targetEnmy: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26,
+    type: 3}
   player: {fileID: -4216859302048453862, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   inSight: 0
   shooting: 1

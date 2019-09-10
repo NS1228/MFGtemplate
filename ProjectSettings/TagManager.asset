@@ -25,6 +25,7 @@ TagManager:
   - Axer
   - Blowguner
   - Pearl
+  - Lighting
   layers:
   - Default
   - TransparentFX

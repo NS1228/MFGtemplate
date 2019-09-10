@@ -28,12 +28,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyBoosters()
     {
-        if (Player.GetComponent<Money>().Gems >= 80)
+        if (Player.GetComponent<Money>().Gems >= 50)
         {
             useButtons[0].SetActive(true);
             buyButtons[0].SetActive(false);
             sellButtons[0].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 80;
+            Player.GetComponent<Money>().Gems -= 50;
 
 
         }
@@ -55,7 +55,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellBoosters()
     {
-        Player.GetComponent<Money>().Gems += 80;
+        Player.GetComponent<Money>().Gems += 50;
         useButtons[0].SetActive(false);
         buyButtons[0].SetActive(true);
         sellButtons[0].SetActive(false);
@@ -66,12 +66,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyRS()
     {
-        if (Player.GetComponent<Money>().Gems >= 160)
+        if (Player.GetComponent<Money>().Gems >= 100)
         {
             useButtons[1].SetActive(true);
             buyButtons[1].SetActive(false);
             sellButtons[1].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 160;
+            Player.GetComponent<Money>().Gems -= 100;
 
 
         }
@@ -95,7 +95,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellRS()
     {
-        Player.GetComponent<Money>().Gems += 160;
+        Player.GetComponent<Money>().Gems += 100;
         useButtons[1].SetActive(false);
         buyButtons[1].SetActive(true);
         sellButtons[1].SetActive(false);
@@ -109,12 +109,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyBallShoe()
     {
-        if(Player.GetComponent<Money>().Gems >= 250)
+        if(Player.GetComponent<Money>().Gems >= 150)
         {
             useButtons[2].SetActive(true);
             buyButtons[2].SetActive(false);
             sellButtons[2].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 250;
+            Player.GetComponent<Money>().Gems -= 150;
 
 
         }
@@ -139,7 +139,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellBallShoe()
     {
-        Player.GetComponent<Money>().Gems += 250;
+        Player.GetComponent<Money>().Gems += 150;
         useButtons[2].SetActive(false);
         buyButtons[2].SetActive(true);
         sellButtons[2].SetActive(false);
@@ -151,12 +151,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyBouncy()
     {
-        if (Player.GetComponent<Money>().Gems >= 400)
+        if (Player.GetComponent<Money>().Gems >= 200)
         {
             useButtons[3].SetActive(true);
             buyButtons[3].SetActive(false);
             sellButtons[3].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 400;
+            Player.GetComponent<Money>().Gems -= 200;
 
 
         }
@@ -180,7 +180,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellBouncy()
     {
-        Player.GetComponent<Money>().Gems += 400;
+        Player.GetComponent<Money>().Gems += 200;
         useButtons[3].SetActive(false);
         buyButtons[3].SetActive(true);
         sellButtons[3].SetActive(false);
@@ -193,12 +193,12 @@ public class Buy_Gadgets : MonoBehaviour
     public void BuyFP()
     {
 
-        if (Player.GetComponent<Money>().Gems >= 600)
+        if (Player.GetComponent<Money>().Gems >= 350 )
         {
             useButtons[4].SetActive(true);
             buyButtons[4].SetActive(false);
             sellButtons[4].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 600;
+            Player.GetComponent<Money>().Gems -= 350;
 
 
         }
@@ -224,7 +224,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellFP()
     {
-        Player.GetComponent<Money>().Gems += 600;
+        Player.GetComponent<Money>().Gems += 350;
         useButtons[4].SetActive(false);
         buyButtons[4].SetActive(true);
         sellButtons[4].SetActive(false);
@@ -236,12 +236,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyTeleporting()
     {
-        if (Player.GetComponent<Money>().Gems >= 800)
+        if (Player.GetComponent<Money>().Gems >= 250)
         {
             useButtons[5].SetActive(true);
             buyButtons[5].SetActive(false);
             sellButtons[5].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 800;
+            Player.GetComponent<Money>().Gems -= 250;
 
 
         }
@@ -266,7 +266,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellTeleporting()
     {
-        Player.GetComponent<Money>().Gems += 800;
+        Player.GetComponent<Money>().Gems += 250;
         useButtons[5].SetActive(false);
         buyButtons[5].SetActive(true);
         sellButtons[5].SetActive(false);
@@ -279,12 +279,12 @@ public class Buy_Gadgets : MonoBehaviour
     public void BuyHoverboarding ()
     {
 
-        if (Player.GetComponent<Money>().Gems >= 1000)
+        if (Player.GetComponent<Money>().Gems >= 450)
         {
             useButtons[6].SetActive(true);
             buyButtons[6].SetActive(false);
             sellButtons[6].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 1000;
+            Player.GetComponent<Money>().Gems -= 450;
 
 
         }
@@ -309,7 +309,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellHoverboarding()
     {
-        Player.GetComponent<Money>().Gems += 1000;
+        Player.GetComponent<Money>().Gems += 400;
         useButtons[6].SetActive(false);
         buyButtons[6].SetActive(true);
         sellButtons[6].SetActive(false);
@@ -323,12 +323,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyMines()
     {
-        if (Player.GetComponent<Money>().Gems >= 80)
+        if (Player.GetComponent<Money>().Gems >= 50)
         {
             useButtons[7].SetActive(true);
             buyButtons[7].SetActive(false);
             sellButtons[7].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 80;
+            Player.GetComponent<Money>().Gems -= 50;
 
 
         }
@@ -350,7 +350,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellMines ()
     {
-        Player.GetComponent<Money>().Gems += 80;
+        Player.GetComponent<Money>().Gems += 50;
         useButtons[7].SetActive(false);
         buyButtons[7].SetActive(true);
         sellButtons[7].SetActive(false);
@@ -359,12 +359,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuySleeper()
     {
-        if (Player.GetComponent<Money>().Gems >= 150)
+        if (Player.GetComponent<Money>().Gems >= 100)
         {
             useButtons[8].SetActive(true);
             buyButtons[8].SetActive(false);
             sellButtons[8].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 150;
+            Player.GetComponent<Money>().Gems -= 100;
 
 
         }
@@ -388,7 +388,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellSleeper()
     {
-        Player.GetComponent<Money>().Gems += 150;
+        Player.GetComponent<Money>().Gems += 100;
         useButtons[8].SetActive(false);
         buyButtons[8].SetActive(true);
         sellButtons[8].SetActive(false);
@@ -398,12 +398,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyOrbs()
     {
-        if (Player.GetComponent<Money>().Gems >= 300)
+        if (Player.GetComponent<Money>().Gems >= 150)
         {
             useButtons[9].SetActive(true);
             buyButtons[9].SetActive(false);
             sellButtons[9].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 300;
+            Player.GetComponent<Money>().Gems -= 150;
 
 
         }
@@ -426,7 +426,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellOrbs()
     {
-        Player.GetComponent<Money>().Gems += 300;
+        Player.GetComponent<Money>().Gems += 150;
         useButtons[9].SetActive(false);
         buyButtons[9].SetActive(true);
         sellButtons[9].SetActive(false);
@@ -435,12 +435,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyIceTrail()
     {
-        if (Player.GetComponent<Money>().Gems >= 500)
+        if (Player.GetComponent<Money>().Gems >= 200)
         {
             useButtons[10].SetActive(true);
             buyButtons[10].SetActive(false);
             sellButtons[10].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 500;
+            Player.GetComponent<Money>().Gems -= 200;
 
 
         }
@@ -462,7 +462,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellIceTrail()
     {
-        Player.GetComponent<Money>().Gems += 500;
+        Player.GetComponent<Money>().Gems += 200;
         useButtons[10].SetActive(false);
         buyButtons[10].SetActive(true);
         sellButtons[10].SetActive(false);
@@ -472,12 +472,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyTurrets()
     {
-        if (Player.GetComponent<Money>().Gems >= 700)
+        if (Player.GetComponent<Money>().Gems >= 250)
         {
             useButtons[11].SetActive(true);
             buyButtons[11].SetActive(false);
             sellButtons[11].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 700;
+            Player.GetComponent<Money>().Gems -= 250;
 
 
         }
@@ -499,7 +499,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellTurrets()
     {
-        Player.GetComponent<Money>().Gems += 700;
+        Player.GetComponent<Money>().Gems += 250;
         useButtons[11].SetActive(false);
         buyButtons[11].SetActive(true);
         sellButtons[11].SetActive(false);
@@ -508,12 +508,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyLightning()
     {
-        if (Player.GetComponent<Money>().Gems >= 900)
+        if (Player.GetComponent<Money>().Gems >= 350)
         {
             useButtons[12].SetActive(true);
             buyButtons[12].SetActive(false);
             sellButtons[12].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 900;
+            Player.GetComponent<Money>().Gems -= 350;
 
 
         }
@@ -534,7 +534,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellLightning()
     {
-        Player.GetComponent<Money>().Gems += 900;
+        Player.GetComponent<Money>().Gems += 350;
         useButtons[12].SetActive(false);
         buyButtons[12].SetActive(true);
         sellButtons[12].SetActive(false);
@@ -544,12 +544,12 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void BuyGrenade()
     {
-        if (Player.GetComponent<Money>().Gems >= 1100)
+        if (Player.GetComponent<Money>().Gems >= 450)
         {
             useButtons[13].SetActive(true);
             buyButtons[13].SetActive(false);
             sellButtons[13].SetActive(true);
-            Player.GetComponent<Money>().Gems -= 1100;
+            Player.GetComponent<Money>().Gems -= 450;
 
 
         }
@@ -570,7 +570,7 @@ public class Buy_Gadgets : MonoBehaviour
 
     public void SellGrenaqde()
     {
-        Player.GetComponent<Money>().Gems += 1100;
+        Player.GetComponent<Money>().Gems += 450;
         useButtons[13].SetActive(false);
         buyButtons[13].SetActive(true);
         sellButtons[13].SetActive(false);

@@ -2588,8 +2588,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aa78bb982b1054e4ca038524a9763447, type: 2}
   - {fileID: 2100000, guid: bde0451e9ffc57246b3d446baf2bffe7, type: 2}
   frozenMat:
-  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
-  - {fileID: 2100000, guid: 83228db614c901f4a83f3e1f55a6f2c3, type: 2}
+  - {fileID: 2100000, guid: 34c03fec13ec5e84c9671ab0213277c1, type: 2}
+  - {fileID: 2100000, guid: dd4e7c537ccc5ba41a7550d6378b74b4, type: 2}
   defaultWeapon:
   - {fileID: 1075984584162554836, guid: dd6167765115c6542ae94d042259ee4a, type: 3}
   frozenWeapon:

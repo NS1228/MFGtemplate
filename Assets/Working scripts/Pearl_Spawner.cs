@@ -16,7 +16,7 @@ public class Pearl_Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pearlCount <= 1600)
+        if (pearlCount <= 500)
         {
             Vector3 xPosition = new Vector3(Random.Range(-60.0f, 60.0f), Random.Range(2, 70f), Random.Range(-60.0f, 60.0f));
             Instantiate(pearls, xPosition, Quaternion.identity);

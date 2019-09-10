@@ -94,7 +94,9 @@ public class Enemy_Movement : MonoBehaviour
             dmgGiver = false;
           
                 Player.GetComponent<Health_script>().health -= axeDMG;
-           
+                DI_System.CreateIndicator(this.transform);
+            Grunt_Sound.gruntSFX = true;
+
             // print(Player.GetComponent<Health_script>().health);
             dmgTestwo = true;
         }
@@ -103,8 +105,10 @@ public class Enemy_Movement : MonoBehaviour
         {
             
                 Player.GetComponent<Health_script>().health -= axeDMG;
-           
-            
+            DI_System.CreateIndicator(this.transform);
+            Grunt_Sound.gruntSFX = true;
+
+
             dmgTestwo = true;
             dmgLoop = false;
         }

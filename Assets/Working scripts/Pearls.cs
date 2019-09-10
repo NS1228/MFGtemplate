@@ -33,7 +33,7 @@ public class Pearls : MonoBehaviour
         {
             destroy = true;
             destroyTimer = Time.time + 5;
-            Player.GetComponent<Money>().Gems += 10;
+            Player.GetComponent<Money>().Gems += 25;
             Pearl_Sound.pearlSFX = true;
             this.gameObject.GetComponent<SphereCollider>().enabled = false;
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;

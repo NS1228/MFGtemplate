@@ -9,7 +9,7 @@ using UnityEngine;
 public class DMG_i : MonoBehaviour
 {
 
-    private const float maxTimer = 3.0f;
+    private const float maxTimer = 1.5f;
     private float timer = maxTimer;
 
     private CanvasGroup canvasGroup = null;

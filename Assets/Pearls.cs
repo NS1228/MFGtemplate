@@ -6,6 +6,9 @@ public class Pearls : MonoBehaviour
 {
 
     public GameObject Player;
+
+    public float destroyTimer;
+    public bool destroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,12 @@ public class Pearls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(destroy && Time.time >= destroyTimer)
+        {
+            destroy = false;
+            Destroy(gameObject);
+        }
         
     }
 
@@ -22,8 +31,12 @@ public class Pearls : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            destroy = true;
+            destroyTimer = Time.time + 5;
             Player.GetComponent<Money>().Gems += 10;
+            Pearl_Sound.pearlSFX = true;
+            this.gameObject.GetComponent<SphereCollider>().enabled = false;
+            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
 
         }
     }

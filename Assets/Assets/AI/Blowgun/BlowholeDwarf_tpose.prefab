@@ -2642,7 +2642,7 @@ MonoBehaviour:
   sendTriggerMessage: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 7728
+    m_Bits: 15920
   skinWidth: 1e-35
 --- !u!114 &8296172668288613566
 MonoBehaviour:

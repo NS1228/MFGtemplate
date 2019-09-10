@@ -24,7 +24,7 @@ public class Force_fieldscript : MonoBehaviour
     public GameObject spawn3;
     public GameObject spawn4;
     public GameObject spawn5;
-    public GameObject spawn6;
+   
 
 
 
@@ -72,7 +72,6 @@ public class Force_fieldscript : MonoBehaviour
         if (Time.time >= moveTimer5)
         {
             this.transform.position = Vector3.MoveTowards(this.transform.position, wave5, speed * Time.deltaTime);
-            spawn6.SetActive(true);
             spawn5.SetActive(false);
         }
 

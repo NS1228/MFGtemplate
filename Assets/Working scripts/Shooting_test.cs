@@ -136,7 +136,7 @@ public class Shooting_test : MonoBehaviour
             if (!player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Fp_Cooldown>().flyCD && !player.GetComponent<Bouncy>().canBounce && !player.GetComponent<Thirsperson_character>().hasBall && !player.GetComponent<Rollerskates>().skating && !AbilityManager.hasBooster)
                 if (shooting >= 0.60f)
                 {
-
+                    DI_System.CreateIndicator(this.transform);
                     playerHealth -= playerDMG;
                     
                     if (this.anim.GetCurrentAnimatorStateInfo(1).IsName("Shoot"))

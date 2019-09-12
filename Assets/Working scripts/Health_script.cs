@@ -5,6 +5,9 @@ using UnityEngine;
 public class Health_script : MonoBehaviour
 {
 
+    public GameObject cameraone;
+    public GameObject cameratwo;
+
     public float health = 100;
     Animator anim;
 
@@ -48,6 +51,8 @@ public class Health_script : MonoBehaviour
             ragdollTime = Time.time + 6;
             hasDied = false;
             this.GetComponent<Thirsperson_character>().enabled = false;
+            cameraone.GetComponent<Follow_ThePlayer>().leader = null;
+            cameratwo.GetComponent<Thirdperson_cam>().Player = null;
             DeathMC_Sound.deathSFX = true;
         }
 

@@ -39,6 +39,7 @@ public class Shop_Menu : MonoBehaviour
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            AudioListener.volume = 0f;
         }
         else
         {
@@ -47,7 +48,8 @@ public class Shop_Menu : MonoBehaviour
             Time.timeScale = 1;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            
+            AudioListener.volume = 1f;
+
         }
 
     }

@@ -22,7 +22,7 @@ public class Dwarf_Jog : MonoBehaviour
     {
         if (dwarfjogSFX && canDwarfJog)
         {
-            audioSourcee.PlayOneShot(dwarfjog, 0.3f);
+            audioSourcee.PlayOneShot(dwarfjog, 0.7f);
             dwarfjogTimer = Time.time + 4f;
         }
 

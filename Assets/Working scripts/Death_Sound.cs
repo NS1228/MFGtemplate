@@ -22,7 +22,7 @@ public class Death_Sound : MonoBehaviour
     {
         if (dwarfdeathSFX && canDwarfDeath)
         {
-            audioSourcee.PlayOneShot(dwarfdeath, 0.7f);
+            audioSourcee.PlayOneShot(dwarfdeath, 1f);
             dwarfdeathTimer = Time.time + 10f;
         }
 

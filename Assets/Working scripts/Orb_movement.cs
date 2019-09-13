@@ -26,6 +26,7 @@ public class Orb_movement : MonoBehaviour
     {
        
         transform.position += transform.forward * Time.deltaTime * speed;
+        //transform.rotation
         
         //transform.rotation = 
         if(destroy && Time.time >= destroyTimer)
@@ -39,7 +40,7 @@ public class Orb_movement : MonoBehaviour
     {
     if(other.gameObject.tag == "Axer")
         {
-            other.gameObject.GetComponent<AI_health>().health -= 40;
+            other.gameObject.GetComponent<AI_health>().health -= 50;
             // Destroy(gameObject);
             this.GetComponent<SphereCollider>().enabled = false;
             this.GetComponent<MeshRenderer>().enabled = false;
@@ -52,7 +53,7 @@ public class Orb_movement : MonoBehaviour
 
         if (other.gameObject.tag == "Shotguner")
         {
-            other.gameObject.GetComponent<AI_health>().health -= 40;
+            other.gameObject.GetComponent<AI_health>().health -= 50;
             this.GetComponent<SphereCollider>().enabled = false;
             this.GetComponent<MeshRenderer>().enabled = false;
             destroy = true;
@@ -64,7 +65,7 @@ public class Orb_movement : MonoBehaviour
 
         if (other.gameObject.tag == "Blowguner")
         {
-            other.gameObject.GetComponent<AI_health>().health -= 40;
+            other.gameObject.GetComponent<AI_health>().health -= 50;
             this.GetComponent<SphereCollider>().enabled = false;
             this.GetComponent<MeshRenderer>().enabled = false;
             destroy = true;

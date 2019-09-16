@@ -23,6 +23,8 @@ public class Bouncy : MonoBehaviour
     Animator anim;
 
     public float jumpAllowed;
+
+    public GameObject banButton;
     
 
     // Start is called before the first frame update
@@ -48,7 +50,7 @@ public class Bouncy : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && !cooldown)
         {
             canBounce = true;
-           
+            banButton.SetActive(true);
             //GetComponent<Rigidbody>().useGravity = false;
 
             GetComponent<BoxCollider>().material = bouncyness;
@@ -81,6 +83,7 @@ public class Bouncy : MonoBehaviour
         {
             reset = false;
             cooldown = false;
+            banButton.SetActive(false);
         }
 
 

@@ -28,6 +28,8 @@ public class HBspawner : MonoBehaviour
     public Camera defaultCam;
     public Camera hbCAM;
     //public GameObject empty;
+
+    public GameObject banButton;
     // Start is called before the first frame update
 
 
@@ -64,6 +66,7 @@ public class HBspawner : MonoBehaviour
         {
             canHB = true;
             reset = false;
+            banButton.SetActive(false);
         }
         // transform.localScale = new Vector3(1, 4, 0.5f);
         // transform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -76,6 +79,7 @@ public class HBspawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && canHB && this.GetComponent<Thirsperson_character>().isGrounded)
         {
+            banButton.SetActive(true);
             hbTimer = Time.time + 1f;
 
             if (!Riding)

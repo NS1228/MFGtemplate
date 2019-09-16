@@ -30,6 +30,8 @@ public class Orbvest_manager : MonoBehaviour
 
     public bool animPlay;
     public float playTimer;
+
+    public GameObject banButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +85,7 @@ public class Orbvest_manager : MonoBehaviour
 
         if(Input.GetKey(KeyCode.E) && !isUsing && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
+            banButton.SetActive(true);
             canCooldown = true;
             cooldown = Time.time + 14.3f;
             animPlay = true;
@@ -120,6 +123,7 @@ public class Orbvest_manager : MonoBehaviour
     {
         if(CooldownReset && Time.time >= resetcooldown)
         {
+            banButton.SetActive(false);
             isUsing = false;
             CooldownReset = false;
         }

@@ -32,6 +32,8 @@ public class Enemy_Sleeper : MonoBehaviour
 
     public bool enemyAnim;
 
+    public GameObject banButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +73,7 @@ public class Enemy_Sleeper : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E) && !inUse)
             {
+                banButton.SetActive(true);
                 HackThem = true;
                 timer = Time.time + 9.18f;
                 stopHack = true;
@@ -127,6 +130,7 @@ public class Enemy_Sleeper : MonoBehaviour
         {
             inUse = false;
             resetthis = false;
+            banButton.SetActive(false);
         }
     }
 

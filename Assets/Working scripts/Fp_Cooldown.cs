@@ -15,6 +15,8 @@ public class Fp_Cooldown : MonoBehaviour
 
     Animator anim;
 
+    public GameObject banButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class Fp_Cooldown : MonoBehaviour
             this.GetComponent<Normal_jump>().enabled = false;
             Time.fixedDeltaTime = 0.0075f;
             this.GetComponent<Shop_Menu>().enabled = false;
+            banButton.SetActive(true);
 
 
         }
@@ -74,6 +77,7 @@ public class Fp_Cooldown : MonoBehaviour
             toFly = true;
             reset = false;
             this.GetComponent<Fly_test>().enabled = true;
+            banButton.SetActive(false);
         }
 
     }

@@ -12,6 +12,8 @@ public class AbilityManager : MonoBehaviour
 
     public bool boostCD;
     public bool resetCD;
+
+    public GameObject banButton;
     
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,7 @@ public class AbilityManager : MonoBehaviour
              boostCD = true;
             Time.fixedDeltaTime = 0.0075f;
             this.GetComponent<Shop_Menu>().enabled = false;
+            banButton.SetActive(true);
 
 
         }
@@ -81,6 +84,7 @@ public class AbilityManager : MonoBehaviour
         {
             resetCD = false;
             canBooster = true;
+            banButton.SetActive(false);
         }
     }
 

@@ -22,6 +22,7 @@ public class Mine_Generator : MonoBehaviour
 
     AudioSource audios;
 
+    public GameObject banButton;
    
    
     // Start is called before the first frame update
@@ -38,7 +39,14 @@ public class Mine_Generator : MonoBehaviour
     {
       
 
-      
+      if(maxMines <= 0)
+        {
+            banButton.SetActive(true);
+        }
+      else
+        {
+            banButton.SetActive(false);
+        }
 
     
        
@@ -58,6 +66,7 @@ public class Mine_Generator : MonoBehaviour
 
             if (maxMines >= 1 && Input.GetKeyDown(KeyCode.E) && canMine)
             {
+
                 anim.SetBool("dropMine", true);
                 animTimer = Time.time + 0.69f;
                 deployMine = true;

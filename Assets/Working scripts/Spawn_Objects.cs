@@ -29,6 +29,8 @@ public class Spawn_Objects : MonoBehaviour
 
     AudioSource audios;
 
+    public GameObject banButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +97,7 @@ public class Spawn_Objects : MonoBehaviour
             timer = Time.time + 5f;
             buildLimitReached = false;
             this.GetComponent<Shop_Menu>().enabled = true;
+            banButton.SetActive(true);
         }
 
         if(buildtimer && Time.time >= Turrettimerz)
@@ -104,6 +107,8 @@ public class Spawn_Objects : MonoBehaviour
             startCD = true;
             timer = Time.time + 5f;
             this.GetComponent<Shop_Menu>().enabled = true;
+            banButton.SetActive(true);
+
         }
 
         Cooldown();
@@ -138,6 +143,7 @@ public class Spawn_Objects : MonoBehaviour
             startCD = false;
             canBuildNCD = true;
             buildLimit = 0;
+            banButton.SetActive(false);
 
         }
     }

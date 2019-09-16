@@ -16,6 +16,8 @@ public class Icetrail_Manager : MonoBehaviour
 
     public bool canUse;
 
+    public GameObject banButton;
+
     
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class Icetrail_Manager : MonoBehaviour
             durationTimer = Time.time + 10;
             Icetrail_Sound.iceSFX = true;
             this.GetComponent<Shop_Menu>().enabled = false;
+            banButton.SetActive(true);
         }
 
         if(duration && Time.time >= durationTimer)
@@ -60,12 +63,14 @@ public class Icetrail_Manager : MonoBehaviour
             cooldown = false;
             isUsing = false;
             canUse = false;
-            
+            banButton.SetActive(false);
+
         }
 
         if(isUsing)
         {
             this.gameObject.GetComponent<Spawn_Icetrail>().enabled = false;
+           
         }
     }
 

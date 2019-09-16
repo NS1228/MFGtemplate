@@ -17,6 +17,8 @@ public class Telport_device : MonoBehaviour
 
     Animator anim;
 
+    public GameObject banButton;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,25 +32,34 @@ public class Telport_device : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /*( if (Input.GetKeyDown(KeyCode.Q) && !hasTP)
+        if (tpdevices <= 0)
         {
-           telep = Instantiate(teleporterdevice, transform.position + (transform.forward * 1) + (transform.up *1), transform.rotation);
-           telep.transform.parent = playerCam;
-           telep.GetComponent<Rigidbody>().useGravity = false;
-
-
+            banButton.SetActive(true);
+        }
+        else
+        {
+            banButton.SetActive(false);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            telep.GetComponent<Rigidbody>().useGravity = true;
-            telep.GetComponent<Rigidbody>().isKinematic = false;
-            telep.transform.parent = null;
-            telep.GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
-            StartCoroutine(Teleportthis());
-        } */
+        /*( if (Input.GetKeyDown(KeyCode.Q) && !hasTP)
+         {
+            telep = Instantiate(teleporterdevice, transform.position + (transform.forward * 1) + (transform.up *1), transform.rotation);
+            telep.transform.parent = playerCam;
+            telep.GetComponent<Rigidbody>().useGravity = false;
 
-        if(telep == null)
+
+         }
+
+         if (Input.GetMouseButtonDown(0))
+         {
+             telep.GetComponent<Rigidbody>().useGravity = true;
+             telep.GetComponent<Rigidbody>().isKinematic = false;
+             telep.transform.parent = null;
+             telep.GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+             StartCoroutine(Teleportthis());
+         } */
+
+        if (telep == null)
         {
             hasTP = false;
         }
@@ -119,7 +130,7 @@ public class Telport_device : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !hasTP && tpdevices > 0)
         {
             this.GetComponent<Shop_Menu>().enabled = false;
-
+            banButton.SetActive(true);
             anim.SetBool("lowThrow", true);
             Teleporting_Sound.tpSFX = true;
             this.GetComponent<Thirsperson_character>().verSpeed = 0;

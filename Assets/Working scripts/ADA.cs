@@ -46,6 +46,7 @@ public class ADA : MonoBehaviour
 
     AudioSource audios;
 
+    public GameObject banButton;
 
 
     // Start is called before the first frame update
@@ -96,8 +97,8 @@ public class ADA : MonoBehaviour
     {
         if (canGrenadeFall && Input.GetKey(KeyCode.E) && this.GetComponent<Thirsperson_character>().hasBall == false && AbilityManager.hasBooster == false && this.GetComponent<Rollerskates>().skating == false && this.GetComponent<Bouncy>().canBounce == false && this.GetComponent<Fly_test>().canFly == false && HBspawner.Riding == false)
         {
-            
-            
+
+            banButton.SetActive(true);
             anim.SetBool("Grenade", true);
             deployGrenades = true;
             animTimer = Time.time + 1.59f;
@@ -145,6 +146,7 @@ public class ADA : MonoBehaviour
     {
         if(Time.time >= grenadeCooldownReset && resetGrenadeFall)
         {
+            banButton.SetActive(false);
             canGrenadeFall = true;
             resetGrenadeFall = false;
            // print("can use now");

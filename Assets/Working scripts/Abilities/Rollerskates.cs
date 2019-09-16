@@ -16,6 +16,8 @@ public class Rollerskates : MonoBehaviour
 
     public bool skateReset;
     public float resetTimer;
+
+    public GameObject banButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,7 @@ public class Rollerskates : MonoBehaviour
                 skateCooldown = true;
                 Time.fixedDeltaTime = 0.0075f;
                 this.GetComponent<Shop_Menu>().enabled = false;
+                banButton.SetActive(true);
 
 
             }
@@ -113,6 +116,7 @@ public class Rollerskates : MonoBehaviour
         {
             canSkate = true;
             skateReset = false;
+            banButton.SetActive(false);
         }
         
 

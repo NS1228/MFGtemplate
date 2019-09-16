@@ -272,7 +272,7 @@ public class New_ShotgunMovement : MonoBehaviour
 
         if(freezeReShoot && Time.time >= freezeShootTimer)
         {
-            MinDist = 1.4f;
+            MinDist = 0.1f;
             MaxDist = 9;
             freezeReShoot = false;
         }

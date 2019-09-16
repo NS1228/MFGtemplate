@@ -9,6 +9,8 @@ public class Shop_Menu : MonoBehaviour
 
     public float canOpen;
     public bool addTime;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,8 @@ public class Shop_Menu : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             AudioListener.volume = 0f;
+            
+            
         }
         else
         {

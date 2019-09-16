@@ -238,7 +238,7 @@ public class Shooting_test : MonoBehaviour
                 if (!this.GetComponent<New_ShotgunMovement>().isFrozen && !this.GetComponent<New_ShotgunMovement>().freezeReShoot)
                 {
                     this.GetComponent<New_ShotgunMovement>().MaxDist = 9f;
-                    this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
+                    this.GetComponent<New_ShotgunMovement>().MinDist = 0.1f;
                 }
             }
             else
@@ -246,8 +246,8 @@ public class Shooting_test : MonoBehaviour
                 inSight = false;
                 if (!this.GetComponent<New_ShotgunMovement>().isFrozen)
                 {
-                    this.GetComponent<New_ShotgunMovement>().MaxDist = 1.4f;
-                    this.GetComponent<New_ShotgunMovement>().MinDist = 1.4f;
+                    this.GetComponent<New_ShotgunMovement>().MaxDist = 0.1f;
+                    this.GetComponent<New_ShotgunMovement>().MinDist = 0.1f;
                 }
             }
 

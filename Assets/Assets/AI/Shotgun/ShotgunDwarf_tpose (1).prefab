@@ -2377,7 +2377,7 @@ MonoBehaviour:
   player: {fileID: -927199367670048503, guid: d18d8baa6ea69074a9bc2b1470927e26, type: 3}
   MoveSpeed: 4
   MaxDist: 9
-  MinDist: 1.4
+  MinDist: 0.1
   Canlookaround: 0
   canShoot: 0
   freezeTimer: 0

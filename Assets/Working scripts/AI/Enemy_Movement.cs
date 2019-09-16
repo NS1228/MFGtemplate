@@ -239,7 +239,7 @@ public class Enemy_Movement : MonoBehaviour
             isFrozen = false;
             anim.SetBool("Freeze",false);
             Freeze_Soundy.freezeSFX = false;
-            MinDist = 1.4f;
+            MinDist = 0.1f;
             MaxDist = 1.7f;
             character.gameObject.GetComponent<Renderer>().materials = defaultMat;
             weapon.gameObject.GetComponent<Renderer>().materials = defaultWeapon;

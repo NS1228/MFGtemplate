@@ -32,7 +32,7 @@ public class Healing_Script : MonoBehaviour
             destroyTimer = Time.time + 5;
             Player.GetComponent<Health_script>().health += 50;
             Heal_Sound.healSFX = true;
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<MeshCollider>().enabled = false;
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
 
         }

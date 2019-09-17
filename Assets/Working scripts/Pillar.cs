@@ -20,7 +20,7 @@ public class Pillar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pillarGem >= 4)
+        if(pillarGem >= 5)
         {
             portal.SetActive(true);
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health_script : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class Health_script : MonoBehaviour
     public bool hasDied;
 
     public Image healthBar;
-    
+
+    public GameObject deathScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,10 @@ public class Health_script : MonoBehaviour
 
         if (ragdollTime <= Time.time && isDead)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            SceneManager.LoadScene(3);
+            
+            
         }
     }
 

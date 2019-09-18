@@ -43,7 +43,7 @@ public class Rollerskates : MonoBehaviour
                 skating = true;
                 animator.SetBool("isSkating", true);
                 canSkate = false;
-                skateTimer = Time.time + 11;
+                skateTimer = Time.time + 10;
                 skateCooldown = true;
                 Time.fixedDeltaTime = 0.0075f;
                 this.GetComponent<Shop_Menu>().enabled = false;
@@ -106,7 +106,7 @@ public class Rollerskates : MonoBehaviour
         {
             skateCooldown = false;
             skateReset = true;
-            resetTimer = Time.time + 18;
+            resetTimer = Time.time + 6;
             skating = false;
             animator.SetBool("isSkating", false);
             

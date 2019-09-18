@@ -12,6 +12,7 @@ public class Stunand_Damage : MonoBehaviour
     
     public GameObject Player;
     public GameObject parent;
+    
 
 
     // Start is called before the first frame update

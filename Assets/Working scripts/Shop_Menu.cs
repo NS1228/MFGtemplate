@@ -10,6 +10,9 @@ public class Shop_Menu : MonoBehaviour
     public float canOpen;
     public bool addTime;
 
+    public GameObject mainHud;
+    public GameObject DeathBox;
+
     
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,7 @@ public class Shop_Menu : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             AudioListener.volume = 0f;
+            mainHud.SetActive(false);
             
             
         }
@@ -50,9 +54,13 @@ public class Shop_Menu : MonoBehaviour
             
             shopMenu.SetActive(false);
             Time.timeScale = 1;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            if (DeathBox.activeInHierarchy == false)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
             AudioListener.volume = 1f;
+            mainHud.SetActive(true);
 
         }
 

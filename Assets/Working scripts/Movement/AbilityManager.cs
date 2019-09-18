@@ -70,7 +70,7 @@ public class AbilityManager : MonoBehaviour
         {
             boostCD = false;
             resetCD = true;
-            boosterReset = Time.time + 5;
+            boosterReset = Time.time + 6;
             hasBooster = false;
             Time.fixedDeltaTime = 0.02f;
             this.GetComponent<Shop_Menu>().enabled = true;

@@ -87,7 +87,7 @@ public class HBspawner : MonoBehaviour
                 Riding = true;
                 canHB = false;
                 coolDown = true;
-                cooldownTimer = Time.time + 10;
+                cooldownTimer = Time.time + 11.5f;
                 Time.fixedDeltaTime = 0.0075f;
                 this.GetComponent<Shop_Menu>().enabled = false;
 

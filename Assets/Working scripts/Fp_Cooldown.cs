@@ -64,7 +64,7 @@ public class Fp_Cooldown : MonoBehaviour
             this.GetComponent<Fly_test>().dropValue  = 4;
             flyCD = false;
             reset = true;
-            resetTimer = Time.time + 10;
+            resetTimer = Time.time + 6;
             anim.SetBool("isFlying", false);
             this.GetComponent<Normal_jump>().enabled = true;
             Time.fixedDeltaTime = 0.02f;

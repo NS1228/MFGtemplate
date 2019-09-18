@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Load_MM : MonoBehaviour
 {
+    public GameObject mainMenu;
+    public GameObject optionsMenu;
+    public GameObject controlsMenu;
+    public GameObject creditssMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +37,40 @@ public class Load_MM : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        optionsMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void OptionsBack()
+    {
+        optionsMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void Controls ()
+    {
+        controlsMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+
+    public void ControlsBack()
+    {
+        controlsMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void Credits()
+    {
+        creditssMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+
+    public void CreditsBack()
+    {
+        creditssMenu.SetActive(false);
+        optionsMenu.SetActive(true);
     }
 }

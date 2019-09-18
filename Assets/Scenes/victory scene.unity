@@ -343,7 +343,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 757058317}
-        m_MethodName: MM
+        m_MethodName: Mains
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 757058312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0ec3c5d0de9c74a89ef1ae843012f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b79ea13fda4e0a4e97c2ab7550e3a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &874677263
@@ -524,7 +524,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 250, y: -170}
-  m_SizeDelta: {x: 400, y: 300}
+  m_SizeDelta: {x: 210, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &933655811
 MonoBehaviour:
@@ -570,7 +570,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 933655814}
-        m_MethodName: Quit
+        m_MethodName: Quits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 933655809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0ec3c5d0de9c74a89ef1ae843012f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b79ea13fda4e0a4e97c2ab7550e3a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1701388607

@@ -29,7 +29,7 @@ public class Ballshoe_Cooldown : MonoBehaviour
             Ballshoe.SetActive(true);
             canBS = false;
             bsCooldown = true;
-            bsTimer = Time.time + 12;
+            bsTimer = Time.time + 10;
             Time.fixedDeltaTime = 0.0075f;
             this.GetComponent<Shop_Menu>().enabled = false;
             banButton.SetActive(true);

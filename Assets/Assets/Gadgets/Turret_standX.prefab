@@ -182,7 +182,7 @@ MonoBehaviour:
   range: 10
   fireDelay: 0.4
   spawnLocation: {fileID: 6597275200640533704}
-  prefab: {fileID: 2569370717080077961, guid: 5796f84c38e8bff4dbd8dffa034beb13, type: 3}
+  prefab: {fileID: 6624393485560356156, guid: 51b6557931016354aa8f16545dcc92bd, type: 3}
   speed: 5
 --- !u!114 &8447049615639809697
 MonoBehaviour:

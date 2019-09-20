@@ -19,6 +19,8 @@ public class Telport_device : MonoBehaviour
 
     public GameObject banButton;
 
+    public GameObject[] tpCount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,69 @@ public class Telport_device : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(tpdevices == 1)
+        {
+            tpCount[0].SetActive(true);
+            tpCount[1].SetActive(false);
+            tpCount[2].SetActive(false);
+            tpCount[3].SetActive(false);
+            tpCount[4].SetActive(false);
+            tpCount[5].SetActive(false);
+            
+        }
+        if (tpdevices == 2)
+        {
+            tpCount[1].SetActive(true);
+            tpCount[0].SetActive(false);
+            tpCount[2].SetActive(false);
+            tpCount[3].SetActive(false);
+            tpCount[4].SetActive(false);
+            tpCount[5].SetActive(false);
+
+        }
+        if (tpdevices == 3)
+        {
+            tpCount[2].SetActive(true);
+            tpCount[1].SetActive(false);
+            tpCount[0].SetActive(false);
+            tpCount[3].SetActive(false);
+            tpCount[4].SetActive(false);
+            tpCount[5].SetActive(false);
+
+        }
+        if (tpdevices == 4)
+        {
+            tpCount[3].SetActive(true);
+            tpCount[1].SetActive(false);
+            tpCount[2].SetActive(false);
+            tpCount[0].SetActive(false);
+            tpCount[4].SetActive(false);
+            tpCount[5].SetActive(false);
+
+        }
+        if (tpdevices == 5)
+        {
+            tpCount[4].SetActive(true);
+            tpCount[1].SetActive(false);
+            tpCount[2].SetActive(false);
+            tpCount[3].SetActive(false);
+            tpCount[0].SetActive(false);
+            tpCount[5].SetActive(false);
+
+        }
+        if (tpdevices == 6)
+        {
+            tpCount[5].SetActive(true);
+            tpCount[1].SetActive(false);
+            tpCount[2].SetActive(false);
+            tpCount[3].SetActive(false);
+            tpCount[4].SetActive(false);
+            tpCount[0].SetActive(false);
+
+        }
+
+
+
         if (tpdevices <= 0)
         {
             banButton.SetActive(true);

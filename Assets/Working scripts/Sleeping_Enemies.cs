@@ -183,7 +183,7 @@ public class Sleeping_Enemies : MonoBehaviour
         if(takeSleepDMG && Time.time >= dmgTimer)
         {
             takeSleepDMG = false;
-            this.GetComponent<AI_health>().health -= 20;
+            this.GetComponent<AI_health>().health -= 40;
             
         }
 

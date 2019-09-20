@@ -87,7 +87,7 @@ public class Orbvest_manager : MonoBehaviour
         {
             banButton.SetActive(true);
             canCooldown = true;
-            cooldown = Time.time + 14.3f;
+            cooldown = Time.time + 15.5f;
             animPlay = true;
             playTimer = Time.time + 2.3f;
             anim.SetBool("Orbs", true);
@@ -108,7 +108,7 @@ public class Orbvest_manager : MonoBehaviour
             vestBarrel4.GetComponent<Orb_shooter>().enabled = false;
 
             CooldownReset = true;
-            resetcooldown = Time.time + 5;
+            resetcooldown = Time.time + 6;
             canCooldown = false;
             this.GetComponent<Shop_Menu>().enabled = true;
 

@@ -179,7 +179,7 @@ MonoBehaviour:
   enemyShotgun: Shotguner
   enemyBlowgun: Blowguner
   test: []
-  range: 10
+  range: 15
   fireDelay: 0.4
   spawnLocation: {fileID: 6597275200640533704}
   prefab: {fileID: 6624393485560356156, guid: 51b6557931016354aa8f16545dcc92bd, type: 3}

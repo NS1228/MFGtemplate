@@ -46,6 +46,16 @@ public class Spawn_Objects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(this.GetComponent<Thirsperson_character>().isGrounded)
+        {
+            canBuild = true;
+        }
+        else
+        {
+            canBuild = false;
+        }
+
+
         if(Input.GetKey(KeyCode.F) && canBuildNCD)
         {
             Turrettimerz = 0;
@@ -94,7 +104,7 @@ public class Spawn_Objects : MonoBehaviour
         {
             canBuildNCD = false;
             startCD = true;
-            timer = Time.time + 5f;
+            timer = Time.time + 6f;
             buildLimitReached = false;
             this.GetComponent<Shop_Menu>().enabled = true;
             banButton.SetActive(true);
@@ -105,7 +115,7 @@ public class Spawn_Objects : MonoBehaviour
             buildtimer = false;
             canBuildNCD = false;
             startCD = true;
-            timer = Time.time + 5f;
+            timer = Time.time + 6f;
             this.GetComponent<Shop_Menu>().enabled = true;
             banButton.SetActive(true);
 
@@ -115,7 +125,7 @@ public class Spawn_Objects : MonoBehaviour
 
     }
 
-    void OnCollisionEnter (Collision other)
+   /* void OnCollisionEnter (Collision other)
     {
         if(other.gameObject.tag == "Floor")
         {
@@ -133,7 +143,9 @@ public class Spawn_Objects : MonoBehaviour
         }
         
         
-    }
+    } */
+
+       
 
 
     public void Cooldown ()

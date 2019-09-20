@@ -62,7 +62,7 @@ public class Lighting_Spawner : MonoBehaviour
 
             banButton.SetActive(true);
             spawnYes = false;
-            timer = Time.time + 8.02f;
+            timer = Time.time + 13.02f;
             switcherbool = true;
             anim.SetBool("Lightning", true);
             deployLightning = true;
@@ -90,8 +90,8 @@ public class Lighting_Spawner : MonoBehaviour
             switcherbool = false;
             
             arrayOfGameObjects[0].SetActive(false);
-            arrayOfGameObjects[1].SetActive(false);
-            arrayOfGameObjects[2].SetActive(false);
+            //arrayOfGameObjects[1].SetActive(false);
+            //arrayOfGameObjects[2].SetActive(false);
 
             cooldownTimer = Time.time + 5f;
             reset = true;

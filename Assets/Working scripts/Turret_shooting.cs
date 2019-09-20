@@ -124,7 +124,7 @@ public class Turret_shooting : MonoBehaviour
         if (target != null && Time.time >= fireDelay)
         {
             target.GetComponent<AI_health>().health -= 40;
-            fireDelay = Time.time + 2;
+            fireDelay = Time.time + 0.4f;
             Turret_Audio.turretSFX = true;
 
             GameObject bulletGo = (GameObject)Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);

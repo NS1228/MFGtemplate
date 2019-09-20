@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mine_Generator : MonoBehaviour
 {
+    public GameObject[] mineCount;
 
     public GameObject Mines;
 
@@ -37,9 +38,153 @@ public class Mine_Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
 
-      if(maxMines <= 0)
+        if(maxMines == 1)
+        {
+            mineCount[0].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 2)
+        {
+            mineCount[1].SetActive(true);
+            mineCount[0].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+
+
+
+        if (maxMines == 3)
+        {
+            mineCount[2].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 4)
+        {
+            mineCount[3].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 5)
+        {
+            mineCount[4].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 6)
+        {
+            mineCount[5].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 7)
+        {
+            mineCount[6].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 8)
+        {
+            mineCount[7].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 9)
+        {
+            mineCount[8].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[0].SetActive(false);
+            mineCount[9].SetActive(false);
+
+        }
+        if (maxMines == 10)
+        {
+            mineCount[9].SetActive(true);
+            mineCount[1].SetActive(false);
+            mineCount[2].SetActive(false);
+            mineCount[3].SetActive(false);
+            mineCount[4].SetActive(false);
+            mineCount[5].SetActive(false);
+            mineCount[6].SetActive(false);
+            mineCount[7].SetActive(false);
+            mineCount[8].SetActive(false);
+            mineCount[0].SetActive(false);
+
+        }
+
+
+        if (maxMines <= 0)
         {
             banButton.SetActive(true);
         }

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Gem_Inventory : MonoBehaviour
 {
     public float noOfGems;
 
     public GameObject[] gemText;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,7 @@ public class Gem_Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(noOfGems == 0)
         {
             gemText[0].SetActive(true);

@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Money : MonoBehaviour
 {
 
-  
+    public TMPro.TextMeshProUGUI text;
     public float Gems;
     public bool canbuyBoosters;
     // Start is called before the first frame update
@@ -17,7 +18,8 @@ public class Money : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
+        text.text = Gems.ToString();
     }
 
     void OnCollisionEnter(Collision collision)

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Pearls : MonoBehaviour
 {
-
+    
     public GameObject Player;
 
     public float destroyTimer;
@@ -18,8 +19,7 @@ public class Pearls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(destroy && Time.time >= destroyTimer)
+        if (destroy && Time.time >= destroyTimer)
         {
             destroy = false;
             Destroy(gameObject);

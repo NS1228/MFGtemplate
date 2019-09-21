@@ -88,7 +88,7 @@ public class HBspawner : MonoBehaviour
                 canHB = false;
                 coolDown = true;
                 cooldownTimer = Time.time + 11.5f;
-                Time.fixedDeltaTime = 0.0075f;
+               
                 this.GetComponent<Shop_Menu>().enabled = false;
 
             }
@@ -100,7 +100,7 @@ public class HBspawner : MonoBehaviour
         {
 
             Riding = false;
-            Time.fixedDeltaTime = 0.02f;
+            
             this.GetComponent<Shop_Menu>().enabled = true;
         }
 
@@ -126,10 +126,10 @@ public class HBspawner : MonoBehaviour
             this.transform.position = Seat.transform.position;
             this.transform.rotation = Seat.transform.rotation;
             this.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            //this.gameObject.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.GetComponent<Thirsperson_character>().enabled = false;
             this.GetComponent<Normal_jump>().enabled = false;
-
+            Time.fixedDeltaTime = 0.0025f;
 
 
 
@@ -137,6 +137,7 @@ public class HBspawner : MonoBehaviour
         }
         else
         {
+            Time.fixedDeltaTime = 0.02f;
             HB_sound.hbSFX = false;
             anim.SetBool("isHovering", false);
             hoverBoard.SetActive(false);

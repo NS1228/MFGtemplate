@@ -75,7 +75,7 @@ public class Enemy_Sleeper : MonoBehaviour
             {
                 banButton.SetActive(true);
                 HackThem = true;
-                timer = Time.time + 12.7f;
+                timer = Time.time + 10.7f;
                 stopHack = true;
                 inUse = true;
                 stunDMG = true;
@@ -102,7 +102,7 @@ public class Enemy_Sleeper : MonoBehaviour
             HackThem = false;
 
             resetthis = true;
-            resettimer = Time.time + 6;
+            resettimer = Time.time + 4;
             enemyAnim = false;
             this.GetComponent<Shop_Menu>().enabled = true;
 

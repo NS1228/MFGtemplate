@@ -22,7 +22,7 @@ public class Heal_Sound : MonoBehaviour
     {
         if (healSFX && canHeal)
         {
-            audioSourcee.PlayOneShot(heal, 0.7f);
+            audioSourcee.PlayOneShot(heal, 0.1f);
             healTimer = Time.time + 5f;
         }
 

@@ -50,7 +50,7 @@ public class DontGoThroughThings : MonoBehaviour
                         return;
 
                     if (hitInfo.collider.isTrigger)
-                        hitInfo.collider.SendMessage("OnTriggerEnter", myCollider);
+                       // hitInfo.collider.SendMessage("OnTriggerEnter", myCollider);
 
                     if (!hitInfo.collider.isTrigger)
                         myRigidbody.position = hitInfo.point - (movementThisStep / movementMagnitude) * partialExtent;

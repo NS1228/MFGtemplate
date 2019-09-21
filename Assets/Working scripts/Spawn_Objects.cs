@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawn_Objects : MonoBehaviour
 {
+    public GameObject[] leftToBuild;
+
     public GameObject turret;
     public bool canBuild;
 
@@ -41,12 +43,36 @@ public class Spawn_Objects : MonoBehaviour
         anim = this.GetComponent<Animator>();
         audios = this.GetComponent<AudioSource>();
 
+       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(this.GetComponent<Thirsperson_character>().isGrounded)
+        if(buildLimit == 0)
+        {
+            leftToBuild[2].SetActive(true);
+            leftToBuild[1].SetActive(false);
+            leftToBuild[0].SetActive(false);
+
+        }
+        if (buildLimit == 1)
+        {
+            leftToBuild[2].SetActive(false);
+            leftToBuild[1].SetActive(true);
+            leftToBuild[0].SetActive(false);
+        }
+        if (buildLimit == 2)
+        {
+            leftToBuild[2].SetActive(false);
+            leftToBuild[1].SetActive(false);
+            leftToBuild[0].SetActive(true);
+        }
+
+
+
+        if (this.GetComponent<Thirsperson_character>().isGrounded)
         {
             canBuild = true;
         }
@@ -156,7 +182,7 @@ public class Spawn_Objects : MonoBehaviour
             canBuildNCD = true;
             buildLimit = 0;
             banButton.SetActive(false);
-
+            
         }
     }
 }

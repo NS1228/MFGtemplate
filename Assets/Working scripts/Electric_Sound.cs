@@ -22,7 +22,7 @@ public class Electric_Sound : MonoBehaviour
     {
         if (shockSFX && canShock)
         {
-            audioSourcee.PlayOneShot(shock, 0.7f);
+            audioSourcee.PlayOneShot(shock, 0.3f);
             shockTimer = Time.time + 0.7f;
         }
 

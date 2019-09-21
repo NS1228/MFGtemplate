@@ -24,8 +24,6 @@ public class Force_fieldscript : MonoBehaviour
     public GameObject spawn3;
     public GameObject spawn4;
     public GameObject spawn5;
-   
-
 
 
 
@@ -41,12 +39,18 @@ public class Force_fieldscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+     
+       
 
         if (Time.time >= moveTimer1)
         {
             this.transform.position = Vector3.MoveTowards(this.transform.position, wave1, speed * Time.deltaTime);
             spawn2.SetActive(true);
             spawn1.SetActive(false);
+            
+            
+            
 
         }
         if (Time.time >= moveTimer2)

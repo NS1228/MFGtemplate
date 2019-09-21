@@ -21,7 +21,7 @@ public class Portal_Script : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
 
         }
     }

@@ -39,7 +39,7 @@ public class Health_script : MonoBehaviour
             health = 100;
         }
 
-        print(Time.fixedDeltaTime);
+       // print(Time.fixedDeltaTime);
         Death();
 
         if (ragdollTime <= Time.time && isDead)

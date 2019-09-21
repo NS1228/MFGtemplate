@@ -39,6 +39,15 @@ public class Mine_Generator : MonoBehaviour
     void Update()
     {
 
+        if(this.GetComponent<Thirsperson_character>().isGrounded)
+        {
+            canMine = true;
+        }
+        else
+        {
+            canMine = false;
+        }
+
         if(maxMines == 1)
         {
             mineCount[0].SetActive(true);
@@ -263,7 +272,7 @@ public class Mine_Generator : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision other)
+   /* void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Floor")
         {
@@ -281,6 +290,6 @@ public class Mine_Generator : MonoBehaviour
         }
 
 
-    }
+    } */
 
 }

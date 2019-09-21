@@ -22,7 +22,7 @@ public class Gemmy_Soound : MonoBehaviour
     {
         if (gemmySFX && canGem)
         {
-            audioSourcee.PlayOneShot(gem, 0.5f);
+            audioSourcee.PlayOneShot(gem, 0.1f);
             gemTimer = Time.time + 3.5f;
         }
 

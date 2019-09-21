@@ -9,6 +9,7 @@ public class Buy_Gadgets : MonoBehaviour
     public GameObject[] sellButtons;
     public GameObject[] abilityIcons;
     public GameObject[] sellIcons;
+    public GameObject[] price;
 
     public GameObject Player;
 
@@ -20,6 +21,7 @@ public class Buy_Gadgets : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         //ballShoe = GameObject.FindGameObjectWithTag("Ballshoe");
+        
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[0].SetActive(false);
             sellButtons[0].SetActive(true);
             Player.GetComponent<Money>().Gems -= 50;
+            price[0].SetActive(false);
             
 
 
@@ -63,13 +66,7 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[4].SetActive(false);
         abilityIcons[5].SetActive(false);
         abilityIcons[6].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
+        
 
         sellIcons[1].SetActive(false);
         sellIcons[2].SetActive(false);
@@ -77,13 +74,7 @@ public class Buy_Gadgets : MonoBehaviour
         sellIcons[4].SetActive(false);
         sellIcons[5].SetActive(false);
         sellIcons[6].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
+      
 
 
 
@@ -99,7 +90,8 @@ public class Buy_Gadgets : MonoBehaviour
         sellButtons[0].SetActive(false);
         Player.GetComponent<AbilityManager>().enabled = false;
         abilityIcons[0].SetActive(false);
-       sellIcons[0].SetActive(false);
+        sellIcons[0].SetActive(false);
+       price[0].SetActive(true);
 
 
     }
@@ -112,7 +104,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[1].SetActive(false);
             sellButtons[1].SetActive(true);
             Player.GetComponent<Money>().Gems -= 100;
-            
+            price[1].SetActive(false);
+
 
 
         }
@@ -140,13 +133,7 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[4].SetActive(false);
         abilityIcons[5].SetActive(false);
         abilityIcons[6].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
+        
 
         sellIcons[0].SetActive(false);
         sellIcons[2].SetActive(false);
@@ -154,13 +141,7 @@ public class Buy_Gadgets : MonoBehaviour
         sellIcons[4].SetActive(false);
         sellIcons[5].SetActive(false);
         sellIcons[6].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
+        
 
 
 
@@ -176,6 +157,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Rollerskates>().enabled = false;
         abilityIcons[1].SetActive(false);
         sellIcons[1].SetActive(false);
+        price[1].SetActive(true);
 
 
 
@@ -191,7 +173,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[2].SetActive(false);
             sellButtons[2].SetActive(true);
             Player.GetComponent<Money>().Gems -= 150;
-            
+            price[2].SetActive(false);
+
 
 
         }
@@ -220,13 +203,7 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[4].SetActive(false);
         abilityIcons[5].SetActive(false);
         abilityIcons[6].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
+       
 
         sellIcons[1].SetActive(false);
         sellIcons[0].SetActive(false);
@@ -234,13 +211,7 @@ public class Buy_Gadgets : MonoBehaviour
         sellIcons[4].SetActive(false);
         sellIcons[5].SetActive(false);
         sellIcons[6].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
+       
 
     }
 
@@ -253,6 +224,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Ballshoe_Cooldown>().enabled = false;
         abilityIcons[2].SetActive(false);
         sellIcons[2].SetActive(false);
+        price[2].SetActive(true);
 
 
 
@@ -266,7 +238,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[3].SetActive(false);
             sellButtons[3].SetActive(true);
             Player.GetComponent<Money>().Gems -= 200;
-            
+            price[3].SetActive(false);
+
 
 
         }
@@ -295,13 +268,7 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[4].SetActive(false);
         abilityIcons[5].SetActive(false);
         abilityIcons[6].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
+      
 
         sellIcons[1].SetActive(false);
         sellIcons[2].SetActive(false);
@@ -309,13 +276,7 @@ public class Buy_Gadgets : MonoBehaviour
         sellIcons[4].SetActive(false);
         sellIcons[5].SetActive(false);
         sellIcons[6].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
+        
     }
 
     public void SellBouncy()
@@ -327,6 +288,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Bouncy>().enabled = false;
         abilityIcons[3].SetActive(false);
         sellIcons[3].SetActive(false);
+        price[3].SetActive(true);
 
 
 
@@ -341,7 +303,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[5].SetActive(false);
             sellButtons[5].SetActive(true);
             Player.GetComponent<Money>().Gems -= 350;
-            
+            price[5].SetActive(false);
+
 
 
         }
@@ -371,27 +334,14 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[4].SetActive(false);
         abilityIcons[0].SetActive(false);
         abilityIcons[6].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
-
+        
         sellIcons[1].SetActive(false);
         sellIcons[2].SetActive(false);
         sellIcons[3].SetActive(false);
         sellIcons[4].SetActive(false);
         sellIcons[0].SetActive(false);
         sellIcons[6].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
+       
 
     }
 
@@ -405,6 +355,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Fly_test>().enabled = false;
         abilityIcons[5].SetActive(false);
         sellIcons[5].SetActive(false);
+        price[5].SetActive(true);
 
 
     }
@@ -417,7 +368,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[4].SetActive(false);
             sellButtons[4].SetActive(true);
             Player.GetComponent<Money>().Gems -= 250;
-            
+            price[4].SetActive(false);
+
 
 
 
@@ -447,13 +399,7 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[0].SetActive(false);
         abilityIcons[5].SetActive(false);
         abilityIcons[6].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
+       
 
         sellIcons[1].SetActive(false);
         sellIcons[2].SetActive(false);
@@ -461,14 +407,7 @@ public class Buy_Gadgets : MonoBehaviour
         sellIcons[0].SetActive(false);
         sellIcons[5].SetActive(false);
         sellIcons[6].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
-
+        
     }
 
     public void SellTeleporting()
@@ -480,6 +419,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Telport_device>().enabled = false;
         abilityIcons[4].SetActive(false);
         sellIcons[4].SetActive(false);
+        price[4].SetActive(true);
 
 
 
@@ -494,8 +434,9 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[6].SetActive(false);
             sellButtons[6].SetActive(true);
             Player.GetComponent<Money>().Gems -= 450;
+            price[6].SetActive(false);
 
-            
+
 
 
         }
@@ -524,13 +465,7 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[4].SetActive(false);
         abilityIcons[5].SetActive(false);
         abilityIcons[0].SetActive(false);
-        abilityIcons[7].SetActive(false);
-        abilityIcons[8].SetActive(false);
-        abilityIcons[9].SetActive(false);
-        abilityIcons[10].SetActive(false);
-        abilityIcons[11].SetActive(false);
-        abilityIcons[12].SetActive(false);
-        abilityIcons[13].SetActive(false);
+        
 
         sellIcons[1].SetActive(false);
         sellIcons[2].SetActive(false);
@@ -538,14 +473,7 @@ public class Buy_Gadgets : MonoBehaviour
         sellIcons[4].SetActive(false);
         sellIcons[5].SetActive(false);
         sellIcons[0].SetActive(false);
-        sellIcons[7].SetActive(false);
-        sellIcons[8].SetActive(false);
-        sellIcons[9].SetActive(false);
-        sellIcons[10].SetActive(false);
-        sellIcons[11].SetActive(false);
-        sellIcons[12].SetActive(false);
-        sellIcons[13].SetActive(false);
-
+      
     }
 
     public void SellHoverboarding()
@@ -557,6 +485,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<HBspawner>().enabled = false;
         abilityIcons[6].SetActive(false);
         sellIcons[6].SetActive(false);
+        price[6].SetActive(true);
 
         hbCamera.SetActive(false);
         defaultCamera.SetActive(true);
@@ -572,7 +501,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[7].SetActive(false);
             sellButtons[7].SetActive(true);
             Player.GetComponent<Money>().Gems -= 50;
-            
+            price[7].SetActive(false);
+
 
 
         }
@@ -592,13 +522,8 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[7].SetActive(true);
 
 
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
-        abilityIcons[0].SetActive(false);
+     
+        
         abilityIcons[8].SetActive(false);
         abilityIcons[9].SetActive(false);
         abilityIcons[10].SetActive(false);
@@ -606,13 +531,8 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[12].SetActive(false);
         abilityIcons[13].SetActive(false);
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
-        sellIcons[0].SetActive(false);
+       
+        
         sellIcons[8].SetActive(false);
         sellIcons[9].SetActive(false);
         sellIcons[10].SetActive(false);
@@ -640,7 +560,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[8].SetActive(false);
             sellButtons[8].SetActive(true);
             Player.GetComponent<Money>().Gems -= 100;
-            
+            price[8].SetActive(false);
+
 
 
         }
@@ -661,28 +582,19 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[8].SetActive(true);
 
 
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
+
+      
         abilityIcons[7].SetActive(false);
-        abilityIcons[0].SetActive(false);
+       
         abilityIcons[9].SetActive(false);
         abilityIcons[10].SetActive(false);
         abilityIcons[11].SetActive(false);
         abilityIcons[12].SetActive(false);
         abilityIcons[13].SetActive(false);
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
+        
         sellIcons[7].SetActive(false);
-        sellIcons[0].SetActive(false);
+       
         sellIcons[9].SetActive(false);
         sellIcons[10].SetActive(false);
         sellIcons[11].SetActive(false);
@@ -701,6 +613,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Enemy_Sleeper>().enabled = false;
         abilityIcons[8].SetActive(false);
         sellIcons[8].SetActive(false);
+        price[8].SetActive(true);
 
 
     }
@@ -713,7 +626,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[9].SetActive(false);
             sellButtons[9].SetActive(true);
             Player.GetComponent<Money>().Gems -= 150;
-            
+            price[9].SetActive(false);
+
 
 
         }
@@ -734,29 +648,19 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[9].SetActive(true);
 
 
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
+      
         abilityIcons[7].SetActive(false);
         abilityIcons[8].SetActive(false);
-        abilityIcons[0].SetActive(false);
+       
         abilityIcons[10].SetActive(false);
         abilityIcons[11].SetActive(false);
         abilityIcons[12].SetActive(false);
         abilityIcons[13].SetActive(false);
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
+       
         sellIcons[7].SetActive(false);
         sellIcons[8].SetActive(false);
-        sellIcons[0].SetActive(false);
+       
         sellIcons[10].SetActive(false);
         sellIcons[11].SetActive(false);
         sellIcons[12].SetActive(false);
@@ -773,6 +677,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Orbvest_manager>().enabled = false;
         abilityIcons[9].SetActive(false);
         abilityIcons[9].SetActive(false);
+        price[9].SetActive(true);
     }
 
     public void BuyIceTrail()
@@ -783,7 +688,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[10].SetActive(false);
             sellButtons[10].SetActive(true);
             Player.GetComponent<Money>().Gems -= 200;
-            
+            price[10].SetActive(false);
+
 
 
         }
@@ -803,30 +709,20 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[10].SetActive(true);
 
 
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
+       
         abilityIcons[7].SetActive(false);
         abilityIcons[8].SetActive(false);
         abilityIcons[9].SetActive(false);
-        abilityIcons[0].SetActive(false);
+       
         abilityIcons[11].SetActive(false);
         abilityIcons[12].SetActive(false);
         abilityIcons[13].SetActive(false);
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
+      
         sellIcons[7].SetActive(false);
         sellIcons[8].SetActive(false);
         sellIcons[9].SetActive(false);
-        sellIcons[0].SetActive(false);
+       
         sellIcons[11].SetActive(false);
         sellIcons[12].SetActive(false);
         sellIcons[13].SetActive(false);
@@ -842,6 +738,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Icetrail_Manager>().enabled = false;
         abilityIcons[10].SetActive(false);
         sellIcons[10].SetActive(false);
+        price[10].SetActive(true);
 
     }
 
@@ -853,7 +750,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[11].SetActive(false);
             sellButtons[11].SetActive(true);
             Player.GetComponent<Money>().Gems -= 250;
-           
+            price[11].SetActive(false);
+
 
 
         }
@@ -873,31 +771,21 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[11].SetActive(true);
 
 
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
+       
         abilityIcons[7].SetActive(false);
         abilityIcons[8].SetActive(false);
         abilityIcons[9].SetActive(false);
         abilityIcons[10].SetActive(false);
-        abilityIcons[0].SetActive(false);
+   
         abilityIcons[12].SetActive(false);
         abilityIcons[13].SetActive(false);
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
+      
         sellIcons[7].SetActive(false);
         sellIcons[8].SetActive(false);
         sellIcons[9].SetActive(false);
         sellIcons[10].SetActive(false);
-        sellIcons[0].SetActive(false);
+      
         sellIcons[12].SetActive(false);
         sellIcons[13].SetActive(false);
 
@@ -912,6 +800,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Spawn_Objects>().enabled = false;
         abilityIcons[11].SetActive(false);
         sellIcons[11].SetActive(false);
+       price[11].SetActive(true);
     }
 
     public void BuyLightning()
@@ -922,7 +811,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[12].SetActive(false);
             sellButtons[12].SetActive(true);
             Player.GetComponent<Money>().Gems -= 350;
-           
+            price[12].SetActive(false);
+
 
 
         }
@@ -941,33 +831,22 @@ public class Buy_Gadgets : MonoBehaviour
         this.GetComponent<ADA>().enabled = false;
         abilityIcons[12].SetActive(true);
 
-
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
+        
         abilityIcons[7].SetActive(false);
         abilityIcons[8].SetActive(false);
         abilityIcons[9].SetActive(false);
         abilityIcons[10].SetActive(false);
         abilityIcons[11].SetActive(false);
-        abilityIcons[0].SetActive(false);
+      
         abilityIcons[13].SetActive(false);
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
+  
         sellIcons[7].SetActive(false);
         sellIcons[8].SetActive(false);
         sellIcons[9].SetActive(false);
         sellIcons[10].SetActive(false);
         sellIcons[11].SetActive(false);
-        sellIcons[0].SetActive(false);
+        
         sellIcons[13].SetActive(false);
     }
 
@@ -980,6 +859,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<Lighting_Spawner>().enabled = false;
         abilityIcons[12].SetActive(false);
         sellIcons[12].SetActive(false);
+        price[12].SetActive(true);
 
     }
 
@@ -991,7 +871,8 @@ public class Buy_Gadgets : MonoBehaviour
             buyButtons[13].SetActive(false);
             sellButtons[13].SetActive(true);
             Player.GetComponent<Money>().Gems -= 450;
-            
+            price[13].SetActive(false);
+
 
 
         }
@@ -1011,33 +892,23 @@ public class Buy_Gadgets : MonoBehaviour
         abilityIcons[13].SetActive(true);
 
 
-        abilityIcons[1].SetActive(false);
-        abilityIcons[2].SetActive(false);
-        abilityIcons[3].SetActive(false);
-        abilityIcons[4].SetActive(false);
-        abilityIcons[5].SetActive(false);
-        abilityIcons[6].SetActive(false);
+      
         abilityIcons[7].SetActive(false);
         abilityIcons[8].SetActive(false);
         abilityIcons[9].SetActive(false);
         abilityIcons[10].SetActive(false);
         abilityIcons[11].SetActive(false);
         abilityIcons[12].SetActive(false);
-        abilityIcons[0].SetActive(false);
+      
 
-        sellIcons[1].SetActive(false);
-        sellIcons[2].SetActive(false);
-        sellIcons[3].SetActive(false);
-        sellIcons[4].SetActive(false);
-        sellIcons[5].SetActive(false);
-        sellIcons[6].SetActive(false);
+       
         sellIcons[7].SetActive(false);
         sellIcons[8].SetActive(false);
         sellIcons[9].SetActive(false);
         sellIcons[10].SetActive(false);
         sellIcons[11].SetActive(false);
         sellIcons[12].SetActive(false);
-        sellIcons[0].SetActive(false);
+       
     }
 
     public void SellGrenaqde()
@@ -1049,6 +920,7 @@ public class Buy_Gadgets : MonoBehaviour
         Player.GetComponent<ADA>().enabled = false;
         abilityIcons[13].SetActive(false);
         sellIcons[13].SetActive(false);
+       price[13].SetActive(true);
     }
 
  

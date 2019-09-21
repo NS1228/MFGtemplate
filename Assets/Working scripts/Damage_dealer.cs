@@ -10,6 +10,8 @@ public class Damage_dealer : MonoBehaviour
     public float difference;
    public float damageValue;
 
+    public GameObject riseText;
+
     AudioSource AS;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,11 @@ public class Damage_dealer : MonoBehaviour
             Player.GetComponent<Health_script>().health -= 1 * Time.deltaTime;
             //DI_System.CreateIndicator(this.transform);
             Grunt_Sound.gruntSFX = true;
+            riseText.SetActive(true);
+        }
+        else
+        {
+            riseText.SetActive(false);
         }
 
         if (musicPoint.transform.position.y < this.transform.position.y)

@@ -78,13 +78,14 @@ public class Sleeping_Enemies : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, Player.position) <= range)
         {
             inRange = true;
-            
+            print("YES IN RANGE");
             
 
         }
         if (Vector3.Distance(transform.position, Player.position) > range)
         {
             inRange = false;
+           print ("not in range");
            
         }
 
@@ -174,16 +175,16 @@ public class Sleeping_Enemies : MonoBehaviour
                     anim.SetBool("Sleep", false);
                     sleepThis = true;
                 }
-            }
+            } 
           
 
 
-        }
+        } 
 
         if(takeSleepDMG && Time.time >= dmgTimer)
         {
             takeSleepDMG = false;
-            this.GetComponent<AI_health>().health -= 40;
+            this.GetComponent<AI_health>().health -= 25;
             
         }
 

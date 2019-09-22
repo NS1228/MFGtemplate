@@ -54,15 +54,16 @@ public class HBpilot : MonoBehaviour
             transform.position += transform.forward * Time.deltaTime * speed;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.C))
         {
-            speed -= 5 * Time.deltaTime;
+            //speed -= 5 * Time.deltaTime;
+            speed = 20;
             
         }
         else
         {
-            
-            speed += 5 * Time.deltaTime;
+            speed = 0;
+            //speed += 5 * Time.deltaTime;
         }
 
         

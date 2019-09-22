@@ -112,7 +112,10 @@ public class Orbvest_manager : MonoBehaviour
             canCooldown = false;
             this.GetComponent<Shop_Menu>().enabled = true;
 
-            charatcer.gameObject.GetComponent<Renderer>().materials = deafultMat;
+            if (!HBspawner.Riding)
+            {
+                charatcer.gameObject.GetComponent<Renderer>().materials = deafultMat;
+            }
             
             
 

@@ -78,14 +78,14 @@ public class Sleeping_Enemies : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, Player.position) <= range)
         {
             inRange = true;
-            print("YES IN RANGE");
+           // print("YES IN RANGE");
             
 
         }
         if (Vector3.Distance(transform.position, Player.position) > range)
         {
             inRange = false;
-           print ("not in range");
+          // print ("not in range");
            
         }
 

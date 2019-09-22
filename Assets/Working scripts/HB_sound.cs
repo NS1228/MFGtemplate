@@ -5,6 +5,7 @@ using UnityEngine;
 public class HB_sound : MonoBehaviour
 {
     AudioSource audioSource;
+    public GameObject player;
 
     public static bool hbSFX;
     public bool canHB;
@@ -15,6 +16,7 @@ public class HB_sound : MonoBehaviour
     void Start()
     {
         audioSource = this.GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class HB_sound : MonoBehaviour
         {
             audioSource.PlayOneShot(hoverboard, 0.7F);
             hbTimer = Time.time + 11.65f;
+            player.GetComponent<AudioSource>().volume = 0;
         }
 
         if(Time.time >= hbTimer)
@@ -39,6 +42,7 @@ public class HB_sound : MonoBehaviour
         {
             audioSource.Stop();
             hbTimer = 0;
+            player.GetComponent<AudioSource>().volume = 1;
         }
     }
 }
